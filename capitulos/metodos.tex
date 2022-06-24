@@ -1,0 +1,69 @@
+\chapter{Métodos y consideraciones}
+
+\section{Análisis dimensional}
+Dado que el programa Inventor está limitado a partir a la escala milimétrica, por lo tanto, se tiene que aplicar un escalado. Se procede a realizar un análisis dimensional de las ecuaciones para obtener los nuevos parámetros para la nueva escala del modelo.\\
+
+Siendo $L'$ la longitud en el modelo y $L$ la longitud de la realidad, se considera que ${L'}/{L}=10^4$.
+\subsection{Área}
+La sección de los nano-espaciadores es un polígono regular de cuatro lados cuya fórmula del área es $A=L^2$, donde $A$ es el área y $L$ el lado del polígono.\\
+
+Para cualquier polígono regular a fórmula del área se puede expresar como $A=Cte\cdot L^2$, siendo $Cte$ una constante distinta para cada polígono y tomando en cuenta la relación de escala.
+
+\begin{equation}
+	\dfrac{A'}{A}=\left(\dfrac{L'}{L}\right)^2=10^8
+\end{equation}
+\subsection{Volumen}
+El volumen de un prisma de base de polígono regular se expresa como $V=A\cdot L$, donde $L$ es la altura del prisma.
+\begin{equation}
+	V'=A'\cdot L' = A\cdot L \cdot 10^8\cdot 10^4= V\cdot 10^12
+\end{equation}
+
+El volumen de cada nano-espaciador en el modelo será $10^12$ veces el volumen original.
+\subsection{Conductancia Térmica}
+
+Al aplicarse la escala la conductancia térmica (\textit{C}) se mantiene constante, variando la conductividad térmica (\textit{k}) del material. La nueva conductividad térmica $k'$ será:
+
+\begin{equation}
+	C=k\cdot \frac{A}{L}=k'\cdot\frac{A'}{L'}
+\end{equation}
+\begin{equation}	
+	 k'=\dfrac{L'}{L} \cdot \dfrac{A}{A'} \cdot k=10^4\cdot 10^{-8}=k\cdot 10^{-4}
+\end{equation}
+
+Donde $k$ es la conductividad térmica del material  y $k'$ es la conductividad térmica para la escala aplicada. $k'=k\cdot10^{-4}$
+
+\subsection{Calor Específico}
+
+\subsection{Coeficiente de expansión térmica}
+
+\subsection{Densidad}
+La masa de cada elemento tiene que ser constante entre el modelo y la realidad.
+\begin{equation}
+	M=M'\Longrightarrow \rho\cdot V=\rho'\cdot V'= \rho'\cdot V\cdot {10}^{12}\Longrightarrow \rho'=\rho\cdot{10}^{-12}
+\end{equation}
+
+La densidad de cada elemento en el modelo será $10^{-12}$ veces la densidad de la realidad.
+
+\subsection{Resistencia de Contacto}
+En \cite{noauthor_parallel-plate_nodate} se descubre como la resistencia de contacto afecta a los espaciadores y se obtiene el valor de su coeficiente($\rho$) $4\cdot 10^{-6}m^2 KW^{-1} $. Para obtener cual es el coeficiente de la resistencia de contacto del modelo se realiza un análisis dimensional.
+
+\begin{equation}
+	R= \rho \cdot A =\rho ' \cdot A' \Longrightarrow \rho '=\rho \cdot \dfrac{A}{A'}=\rho \cdot 10^8
+\end{equation}
+
+La resistencia térmica por contacto
+
+Según el módelo de XXXXXXX:
+\begin{equation}
+	h_c=\dfrac{k_s\cdot}{m}\cdot \left( \dfrac{P}{H_c} \right)^{0.95} \\ \dfrac{P}{H_c} = \left[ \dfrac{P}{c1\cdot \left(1.62\cdot \sigma/m \right)^{c_2}}\right]^{\dfrac{1}{1+0.0071\cdot c_2}} \\	\sigma =\sqrt{{\sigma_1}^2+{\sigma_2}^2} \\ m=\sqrt{{m_1}^2+{m_2}^2}	\\ k_s=2\cdot \dfrac{k_1\cdot k_2}{k_1+k_2}
+\end{equation}
+
+Para el dato hc=1000;
+\begin{equation}
+	\dfrac{\sigma}{m}=\dfrac{\sigma_1}{m1}	\\ h_{c1}=k_{s1}\cdot cte \\ h_{c2}=k_{s2}\cdot cte	\\ k_{s1}=k_1 \\ \dfrac{h_{c2}}{h_{c1}}= 2\cdot \dfrac{k_2}{k_1+k_2}=cof
+\end{equation}
+k1=15 y k2=1.5
+\begin{equation}
+	cof=2\cdot \dfrac{1.5}{15+1.5}=0.18182
+	\\ h_{c2}=h_{c1}\cdot cof=181.82 \rightarrow h_{c2}=181.82 \rightarrow R_{c2}=5.5E-3
+\end{equation}
