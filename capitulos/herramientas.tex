@@ -1,28 +1,39 @@
 \chapter{Materiales y Herramientas}
-
-En este capítulo se exponen los materiales utilizados para cada componente del sistema, las herramientas utilizadas para el modelado y simulación del sistema, y los motivos por de sus usos.
-
- los motivos por el cual se han escogido dichos materiales, las herramientas utilizadas para el modelado del sistema, simulación de la transmisión de calor y cálculos de la radiación por efecto de campo cercano .
-
-A su vez, se exponen los programas utilizados para la realización del modelo del espaciador, la simulación de la transmisión de calor y los cálculos de la radiación producida por el efecto de campo cercano, cin
+%\vspace{-1cm}
+En este capítulo se exponen los materiales utilizados para cada componente del sistema, las herramientas utilizadas para el modelado 3D del nano-espaciador, simulación de la transmisión de calor por conducción y simulación de transmisión de calor por radiación por campo cercano, y los motivos de uso de dichos materiales y herramientas.
 \section{Materiales}
-\subsection{Criterios}
-Para la selección de los materiales se sigue como principal criterio la disponibilidad del material en la IES
-\begin{itemize}
-	\item Disponibilidad de los materiales
-	\item 
-\end{itemize} utilizar se tomó como principal criterio la disponibilidad de materiales en la IES, y como segundo criterios  los casos de uso de los mismos y la disponibilidad
-\subsection{Espaciador}
+Se listan y desarrolla los materiales a utilizar para cada uno de los componentes del sistema TPV, incluyendo los criterios seguidos de su selección.
+\subsection{Nano-espaciador}
+El nano-espaciador es de Dióxido de Silicio ($SiO_2$), un material que ha sido utilizado en varias ocasiones en sistemas de campo cercano de TPVs o TEC por ser un material cerámico con una baja conductividad térmica, buena resistencia ante choques de calor y alta fuerza de compresión. La conductividad térmica es menor a 10 W/m\textdegree C en el rango de temperatura de trabajo, entre 25 a 800\textdegree C. A su vez se considera el $SiO_2$ con tres porosidades distintas, la primera es con una porosidad del 0\%, segundo con una porosidad del 25\% y tercero con una porosidad del 50\%, calculando la nueva conductividad térmica para los casos de porosidad distinta al 0\% según el modelo CP en \cite{PorosidadSiO2lapotin_thermophotovoltaic_2022}.
 
+\subsection{Célula}
+La célula es en una primera instancia de Silicio (Si) para la realización de unas pruebas de simulación iniciales, se utiliza Silicio para dichas pruebas por ser muy conocido y utilizado en la fabricación de células fotovoltaicas. En el resto de simulaciones se utiliza Germanio (Ge), que es un semiconductor como el Si pero que es capaz de absorber una mayor cantidad de radiación por tener una banda energética (Band Gap) de 0.66eV a 300K, a diferencia del Si que es unos 1.11eV a 300K. No se utiliza Antimoniuro de Galio (GaSb) por tener una banda energética mayor que al del Ge, de 0.7eV comparado con 0.66eV a 300K.
 \subsection{Emisor}
-\subsection{Receptor}
+Para el emisor se utilizan Silicio, Acero inoxidable 304L (SS) y Carburo de Silicio (SiC). Se utilizá Si para las pruebas de simulación iniciales para tener un punto de partida, para luego pasar al \textit{SS} por ser un material que se utiliza mucho en la industria, incluyendo al transporte, y por último el SiC que es una cerámica que ha se ha utilizado para el aumento de potencia de radiación en campo cercano, aunque es mayor para una capa fina de SiC cercano a la frecuencia de resonancia \cite{doi:Near_field_ThinFilm}.\\
+
+
+Se tomaron en cuenta otros materiales que han sido descartados por varias razones, entre ellas ser muy caros, tener baja potencia de radiación de campo cercano respecto a una célula de Ge, entre otros. %, similar conductividad térmica al SiC, Si o SS, punto de fusión menor o cercano a los 800\textdegree C, o por ser demasiado blandos. 
+Dichos materiales son los siguientes:
+
+\begin{itemize}
+	\item Antimoniuro de Galio (GaSb): Semiconductor con punto de fusión de 710\textdegree C que es menor a los 800\textdegree C que se encuentra el emisor, por lo cual no se puede utilizar porque empezará a pasar a estado líquido antes de llegar a la temperatura deseada.
+	\item Grafito: es un material relativamente barato con una buena conductividad térmica, alto punto de fusión, pero es muy blando respecto al $SiO_2$, tiene como dureza máxima unos 50 HV (dureza Vickers) en comparación a la dureza del $SiO_2$ de unos 500 HV, por lo cual el nano-espaciador se hará paso por el emisor.
+	\item Tungsteno (W): El coste del material es medio, como máximo unos 56.4€/kg, su dureza Vickers es de unos 350 HV que es adecuada por no ser tan inferior a la del $SiO_2$, su conductividad térmica es más alta que la del nano-espaciador pero la potencia radiativa en campo cercano es baja, más cercana a la del acero.
+	\item Alumina ($Al_2O_3$): Es un material muy caro, aproximadamente 16000€/kg o más, disminuyendo considerablemente la viabilidad del sistema.
+\end{itemize}
 
 \section{Herramientas}
-\subsection{edu...}
-\subsection{Inventor 2021}
 
-\subsection{Nastran Envioroment}
+\subsection{Obtención de Datos de Materiales}
+EDU...
+\subsection{Modelado 3D}
+\subsubsection{Inventor 2021}
+\subsection{Simulaciones de transmisión de calor por conducción}
 
-\subsection{CFD}
-\subsection{MATLAB}
-\subsection{Calculadora de campo cercano}
+\subsubsection{Nastran Environment}
+
+\subsubsection{CFD}
+
+\subsection{Simulaciones de transmisión de calor por radiación}
+\subsubsection{MATLAB}
+\subsubsection{Calculadora de campo cercano}
