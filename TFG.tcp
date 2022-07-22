@@ -6,7 +6,7 @@ Version=4
 MainFile=TFG.tex
 UseBibTeX=1
 UseMakeIndex=0
-ActiveProfile=LaTeX ⇨ PDF
+ActiveProfile=LuaLaTeX ⇨ PDF
 ProjectLanguage=es
 ProjectDialect=ANY
 
