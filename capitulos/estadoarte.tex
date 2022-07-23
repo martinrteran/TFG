@@ -77,35 +77,56 @@ La radiación de campo lejano cumple la regla de Planck sobre la emitancia monoc
 \end{equation}
 Donde $\epsilon_i$ es la emisividad monocromática, es decir, el cociente de la emisividad del cuerpo respecto a la del cuerpo negro, cuyo vaor es constante por ser considerados las superficies como cuerpos grises.\\
 
-Para la radiación de propagación en campo cercano se denota se resuelve de otra manera, que en el caso más sencillo el emisor y el receptor son cuerpos planos y gruesos, la ecuación que modela el flujo de calor por frecuencia de un emisor (nº1) a un receptor (nº3) separados por el vacío (nº2) es \cite{nfTPV_equations}:
+Para la radiación de propagación en campo cercano se denota se resuelve de otra manera, que en el caso más sencillo el emisor y el receptor son cuerpos planos y gruesos (figura \ref{fig:campoCercanoEquation1}), la ecuación que modela el flujo de calor por frecuencia de un emisor (nº1) a un receptor (nº3) separados por el vacío (nº2) es \cite{nfTPV_equations}:
 
 \begin{equation}
-q_{w,abs}^{prop}=\dfrac{\Theta \left( \omega,T_1 \right)}{4 \pi^2}\times \int^{k_\upsilon}_{0} k_\rho d\k_\rho \sum_{\gamma=TE,TM}\dfrac{\left( 1- \left| r_{21}^\gamma \right|^2\right) \left( 1-  \left| r_{23}^\gamma \right|^2 \right)}{\left| 1- r_{21}^\gamma r_{23}^\gamma e^{2ik_{z2}d_{c}} \right|^2}
+q_{w,abs}^{prop}=\dfrac{\Theta \left( \omega,T_1 \right)}{4 \pi^2}\times \int^{k_\upsilon}_{0} k_\rho d k_\rho \sum_{\gamma=TE,TM}\dfrac{\left( 1- \left| r_{21}^\gamma \right|^2\right) \left( 1-  \left| r_{23}^\gamma \right|^2 \right)}{\left| 1- r_{21}^\gamma r_{23}^\gamma e^{2ik_{z2}d_{c}} \right|^2}
 \label{eq:flujoPropNF}
 \end{equation}
-Donde $\Theta \left( \omega,T_i \right)$ es la energía media de un oscilador de Planck para una frecuencia y temperatura dada, $r_{i,j}^\gamma$ es el coeficiente de reflexión de Fresnel en dicha interfaz en estado polarizado $\gamma$, TE son las ondas eléctricas transversales y TM son las ondas magnéticas transversales, i es la constante compleja $\sqrt{-1}$, $k_\rho$ es el vector de onda de la onda primaria \cite{nfTPV_fullEquations}.\\
-
+Donde $\Theta \left( \omega,T_i \right)$ es la energía media de un oscilador de Planck para una frecuencia y temperatura dada, $r_{i,j}^\gamma$ es el coeficiente de reflexión de Fresnel de la interfaz entre el cuerpo i y el cuerpo j en estado polarizado $\gamma$, TE son las ondas eléctricas transversales y TM son las ondas magnéticas transversales, i es la constante compleja $\sqrt{-1}$, $d_c$ es la separación entre las capas y $k_\rho$ es el vector de onda de la onda primaria \cite{nfTPV_fullEquations}.\\
+\begin{figure}[H]
+	\centering
+		\includegraphics[height=7cm]{figuras/campoCercanoEquation1.png}
+	\caption{Esquemático de la representación geométrica para el flujo entre dos cuerpos separados por vacío. \textit{Fuente: \cite{nfTPV_equations}}}
+	\label{fig:campoCercanoEquation1}
+\end{figure}
 La ecuación \ref{eq:flujoPropNF} es para dos placas gruesas separadas por un vacío y rodeadas por vacío, se obtiene de las ecuaciones presentadas en \cite{nfTPV_fullEquations}, donde se presenta las ecuaciones para la radiación de campo cercano de sistemas multicapa y un método numérico para solucionar las ecuaciones.
 
 \subsubsection{Radiación evanescente o campo cercano}
-
-\ref{eq:dos}
-\begin{subequations}
-\label{eq: uno}
+La radiación evanescente se transmite distancias muy pequeñas la cual puede ser aprovechada para la recuperación del calor residual, introduciéndose un algoritmo general para el análisis de un sistema unidimensional multi-capa basado en las funciones de dyadic Green y la amplitud para cada capa es calculada con una matriz de dispersión \cite{nfTPV_fullEquations}, obteniéndose para el caso de dos capas gruesas separadas por vacío una distancia $d_c$, el flujo de la radiación evanescente \cite{nfTPV_equations} como :
 \begin{equation}
-\label{eq:dos}
-  \operatorname{min}_{a,b,c} 
-  \frac{1}{2}\mathbf{w}^{T}\mathbf{w} + C \sum_{i=1}^{l}\xi_{i} 
-\end{equation}    
-\begin{equation}
-  y_{i}\left(\mathbf{w}^{T}\phi(x_{i})+b\right)
+q_{\omega,abs}^{evan}=\dfrac{\Theta \left( \omega,T_1 \right)}{\pi^2}\times \int^{\infty}_{k_\upsilon}k_\rho d k_\rho e^{-2k_{z2}'' d_c} \sum_{\gamma=TE,TM} \dfrac{Im\left( r_{21}^\gamma \right)Im\left( r_{23}^\gamma \right)}{\left| 1- r_{21}^\gamma r_{23}^\gamma e^{2ik_{z2}d_{c}} \right|^2}
+\label{eq:flujoEvasNF}
 \end{equation}
-\end{subequations}
+
+Siendo $Im\left(r_{i,j}^\gamma \right)$ el término imaginario del coeficiente Fresnel de la interfaz entre el cuerpo i y el cuerpo j en estado polarizado $\gamma$. La componente $e^{-2k_{z2}'' d_c}$ representa de manera explícita la caída exponencial del flujo con la distancia de separación. Una mejor representación del efecto de la radiación evanescente se puede observar en la figura \ref{fig:graficaDiff_dc_fullEqu}, donde a partir de cierta distancia de separación se supera el flujo de un cuerpo negro. Y se observa en la figura \ref{fig:graficaDiff_t_fullEqu} como a partir de las 100$\mu m$ de grosor del emisor se puede considerar como una placa gruesa \cite{nfTPV_fullEquations}.
+
+\begin{figure}
+\centering
+\begin{subfigure}[b]{0.48\textwidth}
+	\centering
+		\includegraphics[width=\textwidth]{figuras/graficaDiff_dc_fullEqu.png}
+		\caption{flujo de radiación monocromática variando la distancia de separación d}
+	\label{fig:graficaDiff_dc_fullEqu}
+\end{subfigure}
+\begin{subfigure}[b]{0.48\textwidth}
+	\centering
+		\includegraphics[width=\textwidth]{figuras/graficaDiff_t_fullEqu.png}
+		\caption{flujo de radiación monocromática variando el grosor (t) del emisor}
+	\label{fig:graficaDiff_t_fullEqu}
+\end{subfigure}
+\caption[Flujos de radiación monocromática por variación de grosor de emisor y variación de distancia]{(\subref{fig:graficaDiff_dc_fullEqu}) Flujo de la radiación monocromática entre dos capas gruesas de cBN a 300K y 0K separadas por vació a una distancia d, y comparados con las predicciones de dos cuerpos negros en el régimen del campo lejano. (\subref{fig:graficaDiff_t_fullEqu})Flujo de la radiación monocromática entre un emisor de grosor (t) variable a 300K y un receptor grueso a 0K, ambos de cBN y separados por una distancia de 100nm en el vacío. \textit{Fuente: \cite{nfTPV_fullEquations}}}%
+\label{fig:graficas_fullEqu}%
+\end{figure}
+
 \subsection{Conducción}
 La transmisión de calor por conducción se dá a través de uno o varios cuerpos, producido por la diferencia de temperatura entre las caras opuestas del conjunto o cuando dos o más objetos a diferentes temperaturas entran en contacto. De manera genérica la conducción térmica se modela como $P_{cond}={\bigtriangleup T}/{R} $, siendo $R$ la resistencia térmica del sistema.
 Para un solo material, la resistencia térmica se modela como $R = l/{\left(A\cdot h\right)}$, donde $l$ es la longitud del material, $A$ es la superficie y $h$ es la conductividad térmica del material. Para varios materiales colocados en serie, es decir, el flujo de calor que los atraviesa es el mismo para todos, la resistencia de conducción se define como la sumatoria de todas las resistencias de cada material($R=\sum R_i$).\\
 
-En la realidad las interfaces de contacto entre los materiales no es perfecta, por ejemplo, la rugosidad de cada superficie, lo que provoca que haya una caída de temperatura entre cada interfaz, esta cada de temperatura se modela como una resistencia que se le llama resistencia de contacto.
+La superficie de contacto entre cada material se le conoce como interfaz, la cual en la realidad no es perfecta y provoca una caída de temperatura la cual se modela como una resistencia térmica llamada resistencia de contacto ($R_c$). La resistencia de contacto depende de muchos parámetros como la rugosidad de cada superficie, la presión, la temperatura, las conductividades térmicas de los materiales involucrados, los tipos de materiales, entre otros, esto provoca que sea muy difícil de obtener un modelo de la misma para una simulación.\\
+
+En [] consiguen modelar la resistencia de contacto entre XXXX ...
+En \cite{experimental_Rc_SS} los aceros
 
 
 \subsubsection{Resistencia de contacto}
