@@ -125,11 +125,19 @@ Para un solo material, la resistencia térmica se modela como $R = l/{\left(A\cd
 
 La superficie de contacto entre cada material se le conoce como interfaz, la cual en la realidad no es perfecta y provoca una caída de temperatura la cual se modela como una resistencia térmica llamada resistencia de contacto ($R_c$). La resistencia de contacto depende de muchos parámetros como la rugosidad de cada superficie, la presión, la temperatura, las conductividades térmicas de los materiales involucrados, los tipos de materiales, entre otros, esto provoca que sea muy difícil de obtener un modelo de la misma para una simulación.\\
 
-En [] consiguen modelar la resistencia de contacto entre XXXX ...
-En \cite{experimental_Rc_SS} los aceros
+En \cite{experimental_Rc_SS} comparan la desviación entre los experimentos y la teoría de la resistencia de contacto entre varios materiales, siguiendo el modelo teórico utilizado para la zona plástica una ecuación simplificada, que para dos aceros inoxidables 304 la diferencia entre experimentación y teoría disminuye con el aumento de la presión. Dichas ecuaciones teóricas que modelan la variación de la resistencia de contacto con la presión son:
 
 
-\subsubsection{Resistencia de contacto}
-La resistencia de contacto en la interfaz entre dos conductores produce una caída de temperatura significante, como se observa en el \cite{nf_TPV_Pillars_SiO2}, la cual es dependiente de muchos parámetros, tales como la temperatura, la presión, la rugosidad, etc.\\
+\begin{subequations}
+\begin{equation}
+\dfrac{h_c\sigma}{k_sm}=1.25\left(\dfrac{P}{H_c}\right)^{0.95}
+\label{eq:correlacionCooperSimplificadaYovanovich}
+\end{equation}
+\begin{equation}
+\dfrac{P}{H_c}=\left[ \dfrac{P}{c_1\left(1.62\sigma/m\right)^{c_2}} \right]^{\frac{1}{2+0.071c_2}}
+\label{eq:modeloYovanovich}
+\end{equation}
+\label{eqs:}
+\end{subequations}
 
-Esta gran cantidad de dependencias hace que sea difícil parametrizar su valor, por lo tanto, se utilizan valores empíricos como el obtenido en \cite{nf_TPV_Pillars_SiO2} de unos $4E{-6} \ m^2K/W$, pero también se puede llegar a parametrizar para ciertos casos, como en \textbf{Otra citación}, donde modelan el cálculo de la resistencia de contacto entre dos aceros 304L a temperatura ambiente como $Modelo de resistencia de contacto$.
+Donde los valores de las constantes $c_1$ es 10.6 GPa y $c_2$ es -0.40, y donde $\sigma$ es la combinación RMS de la rugosidad de ambas superficies de los materiales, $m$ es la combinación RMS de la media absoluta de la pendiente de la rugosidad, $H_c$ es la micro-dureza Vickers del material más duro y P es la presión aplicada \cite{experimental_Rc_SS}.
