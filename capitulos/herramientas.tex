@@ -4,10 +4,14 @@ En este capítulo se exponen los materiales utilizados para cada componente del 
 \section{Materiales}
 Se listan y desarrolla los materiales a utilizar para cada uno de los componentes del sistema TPV, incluyendo los criterios seguidos de su selección.
 \subsection{Nano-espaciador}
-El nano-espaciador es de Dióxido de Silicio ($SiO_2$), un material que ha sido utilizado en varias ocasiones en sistemas de campo cercano de TPVs o TEC por ser un material cerámico con una baja conductividad térmica, buena resistencia ante choques de calor y alta fuerza de compresión. La conductividad térmica es menor a 10 W/m\textdegree C en el rango de temperatura de trabajo, entre 25 a 800\textdegree C. A su vez se considera el $SiO_2$ con tres porosidades distintas, la primera es con una porosidad del 0\%, segundo con una porosidad del 25\% y tercero con una porosidad del 50\%, calculando la nueva conductividad térmica para los casos de porosidad distinta al 0\% según el modelo CP en \cite{ThermalConductivity_SiO2_2018}.
+El nano-espaciador es de Dióxido de Silicio ($SiO_2$), un material que ha sido utilizado en varias ocasiones en sistemas de campo cercano de TPVs o TEC por ser un material cerámico con una baja conductividad térmica, buena resistencia ante choques de calor y alta fuerza de compresión. La conductividad térmica es menor a 10 W/m\textdegree C en el rango de temperatura de trabajo, entre 25 a 800\textdegree C.\\
+
+A su vez se considera el $SiO_2$ con tres porosidades distintas, la primera es con una porosidad del 0\%, segundo con una porosidad del 25\% y tercero con una porosidad del 50\%, calculando la nueva conductividad térmica para los casos de porosidad distinta al 0\% según el modelo CP en \cite{ThermalConductivity_SiO2_2018}.
 
 \subsection{Célula}
-La célula es en una primera instancia de Silicio (Si) para la realización de unas pruebas de simulación iniciales, se utiliza Silicio para dichas pruebas por ser muy conocido y utilizado en la fabricación de células fotovoltaicas. En el resto de simulaciones se utiliza Germanio (Ge), que es un semiconductor como el Si pero que es capaz de absorber una mayor cantidad de radiación por tener una banda energética (Band Gap) de 0.66eV a 300K, a diferencia del Si que es unos 1.11eV a 300K. No se utiliza Antimoniuro de Galio (GaSb) por tener una banda energética mayor que al del Ge, de 0.7eV comparado con 0.66eV a 300K.
+La célula es en una primera instancia de Silicio (Si) para la realización de unas pruebas de simulación iniciales, se utiliza Silicio para dichas pruebas por ser muy conocido y utilizado en la fabricación de células fotovoltaicas. En el resto de simulaciones se utiliza Germanio (Ge), que es un semiconductor como el Si pero que es capaz de absorber una mayor cantidad de radiación por tener una banda energética (Band Gap) de 0.66eV a 300K, a diferencia del Si que es unos 1.11eV a 300K. La capacidad de absorber más radiación es importante en la termofotovolaica porque la mayor cantidad de radiación es infrarroja.\\
+
+También se utiliza el Ge por ser el material de las células termofotovoltaicas a disposición en el Insituto de Energía Solar (IES).
 \subsection{Emisor}
 Para el emisor se utilizan Silicio, Acero inoxidable 304L (SS) y Carburo de Silicio (SiC). Se utilizá Si para las pruebas de simulación iniciales para tener un punto de partida, para luego pasar al \textit{SS} por ser un material que se utiliza mucho en la industria, incluyendo al transporte, y por último el SiC que es una cerámica que ha se ha utilizado para el aumento de potencia de radiación en campo cercano, aunque es mayor para una capa fina de SiC cercano a la frecuencia de resonancia \cite{doi:Near_field_ThinFilm}.\\
 
@@ -24,16 +28,33 @@ Dichos materiales son los siguientes:
 
 \section{Herramientas}
 
-\subsection{Obtención de datos de materiales}
-EDU...
+Los herramientas o programas utilizados durante el desarrollo del trabajo son variados y por diferentes motivos, a continuación se da una breve descripción y se explican los motivos de la utilización de cada programa.\\
+
+Para la obtención de datos de los materiales se utilizan Granta EduPack 2021 R2, la página web Refractive Index y el resto de datos de los materiales que no se encuentren en dichas herramientas se obtienen de artículos de investigación. Para el modelado 3D se utiliza Autodesk Inventor 2021, para las simulaciones de la transmisión de calor por conducción se utiliza Autodesk CFD 2021, para la transmisión de calor por radiación se utiliza la Calculadora de campo cercano y para el análisis de datos se utiliza MATLAB.\\
+
+Unas herramientas a destacar son TexStudio y TexnicCenter utilizadas para la redacción de este trabajo por la facilidad que presenta el escribir ecuaciones, actualizaciones de figuras y la menor necesidad de recursos que Word. También hay que destacar el uso de Git para el control de versiones del documento.\\
+%%%  GRANTA EDUPACK 2021 R2
+\subsubsection{Granta EduPack 2021 R2}
+Programa desarrollado por la empresa Ansys que contiene varias bases de datos que recopila información sobre distintos materiales, teniendo un fácil acceso a la información básica de los mismos a través de una interfaz gráfica y estando organizadas de manera específica por tipo de material (cerámico, metálico, etc) y por la composición (ferrita y austenita para los aceros) para cada base de datos. Este programa está disponible en la versión de Windows 10 del escritorio remoto de la UPM.\\
+
+La base de datos utilizada es la \textit{Level 3} de las avanzadas porque recopila los datos de todos los materiales necesarios, en la mayoría de los casos incluye la variación de algunas propiedades respecto a la temperatura, siendo principalmente necesaria la conductividad térmica del material respecto a la temperatura.
+
+\subsubsection{Refractive Index}
+Esta página web (https://refractiveindex.info) recopila de artículos científicos los índices de refracción (n) e índices de extinción (k) de diferentes materiales en diferentes rangos de longitudes de onda, teniendo a disposición hipervínculos a los artículos de donde se extrajo los datos y la opción de descargar dichos datos.
+
+
+
 \subsection{Modelado 3D}
-\subsubsection{Inventor 2021}
+Para el modelado 3D de cada componente del sistema (emisor, célula y nano-espaciador) se utiliza Autodesk Inventor 2021 por la facilidades que presenta autoDesk de utilizar los archivos de un programa de la misma compañía en otro programa para continuar con el estudio del sistema.
+\subsubsection{Autodesk Inventor 2021}
+Es un software de Diseño 3D Asistido por Ordenador (CAD 3D) que ofrece herramientas para el diseño de piezas, ensamblajes, mecanismos, documentación y simulación de los sistemas. También permite el utilizar herramientas de entorno añadidas para simulaciones más complejas, el fácil acoplamiento para el uso de otros programas de Autodesk y el uso de parámetros en el diseño y modelado de las piezas.
+
 \subsection{Simulaciones de transmisión de calor por conducción}
-
-\subsubsection{Nastran Environment}
-
+Para la simulación de transmisión de calor se usa el programa Autodesk Computational Fluid Dynamics (CFD), que aún ser usado principalmente para simulaciones con fluidos también permite simular solo transmisión de calor por conducción en sólidos y permite usar los diseños de Autodesk Inventor para simular, siendo fácilmente creado el provecto de CFD desde Inventor en la pestaña nueva de simulación, que se crea automáticamente con la instalación de CFD, y haciendo click sobre \textit{Active Model Assessment Tool}. Usándose exclusivamente para las simulaciones de conducción porque no puede simular la transmisión de calor por campo cercano.
 \subsubsection{CFD}
-
+Es un software que se usa para crear simulaciones computacionales de la dinámica de fluidos para la predicción del comportamiento de fluidos (líquidos y gases), el programa también simula la transmisión de calor por conducción en sólidos, convección en fluidos y de radiación con la ayuda de un fluido.
 \subsection{Simulaciones de transmisión de calor por radiación}
+Para las simulaciones de transmisión de calor por radiación de campo cercano se utiliza un código, que ha sido proporcionado, escrito en MATLAB que cumple con las ecuaciones de campo cercano de \cite{nfTPV_equations} para dos placas planas gruesas y a partir de dicho código se desarrolla una aplicación para facilitar el proceso de calcular cualquier combinación de materiales para el emisor y la célula para ciertas distancias de separación.\\
 \subsubsection{MATLAB}
+MATLAB es un programa o plataforma de programación que permite desarrollar cálculos numéricos, desarrollar algoritmos, analizar datos y crear modelos matemáticos de sistemas para cálculo o simulaciones. A su vez, MATLAB proporciona una tienda de paquetes donde los usuarios puede subir aplicaciones desarrolladas en MATLAB que permiten aprovechar aún más los recursos del sistema y facilita el trabajo, ya sea analizar datos, obtener modelos matemáticos, entre otros.\\
 \subsubsection{Calculadora de campo cercano}
