@@ -1,58 +1,52 @@
 \chapter{Métodos}
-En este capítulo se detalla principalmente los criterios seguidos para el diseño del espaciador, su modelado en Inventor, las simulaciones en CFD y los cálculos en MATLAB, a su vez los métodos empleados para la rectificación del correcto funcionamiento de CFD para la extracción de datos.
-
-En segundo lugar se describe el procedimiento realizado para la extracción de datos de las simulaciones realizadas en CFD.
-
-Por último, se describe el procedimiento seguido para la obtención de los resultados.
-\section{Criterios seguidos} 
-
-\section{Simulación en CFD}
-
-
-\section{Análisis dimensional}
-Dado que el programa Inventor está limitado a partir a la escala milimétrica, por lo tanto, se tiene que aplicar un escalado. Se procede a realizar un análisis dimensional de las ecuaciones para obtener los nuevos parámetros para la nueva escala del modelo.\\
-
-Siendo $L'$ la longitud en el modelo y $L$ la longitud de la realidad, se considera que ${L'}/{L}=10^4$.
+En este capítulo se detallan los criterios seguidos para la elección de la geometría de los espaciadores y su escala, los cálculos realizados para la obtención de las propiedades de los materiales utilizados en las simulaciones de transmisión de calor por conducción según la escala utilizada en el modelado 3D del nano-espaciador, los procedimientos seguidos para realizar las simulaciones y el procedimiento seguido para la extracción de los datos de la simulación de CFD.
+\section{Criterios de geometría y escala} 
+La base del nano-espaciador es cuadrada por ser la más sencilla de fabricar por deposición catódica y para realizar cálculos por ser sus ecuaciones de área y volumen la más sencilla de los polígonos regulares cerrados. El lado de la base del nano-espaciador son de 3$\mu m$ por ser la unidad mínima que se es capaz de depositar en la célula para disminuir las pérdidas por conducción.\\\\
+Para el modelado 3D en Inventor se toma como distancia mínima el milímetro, correspondiente a 100nm de la realidad que es la distancia mínima de todos componentes del sistema, para el caso de altura mínima del nano-espaciador a simular.
+\section{Cálculos de las propiedades de los materiales para las simulaciones}
+Para obtener los nuevos parámetros de distancias, áreas y volúmenes del modelo 3D del nano-espaciador se procede a obtener las relaciones de escala entre el modelo y la realidad. También se obtienen las relaciones de las propiedades más significativas de los materiales de la realidad y las simulaciones de transmisión de calor por conducción, siendo la principal propiedad la conductividad térmica. Otras propiedades que se toman en cuenta son la densidad y el calor específico, teniendo que destacar la resistencia de contacto por unidad de área entre el nano-espaciador y el emisor.\\\\
+Para diferenciar la realidad del modelo 3D o del modelo a simular se utilizará el apostrofe después de la variable correspondiente, por ejemplo, para la longitud real se usa $L$ y para la longitud en el modelo 3D se usa $L'$.\\\\
+La relación de longitudes entre el modelo 3D y la realidad es:
+\begin{equation}
+{L'}/{L}={1mm}/{100nm}=10^4
+\label{eq:relacion_longitud}
+\end{equation}
+%%%  AREA
 \subsection{Área}
-La sección de los nano-espaciadores es un polígono regular de cuatro lados cuya fórmula del área es $A=L^2$, donde $A$ es el área y $L$ el lado del polígono.\\
-
-Para cualquier polígono regular a fórmula del área se puede expresar como $A=Cte\cdot L^2$, siendo $Cte$ una constante distinta para cada polígono y tomando en cuenta la relación de escala.
-
+La sección de los nano-espaciadores es un cuadrado cuya fórmula de área es $A=L^2$, donde $A$ es el área y $L$ el lado del cuadrado, siendo la relación de las áreas la siguiente:
 \begin{equation}
 	\dfrac{A'}{A}=\left(\dfrac{L'}{L}\right)^2=10^8
+	\label{eq:relacion_areas}
 \end{equation}
+%%% VOLUMEN
 \subsection{Volumen}
-El volumen de un prisma de base de polígono regular se expresa como $V=A\cdot L$, donde $L$ es la altura del prisma.
+El volumen de un prisma de base cuadrada se expresa como $V=A\cdot L$, donde $L$ es la altura del prisma.
 \begin{equation}
-	V'=A'\cdot L' = A\cdot L \cdot 10^8\cdot 10^4= V\cdot 10^12
+	\dfrac{V'}{V}=\dfrac{A'\cdot L'}{A\cdot L} = 
+	\dfrac{A'}{A}\cdot \dfrac{L'}{L} \ \Longrightarrow \ \dfrac{V'}{V} =10^{12}
+	\label{eq:relacion_volumen}
 \end{equation}
-
-El volumen de cada nano-espaciador en el modelo será $10^12$ veces el volumen original.
-\subsection{Conductancia Térmica}
-
-Al aplicarse la escala la conductancia térmica (\textit{C}) se mantiene constante, variando la conductividad térmica (\textit{k}) del material. La nueva conductividad térmica $k'$ será:
-
-\begin{equation}
-	C=k\cdot \frac{A}{L}=k'\cdot\frac{A'}{L'}
-\end{equation}
-\begin{equation}	
-	 k'=\dfrac{L'}{L} \cdot \dfrac{A}{A'} \cdot k=10^4\cdot 10^{-8}=k\cdot 10^{-4}
-\end{equation}
-
-Donde $k$ es la conductividad térmica del material  y $k'$ es la conductividad térmica para la escala aplicada. $k'=k\cdot10^{-4}$
-
-\subsection{Calor Específico}
-
-\subsection{Coeficiente de expansión térmica}
-
+El volumen de cada nano-espaciador en el modelo será $10^{12}$ veces el volumen original.
+%%% DENSIDAD
 \subsection{Densidad}
-La masa de cada elemento tiene que ser constante entre el modelo y la realidad.
+La masa de cada elemento es igual entre el modelo($M'$) y la realidad($M$), por lo tanto la densidad varía.
 \begin{equation}
-	M=M'\Longrightarrow \rho\cdot V=\rho'\cdot V'= \rho'\cdot V\cdot {10}^{12}\Longrightarrow \rho'=\rho\cdot{10}^{-12}
+\dfrac{\rho '}{\rho}=\dfrac{M'/V'}{M/V}=\dfrac{M'}{M}\cdot \dfrac{V}{V'} \ \Longrightarrow \ 
+\dfrac{\rho '}{\rho}=10^{-12}
+\label{eq:relacion_densidad}
 \end{equation}
-
 La densidad de cada elemento en el modelo será $10^{-12}$ veces la densidad de la realidad.
-
+%%% CONDUCTIVIDAD TERMICA
+\subsection{Conductividad Térmica}
+La resistencia térmica de los materiales del modelo de simulación se mantiene igual a la de la realidad, por lo tanto, la conductividad térmica de los materiales en el modelo son distintas a la realidad. Sabiendo que la fórmula de la resistencia térmica de conducción es $R=1/k \cdot L/A$, donde $k$ es la conductividad térmica, $L$ la longitud y $A$ es la sección, se puede obtener la relación de las conductividades térmicas del modelo de simulación respecto a la realidad.
+\[ \dfrac{R}{R'}= \dfrac{1/k}{1/k'}\cdot \dfrac{L/A}{L'/A'}= \dfrac{k'}{k}\cdot \dfrac{L}{L'}\cdot \dfrac{A'}{A}=1\]
+\begin{equation}
+\dfrac{k'}{k}=\dfrac{L'}{L}\cdot \dfrac{A}{A'}=\dfrac{10^4}{10^8} \ \Longrightarrow \ \dfrac{k'}{k}=10^{-4}
+\label{eq:relacion_conductividadTermica}
+\end{equation}
+%%% CALOR ESPECIFICO
+\subsection{Calor Específico}
+El calor específico de los materiales del modelo de simulación es el mismo que el de la realidad porque el calor específico se define como la cantidad de calor necesaria que hay que suministrar a una unidad de masa para elevar su temperatura en una unidad, como la masa del modelo de simulación es igual a la de la realidad, la cantidad de energía necesaria para elevar una unidad de temperatura va a ser igual al del modelo de simulación respecto a la realidad, por lo tanto, el calor específico se mantiene igual al de la realidad.
 \subsection{Resistencia de Contacto}
 En \cite{nf_TPV_Pillars_SiO2} se descubre como la resistencia de contacto afecta a los espaciadores y se obtiene el valor de su coeficiente($\rho$) $4\cdot 10^{-6}m^2 KW^{-1} $. Para obtener cual es el coeficiente de la resistencia de contacto del modelo se realiza un análisis dimensional.
 
@@ -77,5 +71,9 @@ k1=15 y k2=1.5
 	\\ h_{c2}=h_{c1}\cdot cof=181.82 \rightarrow h_{c2}=181.82 \rightarrow R_{c2}=5.5E-3
 \end{equation}
 
-\section{Simulaciones}
+\section{Simulación de transmisión de calor por radiación de campo cercano}
 %Aquí tendrías que meter las simulaciones de campo cercano y hablar del método (está descrito en un paper que te pasé
+
+\section{Simulación de transmisión de calor por conducción}
+
+\section{Procedimiento de extracción de resultados de CFD}
