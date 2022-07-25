@@ -116,30 +116,4 @@ Para un solo material, la resistencia térmica se modela como $R = l/{\left(A\cd
 
 La superficie de contacto entre cada material se le conoce como interfaz, la cual en la realidad no es perfecta y provoca una caída de temperatura la cual se modela como una resistencia térmica llamada resistencia de contacto ($R_c$). La resistencia de contacto depende de muchos parámetros como la rugosidad de cada superficie, la presión, la temperatura, las conductividades térmicas de los materiales involucrados, los tipos de materiales, entre otros, esto provoca que sea muy difícil de obtener un modelo de la misma para una simulación.\\
 
-En \cite{experimental_Rc_SS} comparan la desviación entre los experimentos y la teoría de la resistencia de contacto entre varios materiales, siguiendo el modelo teórico utilizado para la zona plástica una ecuación simplificada, que para dos aceros inoxidables 304 la diferencia entre experimentación y teoría disminuye con el aumento de la presión. Dichas ecuaciones teóricas que modelan la variación de la resistencia de contacto con la presión son:
-
-\begin{subequations}
-\begin{equation}
-\dfrac{h_c\sigma}{k_sm}=1.25\left(\dfrac{P}{H_c}\right)^{0.95}
-\label{eq:correlacionCooperSimplificadaYovanovich}
-\end{equation}
-\begin{equation}
-\dfrac{P}{H_c}=\left[ \dfrac{P}{c_1\left(1.62\sigma/m\right)^{c_2}} \right]^{\frac{1}{2+0.071c_2}}
-\label{eq:modeloYovanovich}
-\end{equation}
-\label{eqs:ecuacionesRcYovanovich}
-\end{subequations}
-
-Donde los valores de las constantes $c_1$ es 10.6 GPa y $c_2$ es -0.40, y donde $\sigma$ es la combinación RMS de la rugosidad de ambas superficies de los materiales con $\sigma_i$ siendo la rugosidad de la superficie $i$ (ecuación \ref{eq:mRMS}), $m$ es la combinación RMS de la media absoluta de la pendiente de la rugosidad con $m_i$ siendo la media de la pendiente absoluta de la rugosidad de la superficie $i$ (ecuación \ref{eq:sigmaRMS}), $H_c$ es la micro-dureza Vickers del material más duro y P es la presión aplicada \cite{experimental_Rc_SS}.
-
-\begin{subequations}
-\begin{equation}
-m=\sqrt{m_1^2+m_2^2}
-\label{eq:mRMS}
-\end{equation}
-\begin{equation}
-\sigma=\sqrt{\sigma_1^2+\sigma_2^2}
-\label{eq:sigmaRMS}
-\end{equation}
-\label{eqs:RMS}
-\end{subequations}
+En \cite{experimental_Rc_SS} comparan la desviación entre los experimentos y la teoría de la resistencia de contacto entre varios materiales, siguiendo el modelo teórico utilizado para la zona plástica una ecuación simplificada, que para dos aceros inoxidables 304 la diferencia entre experimentación y teoría disminuye con el aumento de la presión.

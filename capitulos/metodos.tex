@@ -47,29 +47,54 @@ La resistencia térmica de los materiales del modelo de simulación se mantiene 
 %%% CALOR ESPECIFICO
 \subsection{Calor Específico}
 El calor específico de los materiales del modelo de simulación es el mismo que el de la realidad porque el calor específico se define como la cantidad de calor necesaria que hay que suministrar a una unidad de masa para elevar su temperatura en una unidad, como la masa del modelo de simulación es igual a la de la realidad, la cantidad de energía necesaria para elevar una unidad de temperatura va a ser igual al del modelo de simulación respecto a la realidad, por lo tanto, el calor específico se mantiene igual al de la realidad.
-\subsection{Resistencia de Contacto}
-En \cite{nf_TPV_Pillars_SiO2} se descubre como la resistencia de contacto afecta a los espaciadores y se obtiene el valor de su coeficiente($\rho$) $4\cdot 10^{-6}m^2 KW^{-1} $. Para obtener cual es el coeficiente de la resistencia de contacto del modelo se realiza un análisis dimensional.
-
+%%% RESISTENCIA DE CONTACTO
+\subsection{Resistencia de contacto}
+La resistencia de contacto ($R_c$) es difícil de modelar matemáticamente en una ecuación ya que depende de muchas variables, como la temperatura, presión, entre otros. La resistencia de térmica producida por la resistencia de contacto es $R_{th}=R_{c}/A$, donde A es la superficie de contacto, por lo tanto se ve afectado por la diferencia de escala entre el modelo de simulación y la realidad.
+\[ \dfrac{R_{th}'}{R_{th}}=\dfrac{R_c'}{R_c}\cdot \dfrac{A}{A'}=1 \]
 \begin{equation}
-	R= \rho \cdot A =\rho ' \cdot A' \Longrightarrow \rho '=\rho \cdot \dfrac{A}{A'}=\rho \cdot 10^8
+	\dfrac{R_{th}'}{R_{th}}=\dfrac{R_c'}{R_c}\cdot \dfrac{A}{A'}=1 \ \Longrightarrow \  \dfrac{R_c'}{R_c}=\dfrac{A'}{A}=10^8
+	\label{eq:relacion_Rc}
 \end{equation}
-
-La resistencia térmica por contacto
-
-Según el módelo de XXXXXXX:
+%%% YOVANOVICH
+Para los casos que la resistencia de contacto es presentada como conductancia de contacto según un modelo matemático \cite{experimental_Rc_SS}, según la ecuación de Cooper reducida por Yovanovich (ecuación \ref{eq:modeloYovanovich}).
+\begin{subequations}
 \begin{equation}
-	h_c=\dfrac{k_s\cdot}{m}\cdot \left( \dfrac{P}{H_c} \right)^{0.95} \\ \dfrac{P}{H_c} = \left[ \dfrac{P}{c1\cdot \left(1.62\cdot \sigma/m \right)^{c_2}}\right]^{\dfrac{1}{1+0.0071\cdot c_2}} \\	\sigma =\sqrt{{\sigma_1}^2+{\sigma_2}^2} \\ m=\sqrt{{m_1}^2+{m_2}^2}	\\ k_s=2\cdot \dfrac{k_1\cdot k_2}{k_1+k_2}
+\dfrac{P}{H_c}=\left[ \dfrac{P}{c_1\left(1.62\sigma/m\right)^{c_2}} \right]^{\frac{1}{2+0.071c_2}}
+\label{eq:modeloYovanovich}
 \end{equation}
-
-Para el dato hc=1000;
 \begin{equation}
-	\dfrac{\sigma}{m}=\dfrac{\sigma_1}{m1}	\\ h_{c1}=k_{s1}\cdot cte \\ h_{c2}=k_{s2}\cdot cte	\\ k_{s1}=k_1 \\ \dfrac{h_{c2}}{h_{c1}}= 2\cdot \dfrac{k_2}{k_1+k_2}=cof
+\dfrac{h_c\sigma}{k_sm}=1.25\left(\dfrac{P}{H_c}\right)^{0.95}
+\label{eq:correlacionCooperSimplificadaYovanovich}
 \end{equation}
-k1=15 y k2=1.5
+\label{eqs:ecuacionesRcYovanovich}
+\end{subequations}
+%% Valores de las constantes
+Donde $c_1$ es 10.6 GPa, $c_2$ es -0.40, $\sigma$ es la combinación RMS de la rugosidad de ambas superficies de los materiales con $\sigma_i$ siendo la rugosidad de la superficie $i$ (ecuación \ref{eq:mRMS}), $m$ es la combinación RMS de la media absoluta de la pendiente de la rugosidad con $m_i$ siendo la media de la pendiente absoluta de la rugosidad de la superficie $i$ (ecuación \ref{eq:sigmaRMS}), $H_c$ es la micro-dureza Vickers del material más duro y P es la presión aplicada \cite{experimental_Rc_SS}.
+\begin{subequations}
 \begin{equation}
-	cof=2\cdot \dfrac{1.5}{15+1.5}=0.18182
-	\\ h_{c2}=h_{c1}\cdot cof=181.82 \rightarrow h_{c2}=181.82 \rightarrow R_{c2}=5.5E-3
+m=\sqrt{m_1^2+m_2^2}
+\label{eq:mRMS}
 \end{equation}
+\begin{equation}
+\sigma=\sqrt{\sigma_1^2+\sigma_2^2}
+\label{eq:sigmaRMS}
+\end{equation}
+\label{eqs:RMS}
+\end{subequations}
+Las ecuaciones son para la conductancia de contacto ($h_c$) entre dos aceros inoxidables 304(SS304), entonces para tener una mejor idea como la resistencia de contacto afecta a la conducción de calor se supone que el nano-espaciador de $SiO_2$ es liso, por ende, su $m_i$ y su $\sigma_i$ son nulas. Por lo tanto, se calcula la relación de las ecuaciones para el caso de los dos aceros y para el caso de SS-$SiO_2$.\\\\
+Como se puede observar en las ecuaciones \ref{eqs:ecuacionesRcYovanovich}, el valor de $\sigma$ y $m$ se presentan siempre relacionados como $\sigma / m$, y se cumple que $\sigma /m =\sigma ' / m'$ porque al suponer que el caso de dos aceros tienen idénticas $m_i$ y $\sigma_i$, la relación $\sigma / m$ queda como $\sigma_i / m_i$, que resulta ser la misma relación para el caso de SS-$SiO_2$.\\\\
+\[ \frac{\sigma}{m}=\frac{\sqrt{\sigma_{SS}^2+\sigma_{SS}^2}}{\sqrt{m_{SS}^2+m_{SS}^2}}=\frac{\sigma_{SS}\sqrt{2}}{m_{SS}\sqrt{2}} =\frac{\sigma_{SS}}{m_{SS}}\]
+\[ \frac{\sigma'}{m'}=\frac{\sqrt{\sigma_{SS}^2+0^2}}{\sqrt{m_{SS}^2+0^2}}=\frac{\sigma_{SS}}{m_{SS}} \]
+Por lo tanto, considerando que $c_1$ y $c_2$ no varían con el cambio de material la relación de $h_c'$ respecto a $h_c$ se obtiene relacionando la ecuación \ref{eq:correlacionCooperSimplificadaYovanovich} del modelo a simular con la realidad.
+\[Cte=1.25\frac{m}{\sigma}\cdot \left(\dfrac{P}{H_c}\right)^{0.95} \]
+\[h_c=k_s\cdot Cte \qquad k_s=2\cdot \frac{k_1\cdot k_2}{k_1+k_2}\]
+Donde $Cte$ es una constante que es igual para el caso de los aceros y el caso SS-$SiO_2$. El valor de $k_s$ para el caso de de los aceros es $k_{SS}$, siendo $k_{SS}$ la conductividad térmica del acero inoxidable 304. 
+\[ \frac{h_c'}{h_c}=\frac{k_s'}{k_s}\cdot \frac{Cte}{Cte}=\frac{2 \cdot \frac{k_{SS}\cdot k_{SiO_2}}{k_{SS}+k_{SiO_2}}}{k_{SS}}\]
+\begin{equation}
+\frac{h_c'}{h_c}=2\cdot \frac{k_{SiO_2}}{k_{SS}+k_{SiO_2}}
+\label{eq:relacion_conductividadesTermicas}
+\end{equation}
+Para este trabajo los datos utilizados de las conductividades térmicas de los materiales para la relación de las conductancias de contacto son a temperatura ambiente, el valor de $k_{SiO_2}$ es $1.5 \ W/\left( m^2 K\right)$ y el valor de $k_{SS}$ es de $15 \ W/\left( m^2 K\right)$, quedando la relación de conductancias de contacto como ${h_c'}/{h_c}=0.1818$
 
 \section{Simulación de transmisión de calor por radiación de campo cercano}
 %Aquí tendrías que meter las simulaciones de campo cercano y hablar del método (está descrito en un paper que te pasé
