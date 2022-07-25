@@ -4,14 +4,13 @@ En este capítulo se exponen los materiales utilizados para cada componente del 
 \section{Materiales}
 Se listan y desarrolla los materiales a utilizar para cada uno de los componentes del sistema TPV, incluyendo los criterios seguidos de su selección.
 \subsection{Nano-espaciador}
-El nano-espaciador es de Dióxido de Silicio ($SiO_2$), un material que ha sido utilizado en varias ocasiones en sistemas de campo cercano de TPVs o TEC por ser un material cerámico con una baja conductividad térmica, buena resistencia ante choques de calor y alta fuerza de compresión. La conductividad térmica es menor a 10 W/m\textdegree C en el rango de temperatura de trabajo, entre 25 a 800\textdegree C.\\
-
+El nano-espaciador es de Dióxido de Silicio ($SiO_2$), un material que ha sido utilizado en varias ocasiones en sistemas de campo cercano de TPVs o TEC por ser un material cerámico con una baja conductividad térmica, buena resistencia ante choques de calor y alta fuerza de compresión. La conductividad térmica es menor a 10 W/m\textdegree C en el rango de temperatura de trabajo, entre 25 a 800\textdegree C.\\\\
 A su vez se considera el $SiO_2$ con tres porosidades distintas, la primera es con una porosidad del 0\%, segundo con una porosidad del 25\% y tercero con una porosidad del 50\%, calculando la nueva conductividad térmica para los casos de porosidad distinta al 0\% según el modelo CP en \cite{ThermalConductivity_SiO2_2018}.
 
 \subsection{Célula}
 La célula es en una primera instancia de Silicio (Si) para la realización de unas pruebas de simulación iniciales, se utiliza Silicio para dichas pruebas por ser muy conocido y utilizado en la fabricación de células fotovoltaicas. En el resto de simulaciones se utiliza Germanio (Ge), que es un semiconductor como el Si pero que es capaz de absorber una mayor cantidad de radiación por tener una banda energética (Band Gap) de 0.66eV a 300K, a diferencia del Si que es unos 1.11eV a 300K. La capacidad de absorber más radiación es importante en la termofotovolaica porque la mayor cantidad de radiación es infrarroja.\\
 
-También se utiliza el Ge por ser el material de las células termofotovoltaicas a disposición en el Insituto de Energía Solar (IES).
+También se utiliza el Ge por ser el material de las células termofotovoltaicas a disposición en el Instituto de Energía Solar (IES).
 \subsection{Emisor}
 Para el emisor se utilizan Silicio, Acero inoxidable 304L (SS) y Carburo de Silicio (SiC). Se utilizá Si para las pruebas de simulación iniciales para tener un punto de partida, para luego pasar al \textit{SS} por ser un material que se utiliza mucho en la industria, incluyendo al transporte, y por último el SiC que es una cerámica que ha se ha utilizado para el aumento de potencia de radiación en campo cercano, aunque es mayor para una capa fina de SiC cercano a la frecuencia de resonancia \cite{doi:Near_field_ThinFilm}.\\\\
 Se tomaron en cuenta otros materiales que han sido descartados por varias razones, entre ellas ser muy caros, tener baja potencia de radiación de campo cercano respecto a una célula de Ge, entre otros. %, similar conductividad térmica al SiC, Si o SS, punto de fusión menor o cercano a los 800\textdegree C, o por ser demasiado blandos. 
@@ -31,7 +30,7 @@ Para la obtención de datos de los materiales se utilizan Granta EduPack 2021 R2
 Unas herramientas a destacar son TexStudio y TexnicCenter utilizadas para la redacción de este trabajo por la facilidad que presenta el escribir ecuaciones, actualizaciones de figuras y la menor necesidad de recursos que Word. También hay que destacar el uso de Git para el control de versiones del documento.\\
 %%%  GRANTA EDUPACK 2021 R2
 \subsection{Granta EduPack 2021 R2}
-Programa desarrollado por la empresa Ansys que contiene varias bases de datos que recopila información sobre distintos materiales, teniendo un fácil acceso a la información básica de los mismos a través de una interfaz gráfica y estando organizadas de manera específica para cada base de datos. Este programa está disponible en la versión de Windows 10 del escritorio remoto de la UPM.\\\\
+Programa desarrollado por la empresa Ansys que contiene varias bases de datos que recopila información sobre distintos materiales, teniendo un fácil acceso a la información básica de los mismos a través de una interfaz gráfica (GUI) y estando organizadas de manera específica para cada base de datos. Este programa está disponible en la versión de Windows 10 del escritorio remoto de la UPM.\\\\
 La base de datos utilizada es la \textit{Level 3} de las avanzadas porque recopila los datos de todos los materiales necesarios, en la mayoría de los casos incluye la variación de algunas propiedades respecto a la temperatura, siendo principalmente necesaria la conductividad térmica del material respecto a la temperatura.\\\\
 Dado la gran cantidad de datos a disposición y la facilidad de obtención de los datos de los materiales, especialmente los datos que están disponibles con la variación de la temperatura, se utiliza este programa.
 %%%   REFRACTIVE INDEX
@@ -92,31 +91,44 @@ Se utiliza MATLAB para el análisis de los resultados obtenidos de las simulacio
 Para las simulaciones de transmisión de calor por radiación de campo cercano entre dos placas paralelas de área infinita utilizando un código proporcionado que está escrito en MATLAB que cumple con las ecuaciones de campo cercano de \cite{nfTPV_equations} para dos placas planas gruesas y a partir de dicho código se desarrolla una aplicación en el App Designer de MATLAB para facilitar el proceso de calcular cualquier combinación de materiales para el emisor y la célula para ciertas distancias de separación.\\\\
 Los motivos que impulsaron para desarrollar la aplicación son el simplificar el proceso de simular la radiación por campo cercano para diferentes combinaciones de materiales y distancia de separación, y la obtención de la potencia total para el rango de longitudes de onda deseadas para todas las combinaciones.\\
 
-La aplicación se divide en tres pestañas \textit{Potencia Radiada}, \textit{Potencia} y \textit{Materiales}. En cuanto se abre la aplicación se presenta abierta la pestaña de \textit{Potencia Radiada}, donde se seleccionan los materiales del emisor y el receptor, las distancias de separación de los cuerpos y la temperatura del emisor, ya que la del receptor es fija a 300K y no influye en los cálculos. También muestra la gráfica de los resultados obtenidos de la simulación para cualquier combinación excepto cuando se eligen varios materiales y un rango de distancias.\\ 
-
+La aplicación se divide en tres pestañas \textit{Potencia Radiada}, \textit{Potencia} y \textit{Materiales}. En cuanto se abre la aplicación se presenta abierta la pestaña de \textit{Potencia Radiada} (figura \ref{fig:pestana_PotenciaRadiada}), donde se seleccionan los materiales del emisor y el receptor, las distancias de separación de los cuerpos y la temperatura del emisor en grados Kelvin, ya que la del receptor es fija a 300K y no influye en los cálculos. También muestra la gráfica de los resultados obtenidos de la simulación para cualquier combinación excepto cuando se eligen varios materiales y un rango de distancias.\\ 
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.80\textwidth]{figuras/pestana_PotenciaRadiada.png}
 	\caption{Pestaña \textit{Potencia Radiada} de la calculadora de campo cercano}
 	\label{fig:pestana_PotenciaRadiada}
 \end{figure}
-
+Para la selección del rango de los materiales se abre una nueva ventana de una GUI donde se utiliza dos árboles de casillas de selección para los materiales del emisor y el receptor del sistema de transmisión de calor por radiación de campo cercano (figura \ref{fig:ventana_mat}). Para la selección del rango de distancias se abre una nueva ventana de una GUI donde se el paso entre para variar las distancias límites es 100nm, las distancias máxima y mínima son 1000nm y 100nm (figura \ref{fig:ventana_dist}).Antes de realizar los cálculos se realiza una interpolación lineal de los valores de n y k de los materiales para que coincidan los puntos para cada longitud de onda.\\\\
 \begin{figure}[H]%
 \centering
 \begin{subfigure}[b]{0.48\textwidth}
 \centering
-	\includegraphics[width=0.8\textwidth]{figuras/pestana_Distancias.png}
+	\includegraphics[width=0.75\textwidth]{figuras/pestana_Distancias.png}
 	\caption{Ventana de selección de rango de distancias}%
 	\label{fig:ventana_dist}%
 \end{subfigure}
 \hfill
 \begin{subfigure}[b]{0.48\textwidth}
 \centering
-	\includegraphics[width=0.8\textwidth]{figuras/pestana_Elegirmateriales.png}
+	\includegraphics[width=0.75\textwidth]{figuras/pestana_Elegirmateriales.png}
 	\caption{Ventana de selección de materiales}%
 	\label{fig:ventana_mat}%
 \end{subfigure}
 \caption{(\subref{fig:ventana_dist}) Ventana para la selección del rango de las distancias de separación entre el emisor y el receptor. (\subref{fig:ventana_mat}) Ventana para la selección de los materiales para el emisor y el receptor.}%
 \label{fig:ventanas_d_mat}%
+\end{figure}
+La pestaña de \textit{Potencia} (figura \ref{fig:pestana_Potencia})contiene una calculadora para pasar de electrón-voltios a longitud de onda y viceversa, unos campos para controlar el rango de longitudes de onda para realizar la integral de la potencia radiada y una gráfica para mostrar los resultados obtenidos de integrar. La integral se realiza por el método del trapezoide. Los resultados obtenidos de la potencia, los de la potencia radiada o ambos se pueden guardar en un archivo excel.
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.70\textwidth]{figuras/pestana_Potencia.png}
+	\caption{Pestaña de la Potencia}
+	\label{fig:pestana_Potencia}
+\end{figure}
+La pestaña de \textit{Materiales} se usa para observar en una tabla o gráfica, según la pestaña interna seleccionada, los valores de n y k del material seleccionado en la lista de la izquierda, como se puede observar en la figura \ref{fig:pestana_materiales}.
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.70\textwidth]{figuras/pestana_materiales.png}
+	\caption{Pestaña de los datos de n y k  de los materiales disponibles}
+	\label{fig:pestana_materiales}
 \end{figure}
 Cabe destacar que la aplicación sigue en fase de desarrollo, todavía no se ha terminado de agregar todas las funcionalidades y arreglar los bugs.
