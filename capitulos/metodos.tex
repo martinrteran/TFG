@@ -95,11 +95,125 @@ Donde $Cte$ es una constante que es igual para el caso de los aceros y el caso S
 \frac{h_c'}{h_c}=2\cdot \frac{k_{SiO_2}}{k_{SS}+k_{SiO_2}}
 \label{eq:relacion_conductividadesTermicas}
 \end{equation}
-Para este trabajo los datos utilizados de las conductividades térmicas de los materiales para la relación de las conductancias de contacto son a temperatura ambiente, el valor de $k_{SiO_2}$ es $1.5 \ W/\left( m^2 K\right)$ y el valor de $k_{SS}$ es de $15 \ W/\left( m^2 K\right)$, quedando la relación de conductancias de contacto como ${h_c'}/{h_c}=0.1818$
+Para este trabajo los datos utilizados de las conductividades térmicas de los materiales para la relación de las conductancias de contacto son a temperatura ambiente, el valor de $k_{SiO_2}$ es $1.5 \ W/\left( m^2 K\right)$ y el valor de $k_{SS}$ es de $15 \ W/\left( m^2 K\right)$, quedando la relación de conductancias de contacto como ${h_c'}/{h_c}=0.1818$.
 
-\section{Simulación de transmisión de calor por radiación de campo cercano}
+%%%%%%%%     PROCEDIMIENTOS DE LAS SIMULACIONES Y EXTRACCION DE RESULTADOS
+\section{Procedimientos seguidos en la realización de las simulaciones de transmisión de calor y extracción de resultados}
+A continuación se describen los procedimientos seguidos en este trabajo para la simulación de la transmisión de calor por radiación de campo cercano, la simulación de la transmisión de calor por conducción y la extracción de los datos de la simulación.\\
+\subsection{Para la radiación de campo cercano}
 %Aquí tendrías que meter las simulaciones de campo cercano y hablar del método (está descrito en un paper que te pasé
-
-\section{Simulación de transmisión de calor por conducción}
-
-\section{Procedimiento de extracción de resultados de CFD}
+Hay cuatro casos de simulaciones de transmisión de campo cercano que se puede realizar, para este trabajo se realizó una simulación de la combinación de varios materiales con un rango completo de distancias. Para realización de las simulaciones de transmisión de calor por campo cercano de este trabajo, obteniéndose la potencia radiada y la potencia, se siguen los siguientes pasos:
+\begin{enumerate}
+	\item Abrir la aplicación de la Calculadora de campo cercano.
+	\item Seleccionar la cajetilla de \textbf{Materials Range} (figura \ref{fig:check_materials}). 
+	\item Seleccionar la cajetilla de \textbf{Distance Range} (figura \ref{fig:check_distances}).
+	\begin{figure}[H]%
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+			\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/check_distances2.png}
+		\caption{Rango de distancias}
+		\label{fig:check_distances}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+			\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/check_materials2.png}
+		\caption{Rango de materiales}
+		\label{fig:check_materials}
+	\end{subfigure}
+	\caption{(\subref{fig:check_distances}) Cajetilla para la selección de la opción de simular un rango de distancias. (\subref{fig:check_materials}) Cajetilla para la selección de la opción de simular una combinación de materiales.}%
+	\label{fig:checkboxes}%
+	\end{figure}
+	\item Hacer clic en el \textbf{set} de \textbf{Materials Range}.
+	\item Seleccionar los materiales para el emisor (UpFace) y la célula (DownFace), y hacer clic en aceptar (figura \ref{fig:set_materials}).
+	\item Hacer clic en el \textbf{set} de \textbf{Distance Range}.	
+	\item Seleccionar el rango de distancias a simular de 100 a 1000 o seleccionar la cajetilla \textbf{Full Range} y hacer clic en aceptar (figura \ref{fig:set_distances}).%% Figuras de las ventanas para los SETs
+	\begin{figure}[H]%
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+			\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/set_distances_fullrange.png}
+		\caption{Set de distancias}
+		\label{fig:set_distances}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+			\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/set_materilas2.png}
+		\caption{Set de materiales}
+		\label{fig:set_materials}
+	\end{subfigure}
+	\caption{(\subref{fig:set_distances}) Ventana para la selección del rango de distancias a simular. (\subref{fig:set_materials}) Ventana para la selección de las combinaciones de materiales a simula, siendo \textbf{UpFace} el emisor y \textbf{DownFace} la célula.}%
+	\label{fig:sets}%
+	\end{figure}
+	\item Asegurar que la temperatura del emisor sea la deseada.
+	\item Hacer clic en el botón \textbf{Calculate} para lanzar la simulación.
+	\item Esperar que el indicador de estado pase de \textit{Running...}, color rojo del indicador (figura \ref{fig:indicador_Running}), a \textit{StdBy}, color verde del indicador (figura \ref{fig:indicador_StdBy}), es decir, esperar que termine la simulación.
+	%% figuras de estados
+	\begin{figure}[H]
+	\centering
+	%% Figura 1
+	\begin{subfigure}[b]{0.3\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/estado_changed}%
+	\caption{Changed}%
+	\label{fig:indicador_Changed}%
+	\end{subfigure}
+	\hfill
+	%% Figura 2
+	\begin{subfigure}[b]{0.3\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/estado_running}%
+	\caption{Running}%
+	\label{fig:indicador_Running}%
+	\end{subfigure}
+	\hfill
+	%% Figura 3
+	\begin{subfigure}[b]{0.3\textwidth}
+	\centering
+	\includegraphics[width=0.9\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/estado_stdby}%
+	\caption{StdBy}%
+	\label{fig:indicador_StdBy}%
+	\end{subfigure}
+	\hfill
+	\caption{Indicadores del estado actual del sistema. (\subref{fig:indicador_Changed}) Indicador del estado \textbf{Changed} o estado de cambio, se activa cuando se produce algún cambio en los datos seleccionados para simular. (\subref{fig:indicador_Running}) Indicador del estado \textbf{Running} o corriendo, se activa cuando estando en el estado \textbf{Changed} se hace clic al botón \textbf{Calculate} y corre la simulación. (\subref{fig:indicador_StdBy}) Indicador del estado \textbf{StdBy}, se activa cuando termina la simulación, avisando que está a la espera de algún cambio.}
+	\label{fig:indicadorLED}
+	\end{figure}
+	%% Se acaba la figura
+	\item Ir a la pestaña de \textbf{Potencia}.
+	\item Introducir el rango de longitudes de onda para calcular la potencia por unidad de área, siendo elegido desde el mínimo hasta 1.8 $\mu m$ que es el rango de longitudes de onda que absorbe la célula de Ge (figura \ref{fig:graficar_ejemplo2}).
+	\item Hacer clic en el botón \textbf{Graph} para calcular y graficar las potencias (figura \ref{fig:graficar_ejemplo2}).
+\end{enumerate}
+%% Graficas de la pestaña de potencia
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.30\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/graficar_ejemplo2.png}
+	\caption{Preferencias para el cálculo de la potencia}
+	\label{fig:graficar_ejemplo2}
+\end{figure}
+%% Guardar resultados
+El procedimiento seguido en este trabajo se encuentra detallado paos a paso en el Apéndice xxxx. Para la extracción de los datos obtenidos de potencia por unidad de área se hace clic sobre el botón de \textbf{guardar} (figura \ref{fig:SaveButton_Cut}) estando en la pestaña \textbf{Potencia}, para guardar la potencia radiada se hace clic del botón de \textbf{guardar} estando en la pestaña de \textbf{Potencia Radiada} y para guardar todos los datos se hace clic sobre el botón de \textbf{guardar todos} (figura \ref{fig:SaveAllicon}).
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=0.4\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/SaveButton_Cut.jpg}
+		\caption{Botón de guardar actual}
+		\label{fig:SaveButton_Cut}
+	\end{subfigure}
+  \hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+			\includegraphics[width=0.40\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/SaveAllicon.jpg}
+		\caption{Botón de guardar todos los resultados}
+		\label{fig:SaveAllicon}
+	\end{subfigure}
+	\caption{(\subref{fig:SaveButton_Cut}) Botón de guardar los resultados obtenidos de los cálculos o la simulación, dependiendo de la pestaña que se encuentre el usuario de la calculadora de campo cercano. (\subref{fig:SaveAllicon}) Botón de guardar todos los resultados obtenidos de los cálculos y simulación.}
+	\label{fig:saveButtons}
+\end{figure}
+%%%%%%%%%%%%     Conducción térmica
+\subsection{Para la conducción térmica}
+Las simulaciones de transmisión de calor por conducción se realizaron todas en CFD, siguiendo un mismo conjunto de pasos. Dichos pasos son los siguientes:
+\begin{enumerate}
+	\item 
+	\item
+\end{enumerate}
