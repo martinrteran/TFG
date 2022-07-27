@@ -213,22 +213,24 @@ El procedimiento seguido en este trabajo se encuentra detallado paos a paso en e
 %%%%%%%%%%%%     Conducción térmica
 \subsection{Para la conducción térmica}
 Las simulaciones de transmisión de calor por conducción se realizaron todas en CFD, existiendo unos 10 casos para cada combinación de materiales y resistencias de contacto, para cada uno de ellos se sigue un mismo conjunto de pasos. \\\\
-Primero hay que crear el modelo 3D de cada componente del sistema TPV a simular, siendo cada uno de ellos es un prisma de sección cuadrada. El nano-espaciador tiene de base un cuadrado de lado 3 $\mu m$ y de altura variable $h$, el emisor y la célula tiene el mismo modelo 3D, con base cuadrada de 1mm de lado con 0.2mm de altura. Para el cálculo de las longitudes del modelo 3D se utiliza la ecuación \ref{eq:relacion_longitud}.\\\\
+Primero hay que crear el modelo 3D de cada componente del sistema TPV a simular, siendo cada uno de ellos es un prisma de sección cuadrada. El nano-espaciador tiene de base un cuadrado de lado 3 $\mu m$ y de altura variable $h$, el emisor y la célula tiene el mismo modelo 3D, con base cuadrada de 1mm de lado con 0.2mm de altura. Para el cálculo de las longitudes del modelo 3D se utiliza la ecuación \ref{eq:relacion_longitud}.\\
+
+%%% MODELADO 3D
 El procedimiento seguido para la obtención de los modelos 3D y la creación del modelo de simulación inicial para cada altura del nano-espaciador es:
 \begin{enumerate}
 	\item Crear las bases cuadradas con la longitud de lado respectiva, 10m para emisor o célula y 3cm para el nano-espaciador. 
 	\item Extrudir el prisma la longitud correspondiente, 2m para el emisor/célula y $h_0$ para el nano-espaciador, siendo $h$ un valor inicial cualquier en el rango de 1mm a 10mm.
 	\item Crear un ensamblaje de emisor-espaciador-célula, estando la base del nano-espaciador en el centro de las bases de los otros dos componentes (figura \ref{fig:modelado3D}).
-	\item Guardar el ensamblaje.
-	\item Usar el \textbf{Active Model Assessment Tool}, que se encuentra en la pestaña de simulaciones, para generar el modelo o estudio de simulación de CFD\label{itm:pasoIniIterativo_Modelado3D}.
-	\item Al abrirse CFD hacer clic en \textit{Transfer to Set Up}, dar un nombre y lanzar.
-	\item Guardar el modelo o estudio de CFD \label{itm:pasoFin_Modelado3D}.
-	\item Ir al ensamblaje en Inventor.
-	\item Hacer clic derecho sobre el ícono del objeto correspondiente al nano-espaciador en el panel \textbf{model} y hacer clic en editar.
-	\item Hacer clic derecho sobre la extrusión y seleccionar la opción de editar característica (\textbf{Edit Feature}).
-	\item Modificar la altura del nano-espaciador y al terminar hacer clic en \textbf{Return} \label{itm:pasoFinIterativo_Modelado3D}.
-	\item Repetir desde el paso \ref{itm:pasoIniIterativo_Modelado3D} al \ref{itm:pasoFinIterativo_Modelado3D}, excepto en la última iteración que es hasta el paso \ref{itm:pasoFin_Modelado3D}, incluido.
-\end{enumerate}
+	%% PASOS PARA EL ENSAMBLAJE
+	\begin{enumerate}
+		\item Agregar el nano-espaciador y los dos prismas de 10m de lado.
+		\item Renombrar los prismas de 10m de lado, una siendo emisor y la otra célula, para así diferenciarlas.
+		\item Obtener el centro de la cara superior de la célula, mediante un dibujo con dos rectas secantes que van de una esquina a otra (figura \ref{fig:modelado3D_centro_cerca}).
+		\item Aplicar una restricción con la opción \textbf{Mate} de separación nula entre la cara inferior del nano-espaciador con el centro de la cara superior de la célula,es decir, las caras entran en contacto si la distancia de separación es nula (figura \ref{fig:modelado3D_centro_cerca}).
+		\item Aplicar una restricción \textbf{Mate} de separación nula entre la cara inferior del emisor y la cara superior del nano-espaciador.
+		\item Aplicar una restricción \textbf{Flush} de separación nula a una cara lateral del emisor y una cara lateral de la célula.
+		\item Repetir el paso anterior para las caras conjuntas, siendo el resultado final el de la figura \ref{fig:modelado3D_lejos}.
+	\end{enumerate}
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.3\textwidth}
@@ -254,6 +256,19 @@ El procedimiento seguido para la obtención de los modelos 3D y la creación del
 	\caption{Vistas del sistema TPV. (\subref{fig:modelado3D_lejos}) Vista de lejos del sistema completo de la TPV. (\subref{fig:modelado3D_cerca}) Vista del sistema TPV de cerca desde un borde. (\subref{fig:modelado3D_centro_cerca}) Vista del nano-espaciador colocado sobre el centro de una cara de la célula.}
 	\label{fig:modelado3D}
 \end{figure}
+	\item Guardar el ensamblaje.
+	\item Usar el \textbf{Active Model Assessment Tool}, que se encuentra en la pestaña de simulaciones, para generar el modelo o estudio de simulación de CFD\label{itm:pasoIniIterativo_Modelado3D}.
+	\item Al abrirse CFD hacer clic en \textit{Transfer to Set Up}, dar un nombre y lanzar.
+	\item Guardar el modelo o estudio de CFD \label{itm:pasoFin_Modelado3D}.
+	\item Ir al ensamblaje en Inventor.
+	\item Hacer clic derecho sobre el ícono del objeto correspondiente al nano-espaciador en el panel \textbf{model} y hacer clic en editar.
+	\item Hacer clic derecho sobre la extrusión y seleccionar la opción de editar característica (\textbf{Edit Feature}).
+	\item Modificar la altura del nano-espaciador y al terminar hacer clic en \textbf{Return} \label{itm:pasoFinIterativo_Modelado3D}.
+	\item Repetir desde el paso \ref{itm:pasoIniIterativo_Modelado3D} al \ref{itm:pasoFinIterativo_Modelado3D}, excepto en la última iteración que es hasta el paso \ref{itm:pasoFin_Modelado3D}, incluido.
+\end{enumerate}
+
+
+%%%  PROCEDIMIENTO CFD
 El procedimiento a seguir para cada modelo de simulación en CFD es el siguiente:
 \begin{enumerate}
 	\item Abrir el modelo o estudio correspondiente de simulación en CFD.
@@ -321,7 +336,8 @@ El procedimiento a seguir para cada modelo de simulación en CFD es el siguiente
 	\end{subfigure}
 	\caption{(\subref{fig:mallado_100_metodos}) Mallado del nano-espaciador de 100nm, con tamaño de malla de 0.01. (\subref{fig:mallado_100_cerca_metodos}) Mallado del nano-espaciador de 100nm visto de cerca. (\subref{fig:mallado_1000_cerca_metodos}) Mallado del nano-espaciador de 1000nm, con tamaño de malla de 0.1.}
 	\label{fig:mallados_metodos}
-\end{figure} %%% CONTINUA ENUMERACION
+\end{figure} 
+%%% CONTINUA ENUMERACION
 	\item Hacer clic en \textbf{Solve} (figura \ref{fig:paneles}).
 	\item Seleccionar en la pestaña \textbf{Physics} la casilla de \textbf{Heat transfer} (\ref{fig:physics_panel}) .
 	\item Ir a la pestaña \textbf{Control} (figura \ref{fig:control_panel}).
