@@ -14,7 +14,7 @@ La conductividad térmica ($\sigma$) del $Si$ es 182.977 W/m\textdegree C y la d
 La temperatura media máxima del nano-espaciador es 792.601\textdegree C, la temperatura media mínima del nano-espaciador es 32.3903\textdegree C y el flujo de calor es 0.00889793 W. Con los resultados de las temperaturas medias del nano-espaciador se obtiene un flujo de calor teórico de 0.00889905 W, obteniéndose un error relativo aproximado del 0.0126\%, por lo tanto el procedimiento es apropiado para la obtención de los resultados de las simulaciones de transmisión de calor por conducción.
 %%% SIMULACIONES DE TRANSMISIÓN DE CALOR POR CONDUCCIÓN EN CFD
 \section{Sistema TPV de Si-SiO2-Si}
-El sistema TPV a estudiado está compuesto de un emisor de $Si$ a 800\textdegree C, una nano-espaciador de $SiO_2$ y una célula de $Si$ a 25\textdegree C. Se estudia el efecto de la porosidad del $SiO_2$ en la potencia de conducción total que fluye por un nano-espaciador de diferentes alturas, el efecto de la resistencia de contacto sobre la conductividad del sistema y la relación entre la potencia radiada y conducida para cada caso en el rango de longitudes de onda que trabaja la célula.\\\\
+Primero se estudia un caso sencillo de un sistema TPV de emisor y célula de $Si$, el efecto de la resistencia de contacto entre emisor y nano-espaciador sobre el flujo de calor y el efecto de la porosidad del $SiO_2$ del nano-espaciador en la potencia de conducción. En segundo lugar se estudia la relación entre la potencia radiada en un 1$cm^2$ de emisor y célula, y la potencia conducida.\\
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
@@ -42,7 +42,7 @@ El sistema TPV a estudiado está compuesto de un emisor de $Si$ a 800\textdegree
 		\label{fig:relPpor_SiSiO2Si}
 	\end{subfigure}
 	\caption{ }
-	\label{fig:Potencias_SiSiO2Si}
+	\label{fig:Pcond_SiSiO2Si}
 \end{figure}
 \[Rel=\frac{\left| P_{Porosidad}- P_{Normal} \right|}{P_{Normal}}\cdot 100\]
 \[P(d,p1(p),q1(p))=\frac{p1(p)}{d+q1(p)}\]
@@ -72,16 +72,156 @@ De las simulaciones de transmisión de calor de CFD, se obtienen los siguientes 
 	\caption{Tabla de resultados de las simulaciones de conducción y radiación de campo cercano para diferentes alturas del nano-espaciador. Flujos de calor del TPV $Si-SiO_2-Si$ para diferentes alturas del nano-espaciador y para los casos sin $R_c$, con $R_c$ de \cite{nf_TPV_Pillars_SiO2}, sin $R_c$ pero con las proporciones de las porosidades de \cite{ThermalConductivity_SiO2_2018} para un 25\% y un 50\%.}
 	\label{tab:condTerSiSiO2Si}
 \end{table}
+\begin{figure}[H]
+	\centering
+	%% Si-SiO2-Si Eg
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiSi.png}
+		\caption{ }
+		\label{fig:rel_SiSiO2Si}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiSi_full.png}
+		\caption{ }
+		\label{fig:rel_SiSiO2Si_full}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiSi_Rc.png}
+		\caption{ }
+		\label{fig:rel_SiSiO2Si_Rc}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiSi_Rc_full.png}
+		\caption{ }
+		\label{fig:rel_SiSiO2Si_Rc_full}
+	\end{subfigure}
+	\caption{ }
+	\label{fig:relation_SiSiO2Si}
+\end{figure}
 
-
-
-\subsection{Efectos de la porosidad}
-
-\subsection{Relación entre conducción y radiación}
+\begin{figure}[H]
+	\centering
+	%% Si-SiO2-Si Eg
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiSi_Rc_full_10.png}
+		\caption{ }
+		\label{fig:rel_SiSiO2Si_Rc_full_10}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiSi_Rc_full_100.png}
+		\caption{ }
+		\label{fig:rel_SiSiO2Si_Rc_full_100}
+	\end{subfigure}
+	\caption{ }
+	\label{fig:relation_SiSiO2Si_zoomIn}
+\end{figure}
 
 \section{Caso 2: Sistema TPV de $Si-SiO_2-Ge$}
 
+\begin{figure}[H]
+	\centering
+	%% Si-SiO2-Si Eg
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/conduccion/pdf/Prc_SiSiO2Ge.pdf}
+		\caption{ }
+		\label{fig:Prc_SiSiO2Ge}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/conduccion/pdf/Prc2_SiSiO2Ge.pdf}
+		\caption{ }
+		\label{fig:Prc2_SiSiO2Ge}
+	\end{subfigure}
+	\caption{ }
+	\label{fig:Pcond_SiSiO2Ge}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	%% Si-SiO2-Si Eg
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiGe.png}
+		\caption{ }
+		\label{fig:rel_SiSiO2Ge}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiGe_full.png}
+		\caption{ }
+		\label{fig:rel_SiSiO2Ge_full}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiGe_Rc.png}
+		\caption{ }
+		\label{fig:rel_SiSiO2Ge_Rc}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiGe_Rc_full.png}
+		\caption{ }
+		\label{fig:rel_SiSiO2Ge_Rc_full}
+	\end{subfigure}
+	\caption{ }
+	\label{fig:relation_SiSiO2Ge}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	%% Si-SiO2-Si Eg
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiGe_Rc_full_10.png}
+		\caption{ }
+		\label{fig:rel_SiSiO2Ge_Rc_full_10}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiGe_Rc_full_100.png}
+		\caption{ }
+		\label{fig:rel_SiSiO2Ge_Rc_full_100}
+	\end{subfigure}
+	\caption{ }
+	\label{fig:relation_SiSiO2Ge_zoomIn}
+\end{figure}
 \section{Caso 3: Sistema TPV de $SS-SiO_2-Ge$}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+			\includegraphics[width=1.00\textwidth]{figuras/Resultados/conduccion/pdf/relPrcs_SsSiO2Ge.pdf}
+		\caption{ }
+		\label{fig:relPrcs_SsSiO2Ge}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+			\includegraphics[width=1.00\textwidth]{figuras/Resultados/conduccion/pdf/Prcs_SsSiO2Ge.pdf}
+		\caption{ }
+		\label{fig:Prcs_SsSiO2Ge}
+	\end{subfigure}
+	\caption{ }
+	\label{fig:Pcond_SsSiO2Ge}
+\end{figure}
+
+
 
 \section{Caso 4: Sistema TPV de $SiC-SiO_2-Ge$}
 
