@@ -129,19 +129,21 @@ De las simulaciones de transmisión de calor de CFD, se obtienen los siguientes 
 \section{Caso 2: Sistema TPV de $Si-SiO_2-Ge$}
 \begin{table}[h]
 	\centering
-		\begin{tabular}{|c|c|c|}
+		\begin{tabular}{|c||c|c||c|c|}
 		\hline
-			dnm&Pn&Prcpaper \\ \hline 
-100&5,38E-02&1,68E-03 \\ \hline 
-200&3,65E-02&1,65E-03 \\ \hline 
-300&2,76E-02&1,62E-03 \\ \hline 
-400&2,22E-02&1,60E-03 \\ \hline 
-500&1,85E-02&1,57E-03 \\ \hline 
-600&1,59E-02&1,55E-03 \\ \hline 
-700&1,39E-02&1,52E-03 \\ \hline 
-800&1,24E-02&1,50E-03 \\ \hline 
-900&1,12E-02&1,48E-03 \\ \hline 
-1000&1,02E-02&1,46E-03 \\ \hline 
+\multirow{2}{*}{ }& \multicolumn{4}{c|}{\textbf{\large Potencias según transmisión del calor}}\\ \cline{2-5}
+& \multicolumn{2}{c||}{Conducción (W/nº esp.)}& \multicolumn{2}{c|}{Radiación $(W/m^2)$}\\ \hline
+Dist. (nm)&$P_{Normal}$&$P_{R_c-Empirico}$&$P_{Eg>0.7eV}$&$P_{full}$\\ \hline \hline
+100&5,38E-02&1,68E-03&4,87E+03&1,54E+05\\ \hline 
+200&3,65E-02&1,65E-03&2,94E+03&1,01E+05\\ \hline 
+300&2,76E-02&1,62E-03&2,16E+03&7,71E+04\\ \hline 
+400&2,22E-02&1,60E-03&1,77E+03&6,31E+04\\ \hline 
+500&1,85E-02&1,57E-03&1,59E+03&5,38E+04\\ \hline 
+600&1,59E-02&1,55E-03&1,55E+03&4,74E+04\\ \hline 
+700&1,39E-02&1,52E-03&1,62E+03&4,27E+04\\ \hline 
+800&1,24E-02&1,50E-03&1,73E+03&3,93E+04\\ \hline 
+900&1,12E-02&1,48E-03&1,78E+03&3,67E+04\\ \hline 
+1000&1,02E-02&1,46E-03&1,73E+03&3,49E+04\\ \hline 
 		\end{tabular}
 	\caption{cs}
 	\label{tab:cs}
@@ -222,19 +224,21 @@ De las simulaciones de transmisión de calor de CFD, se obtienen los siguientes 
 \section{Caso 3: Sistema TPV de $SS-SiO_2-Ge$}
 \begin{table}[h]
 	\centering
-		\begin{tabular}{|c|c|c|c|c|}
+		\begin{tabular}{|c||c|c|c|c||c|}
 		\hline
-			dnm&Pn&Prcmax&Prcinter&Prcpaper \\ \hline 
-100&4,79578E-02&1,26815E-06&2,53438E-06&1,67993E-03 \\ \hline 
-200&3,41638E-02&1,26813E-06&2,53431E-06&1,65024E-03 \\ \hline 
-300&2,64074E-02&1,26811E-06&2,53424E-06&1,62198E-03 \\ \hline 
-400&2,14795E-02&1,26809E-06&2,53417E-06&1,59500E-03 \\ \hline 
-500&1,80787E-02&1,26808E-06&2,53410E-06&1,56919E-03 \\ \hline 
-600&1,56074E-02&1,26806E-06&2,53403E-06&1,54444E-03 \\ \hline 
-700&1,37190E-02&1,26804E-06&2,53396E-06&1,52066E-03 \\ \hline 
-800&1,22454E-02&1,26802E-06&2,53388E-06&1,49795E-03 \\ \hline 
-900&1,10504E-02&1,26800E-06&2,53381E-06&1,47593E-03 \\ \hline 
-1000&1,00695E-02&1,26799E-06&2,53374E-06&1,45476E-03 \\ \hline
+		\multirow{2}{*}{ }& \multicolumn{5}{c|}{\textbf{\large Potencias según transmisión del calor}}\\ \cline{2-6}
+& \multicolumn{4}{c||}{Conducción (W/nº esp.)}& Radiación $(W/m^2)$\\ \hline
+Dist. (nm)&$P_{Normal}$&$P_{R_c-Cal.Max}$&$P_{R_c-Cal.Inter}$&$P_{R_c-Empirico}$&$P_{Eg>0.7eV}$\\ \hline \hline
+100&4,80E-02&1,26815E-06&2,53438E-06&1,68E-03&3,13E+03\\ \hline 
+200&3,42E-02&1,26813E-06&2,53431E-06&1,65E-03&1,73E+03\\ \hline 
+300&2,64E-02&1,26811E-06&2,53424E-06&1,62E-03&1,24E+03\\ \hline 
+400&2,15E-02&1,26809E-06&2,53417E-06&1,60E-03&1,01E+03\\ \hline 
+500&1,81E-02&1,26808E-06&2,53410E-06&1,57E-03&9,11E+02\\ \hline 
+600&1,56E-02&1,26806E-06&2,53403E-06&1,54E-03&9,10E+02\\ \hline 
+700&1,37E-02&1,26804E-06&2,53396E-06&1,52E-03&9,93E+02\\ \hline 
+800&1,22E-02&1,26802E-06&2,53388E-06&1,50E-03&1,10E+03\\ \hline 
+900&1,11E-02&1,26800E-06&2,53381E-06&1,48E-03&1,14E+03\\ \hline 
+1000&1,01E-02&1,26799E-06&2,53374E-06&1,45E-03&1,08E+03\\ \hline 
 		\end{tabular}
 	\caption{daa}
 	\label{tab:daa}
@@ -314,19 +318,21 @@ De las simulaciones de transmisión de calor de CFD, se obtienen los siguientes 
 \section{Caso 4: Sistema TPV de $SiC-SiO_2-Ge$}
 \begin{table}[h]
 	\centering
-		\begin{tabular}{|c|c|c|}
+		\begin{tabular}{|c||c|c||c|c|}
 		\hline
-			dnm&Pn&Prc\\ \hline 
-100&6,23E-02&1,69E-03\\ \hline 
-200&4,09E-02&1,66E-03\\ \hline 
-300&3,03E-02&1,63E-03\\ \hline 
-400&2,39E-02&1,61E-03\\ \hline 
-500&1,98E-02&1,58E-03\\ \hline 
-600&1,68E-02&1,55E-03\\ \hline 
-700&1,47E-02&1,53E-03\\ \hline 
-800&1,30E-02&1,51E-03\\ \hline 
-900&1,17E-02&1,49E-03\\ \hline 
-1000&1,06E-02&1,46E-03\\ \hline 
+\multirow{2}{*}{ }& \multicolumn{4}{c|}{\textbf{\large Potencias según transmisión del calor}}\\ \cline{2-5}
+& \multicolumn{2}{c||}{Conducción (W/nº esp.)}& \multicolumn{2}{c|}{Radiación $(W/m^2)$}\\ \hline
+Dist. (nm)&$P_{Normal}$&$P_{R_c-Empirico}$&$P_{Eg>0.7eV}$&$P_{full}$\\ \hline \hline
+100&6,23E-02&1,69E-03&4,90E+03&1,50E+05\\ \hline 
+200&4,09E-02&1,66E-03&3,00E+03&1,01E+05\\ \hline 
+300&3,03E-02&1,63E-03&2,21E+03&7,80E+04\\ \hline 
+400&2,39E-02&1,61E-03&1,82E+03&6,43E+04\\ \hline 
+500&1,98E-02&1,58E-03&1,64E+03&5,52E+04\\ \hline 
+600&1,68E-02&1,55E-03&1,60E+03&4,87E+04\\ \hline 
+700&1,47E-02&1,53E-03&1,67E+03&4,40E+04\\ \hline 
+800&1,30E-02&1,51E-03&1,76E+03&4,06E+04\\ \hline 
+900&1,17E-02&1,49E-03&1,81E+03&3,80E+04\\ \hline 
+1000&1,06E-02&1,46E-03&1,75E+03&3,61E+04\\ \hline 
 		\end{tabular}
 	\caption{dac}
 	\label{tab:dac}
@@ -375,7 +381,7 @@ relleno
 \end{figure}
 
 \section{Resultados}
-
+%% comparar el efecto de cambiar el material del nano-espaciador
 \begin{table}[H]
 	\centering
 		\begin{tabular}{|c|c|c|}
