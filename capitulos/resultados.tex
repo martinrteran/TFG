@@ -127,7 +127,25 @@ De las simulaciones de transmisión de calor de CFD, se obtienen los siguientes 
 \end{figure}
 
 \section{Caso 2: Sistema TPV de $Si-SiO_2-Ge$}
-
+\begin{table}[h]
+	\centering
+		\begin{tabular}{|c|c|c|}
+		\hline
+			dnm&Pn&Prcpaper \\ \hline 
+100&5,38E-02&1,68E-03 \\ \hline 
+200&3,65E-02&1,65E-03 \\ \hline 
+300&2,76E-02&1,62E-03 \\ \hline 
+400&2,22E-02&1,60E-03 \\ \hline 
+500&1,85E-02&1,57E-03 \\ \hline 
+600&1,59E-02&1,55E-03 \\ \hline 
+700&1,39E-02&1,52E-03 \\ \hline 
+800&1,24E-02&1,50E-03 \\ \hline 
+900&1,12E-02&1,48E-03 \\ \hline 
+1000&1,02E-02&1,46E-03 \\ \hline 
+		\end{tabular}
+	\caption{cs}
+	\label{tab:cs}
+\end{table}
 \begin{figure}[H]
 	\centering
 	%% Si-SiO2-Si Eg
@@ -202,6 +220,25 @@ De las simulaciones de transmisión de calor de CFD, se obtienen los siguientes 
 	\label{fig:relation_SiSiO2Ge_zoomIn}
 \end{figure}
 \section{Caso 3: Sistema TPV de $SS-SiO_2-Ge$}
+\begin{table}[h]
+	\centering
+		\begin{tabular}{|c|c|c|c|c|}
+		\hline
+			dnm&Pn&Prcmax&Prcinter&Prcpaper \\ \hline 
+100&4,79578E-02&1,26815E-06&2,53438E-06&1,67993E-03 \\ \hline 
+200&3,41638E-02&1,26813E-06&2,53431E-06&1,65024E-03 \\ \hline 
+300&2,64074E-02&1,26811E-06&2,53424E-06&1,62198E-03 \\ \hline 
+400&2,14795E-02&1,26809E-06&2,53417E-06&1,59500E-03 \\ \hline 
+500&1,80787E-02&1,26808E-06&2,53410E-06&1,56919E-03 \\ \hline 
+600&1,56074E-02&1,26806E-06&2,53403E-06&1,54444E-03 \\ \hline 
+700&1,37190E-02&1,26804E-06&2,53396E-06&1,52066E-03 \\ \hline 
+800&1,22454E-02&1,26802E-06&2,53388E-06&1,49795E-03 \\ \hline 
+900&1,10504E-02&1,26800E-06&2,53381E-06&1,47593E-03 \\ \hline 
+1000&1,00695E-02&1,26799E-06&2,53374E-06&1,45476E-03 \\ \hline
+		\end{tabular}
+	\caption{daa}
+	\label{tab:daa}
+\end{table}
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
@@ -221,11 +258,142 @@ De las simulaciones de transmisión de calor de CFD, se obtienen los siguientes 
 	\label{fig:Pcond_SsSiO2Ge}
 \end{figure}
 
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+			\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SS.png}
+		\caption{ }
+		\label{fig:rel_SsSiO2Ge}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+			\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SS_Rc_empirico.png}
+		\caption{ empirico}
+		\label{fig:rel_SsSiO2Ge_Rc_emp}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+			\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SS_Rc.png}
+		\caption{ max}
+		\label{fig:rel_SsSiO2Ge_Rc_max}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+			\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SS_Rc_Intermedio.png}
+		\caption{ intermedio}
+		\label{fig:rel_SsSiO2Ge_Rc_inter}
+	\end{subfigure}
+	\caption{ }
+	\label{fig:relation_SsSiO2Ge}
+\end{figure}
 
-
+\begin{figure}[H]
+	\centering
+	%% Si-SiO2-Si Eg
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SS_Rc_Intermedio_100.png}
+		\caption{intermedio }
+		\label{fig:rel_SsSiO2Ge_Rc_inter_100}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SS_Rc_100s.png}
+		\caption{ }
+		\label{fig:rel_SsSiO2Ge_Rc_max_100}
+	\end{subfigure}
+	\caption{ }
+	\label{fig:rel_SsSiO2Ge_100}
+\end{figure}
+%%% 
 \section{Caso 4: Sistema TPV de $SiC-SiO_2-Ge$}
+\begin{table}[h]
+	\centering
+		\begin{tabular}{|c|c|c|}
+		\hline
+			dnm&Pn&Prc\\ \hline 
+100&6,23E-02&1,69E-03\\ \hline 
+200&4,09E-02&1,66E-03\\ \hline 
+300&3,03E-02&1,63E-03\\ \hline 
+400&2,39E-02&1,61E-03\\ \hline 
+500&1,98E-02&1,58E-03\\ \hline 
+600&1,68E-02&1,55E-03\\ \hline 
+700&1,47E-02&1,53E-03\\ \hline 
+800&1,30E-02&1,51E-03\\ \hline 
+900&1,17E-02&1,49E-03\\ \hline 
+1000&1,06E-02&1,46E-03\\ \hline 
+		\end{tabular}
+	\caption{dac}
+	\label{tab:dac}
+\end{table}
+
+relleno
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.6\textwidth]{figuras/Resultados/conduccion/pdf/Prc_SiCSiO2Ge.pdf}
+	\caption{ }
+	\label{fig:Prc_SiCSiO2Ge}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	%% Si-SiO2-Si Eg
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiC_Ge.png}
+		\caption{ }
+		\label{fig:rel_SiCSiO2Ge}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiC_Ge_full.png}
+		\caption{ }
+		\label{fig:rel_SiCSiO2Ge_Rc}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiC_Rc.png}
+		\caption{ }
+		\label{fig:rel_SiCSiO2Ge_full}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiC_Ge_Rc_full.png}
+		\caption{ }
+		\label{fig:rel_SiCSiO2Ge_Rc_full}
+	\end{subfigure}
+	\caption{ }
+	\label{fig:relation_SiCSiO2Ge}
+\end{figure}
 
 \section{Resultados}
 
+\begin{table}[H]
+	\centering
+		\begin{tabular}{|c|c|c|}
+		\hline
+		dnm&Prcpaper&Prc\_SS\\ \hline 
+		100&0,0017136&0,00171126\\ \hline 
+		200&0,0017135&0,00171117\\ \hline 
+		300&0,00171336&0,00171103\\ \hline 
+		400&0,00171322&0,00171089\\ \hline 
+		500&0,00171304&0,00171072\\ \hline 
+		600&0,00171282&0,0017105\\ \hline 
+		700&0,00171257&0,00171025\\ \hline 
+		800&0,0017125&0,00171019\\ \hline 
+		900&0,0017122&0,00170989\\ \hline 
+		1000&0,00171208&0,00170978\\ \hline
+		\end{tabular}
+	\caption{nano-espaciador de Si}
+	\label{tab:nanoEspaciadorDeSi}
+\end{table}
 
 \section{Discusión}
