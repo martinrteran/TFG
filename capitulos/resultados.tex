@@ -14,45 +14,94 @@ La conductividad térmica ($\sigma$) del $Si$ es 182.977 W/m\textdegree C y la d
 La temperatura media máxima del nano-espaciador es 792.601\textdegree C, la temperatura media mínima del nano-espaciador es 32.3903\textdegree C y el flujo de calor es 0.00889793 W. Con los resultados de las temperaturas medias del nano-espaciador se obtiene un flujo de calor teórico de 0.00889905 W, obteniéndose un error relativo aproximado del 0.0126\%, por lo tanto el procedimiento es apropiado para la obtención de los resultados de las simulaciones de transmisión de calor por conducción.
 %%% SIMULACIONES DE TRANSMISIÓN DE CALOR POR CONDUCCIÓN EN CFD
 \section{Resultados de las simulaciones para una TPV de Si-SiO2-Si}
-A continuación se estudian los efectos de la resistencia de contacto y la porosidad sobre un sistema sencillo compuesto por un emisor de $Si$ de 1 $mm$ lado y 0.2 $mm$ de altura con la cara superior a 800 \textdegree C, un nano-espaciador de 3 $\mu m$ de lado y una célula de $Si$ de las mismas dimensiones que el emisor con la cara inferior a 25\textdegree C.\\\\
+A continuación se estudian los efectos de la resistencia de contacto y la porosidad sobre un sistema sencillo compuesto por un emisor de $Si$ de 1 $mm$ lado y 0.2 $mm$ de altura con la cara superior a 800 \textdegree C, un nano-espaciador de 3 $\mu m$ de lado y una célula de $Si$ de las mismas dimensiones que el emisor con la cara inferior a 25\textdegree C.
+\subsection{Efectos de la resistencia de contacto sobre la conducción}
 La resistencia de contacto usada es de unos $4\cdot 10^{-6} \ m^2 K/W$ \cite{nf_TPV_Pillars_SiO2} que es aplicada a la superficie superior del nano-espaciador que entra en contacto con la superficie inferior del emisor, solo se considera en dicha superficie porque el nano-espaciador será depositado sobre la superficie de la célula en la fase de fabricación.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=1.0\textwidth]{figuras/Resultados/conduccion/pdf/Prc_SiSiO2Si.pdf}
-		\caption{Sin y con Resistencia un eje }
+		\caption{Efecto de la $R_c$}
 		\label{fig:Prc_SiSiO2Si}
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=1.0\textwidth]{figuras/Resultados/conduccion/pdf/Prc2_SiSiO2Si.pdf}
-		\caption{Sin y con Resistencia dos eje }
+		\caption{Efecto de la $R_c$ por separado}
 		\label{fig:Prc2_SiSiO2Si}
 	\end{subfigure}
+	\caption[Efectos de la resistencia de contacto sobre el flujo de calor por conducción]{Gráficas de los efectos de la porosidad y de la resistencia de contacto sobre el flujo de calor por conducción. (\subref{fig:Prc_SiSiO2Si},\subref{fig:Prc2_SiSiO2Si}) Comparación de la potencia conducida de un nano-espaciador sin $R_c$ y con $R_c$ en un mismo eje (\subref{fig:Prc_SiSiO2Si}) y en dos ejes (\subref{fig:Prc2_SiSiO2Si})}
+	\label{fig:PcondRc_SiSiO2Si}
+\end{figure}
+Para un área de 9$\mu m^2$ la resistencia de contacto total es aproximadamente de $444.44\cdot 10^3 \ K/W$ comparada con los $85.43\cdot 10^3 \ K/W$ de la mayor resistencia que presenta el nano-espaciador con 1000nm de altura a 25\textdegree C es al menos 5 veces más grande, por lo cual, como se observa en las figuras \ref{fig:Prc_SiSiO2Si} y \ref{fig:Prc2_SiSiO2Si} la resistencia de contacto constante domina sobre la resistencia del nano-espaciador dando así la forma aproximada de una recta porque la mayor caída de temperatura se dá en la superficie de contacto, evitando que aumente la temperatura del nano-espaciador variando menos su resistencia térmica, por ende, dependerá principalmente de la altura del nano-espaciador.
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.49\textwidth]{figuras/Resultados/conduccion/pdf/relPrc_SiSiO2Si.pdf}
+		\caption{Relación de la potencia de la $R_c$ respecto a sin $R_c$}
+	\label{fig:relPrc_SiSiO2Si}
+\end{figure}
+La disminución de flujo de calor por conducción es significativa para todos los casos, siendo la potencia de conducción con $R_c$ variando aproximadamente entre un 3\% y un 14\% de la potencia sin $R_c$, lo que implica una disminución de conducción de unos 97\% y 85\%.\\\\
+Hay que tomar en cuenta que la resistencia de contacto en la realidad no es constante con la temperatura a diferencia de las simulaciones en CFD donde la $R_c$ es constante, pero sirve para tener una primera idea de su importancia en la eliminación de la transferencia de calor por conducción.
+\subsection{Efecto de la porosidad sobre la conducción}
+\begin{figure}[H]
+\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=1.0\textwidth]{figuras/Resultados/conduccion/pdf/Ppor_SiSiO2Si.pdf}
-		\caption{Efecto de la Porosidad }
+		\caption{Efecto de la Porosidad}
 		\label{fig:Ppor_SiSiO2Si}
 	\end{subfigure}
+	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=1.0\textwidth]{figuras/Resultados/conduccion/pdf/relPpor_SiSiO2Si.pdf}
-		\caption{Efecto de la Porosidad relativo }
+		\caption{Efecto de la Porosidad relativo}
 		\label{fig:relPpor_SiSiO2Si}
 	\end{subfigure}
-	\caption{ }
-	\label{fig:Pcond_SiSiO2Si}
+	\caption[Efectos de la porosidad del nano-espaciador sobre el flujo de calor por conducción]{Gráficas de los efectos de la resistencia de contacto sobre el flujo de calor por conducción. (\subref{fig:Ppor_SiSiO2Si}) Efecto del grado de porosidad del $SiO_2$ sobre el flujo de calor por conducción para unos 0\%, 25\% y 50\%. (\subref{fig:relPpor_SiSiO2Si}) Relación de los efectos de la porosidad en la transmisión de calor por conducción respecto a la porosidad del 0\%.}
+	\label{fig:PcondPor_SiSiO2Si}
 \end{figure}
-Para un área de 9$\mu m^2$ la resistencia de contacto total es aproximadamente de $444.44\cdot 10^3 \ K/W$ comparada con los $85.43\cdot 10^3 \ K/W$ de la mayor resistencia que presenta el nano-espaciador con 1000nm de altura y a 25\textdegree C es al menos 5 veces más grande, por lo cual, como se observa en las figuras \ref{fig:Prc_SiSiO2Si} y \ref{fig:Prc2_SiSiO2Si}, la resistencia de contacto domina sobre la resistencia del nano-espaciador dando así la forma aproximada de una recta porque la mayor caída de temperatura se dá en la superficie de contacto. 
-\[Rel=\frac{\left| P_{Porosidad}- P_{Normal} \right|}{P_{Normal}}\cdot 100\]
-\[P(d,p1(p),q1(p))=\frac{p1(p)}{d+q1(p)}\]
-\[p1(p)=-16.47\cdot p +11.03 \ q1(p)=-106.80\cdot p+74.68\]
-\[P(d,p)=\frac{  16.47\cdot p-11.03 }{d-106.80\cdot p +74.68}\]
-\subsection{Efectos de la resistencia de contacto}
-
-De las simulaciones de transmisión de calor de CFD, se obtienen los siguientes resultados:
+%% Ahora a comentar sobre las porosidades
+Para diferentes porosidades la conductividad térmica varía, disminuyendo con el aumento del grado de porosidad \cite{ThermalConductivity_SiO2_2018}, por este motivo la potencia de conducción disminuye para todas las alturas de nano-espaciador. La relación o conductividad térmica normalizada para una porosidad del 25\% y 50\% son respectivamente 0.64 y 0.25 veces la conductividad térmica del material \cite{ThermalConductivity_SiO2_2018}.\\\\
+Como se puede observar en las figuras \ref{fig:Prc_SiSiO2Si} y \ref{fig:Prc2_SiSiO2Si} las relaciones de potencia no se cumplen completamente porque la temperatura en todo el nano-espaciador no es la misma lo que produce que la conductividad térmica a lo largo del espaciador sea distinta. Por tal motivo, al disminuir la altura del nano-espaciador aumenta la relación porque aumenta el gradiente de temperatura.\\\\
+Utilizando la aplicación \textbf{Curve Fitting} de MATLAB se obtiene un modelo matemático que relaciona la potencia de conducción respecto a la altura del nano-espaciador ($d$) y la porosidad del material del nano-espaciador ($\rho$), como se muestra en la ecuación \ref{eq:Pcond_d_p} donde $d$ es en nanómetros.
+\begin{equation}
+P(d,\rho)=\frac{  16.47\cdot \rho-11.03 }{d-106.80\cdot \rho +74.68}
+\label{eq:Pcond_d_p}
+\end{equation}
+%% RAD Si-SiO2-Si
+\subsection{Radiación de campo cercano}
+Para la radiación por campo cercano se utiliza la \textbf{calculadora de campo cercano} para dos placas gruesas de $Si$ para varias separaciones entre ellas. La radiación monocromática o potencia de radiación monocromática aumenta con la disminución de la distancia de separación como lo indica el componente exponencial en la ecuación \ref{eq:flujoEvasNF} de \cite{nfTPV_equations}, como se puede observar en la figura \ref{fig:rad_SiSi_ds}.
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.7\textwidth]{figuras/Resultados/radiacion/SiSi_ds.pdf}
+	\caption{Potencia de radiación monocromática para dos placas gruesas planas de $Si$ separadas diferentes distancias ($d$) en metros.}
+	\label{fig:rad_SiSi_ds}
+\end{figure}
+Realizando la integral para energías mayores a 0.7 eV se obtiene potencias del orden de $10^3 \ W/m^2$ (figura \ref{fig:prad_Eg_SiSi}) a diferencia de todo el rango disponible, hasta las $\sim$20 $\mu m$, cuyo orden es de $10^4 \ W/m^2$ (figura \ref{fig:prad_full_SiSi}), desaprovechándose una gran cantidad de energía.
+\begin{figure}[H]
+	\centering
+		\begin{subfigure}[b]{0.49\textwidth}
+	\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/radiacion/p_Eg_SiSi.pdf}
+	\caption{Potencia para energía mayor a 0.7 eV}
+	\label{fig:prad_Eg_SiSi}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.49\textwidth}
+	\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/radiacion/p_full_SiSi.pdf}
+	\caption{Potencia hasta las $\sim$20 $\mu m$}
+	\label{fig:prad_full_SiSi}
+\end{subfigure}
+	\caption{(\subref{fig:prad_Eg_SiSi}) Potencia por unidad de área transmitida por radiación por efecto de campo cercano para radiación monocromática de energía mayor a los 0.7 eV. (\subref{fig:prad_full_SiSi}) Potencia por unidad de área transmitida por radiación por efecto de campo cercano para radiación monocromática en todo el rango de longitudes de onda disponible.}
+	\label{fig:prad_SiSi}
+\end{figure}
+%% RELACION ENTRE COND Y RAD
+\subsection{Relación de transmisión por conducción y radiación}
+Para tener una primera mejor idea de los valores numéricos de los resultados obtenidos de las simulaciones de transmisión de calor por conducción y radiación de campo cercano se recolectan en la tabla \ref{tab:condTerSiSiO2Si}, estando en notación científica y con los decimales necesarios para una clara diferenciación de los resultados con el cambio de la distancia de separación entre emisor y célula.
 \begin{table}[H]
 	\centering
 		\begin{tabular}{|c||c|c|c|c||c|c|}
@@ -71,7 +120,7 @@ De las simulaciones de transmisión de calor de CFD, se obtienen los siguientes 
 			900&1,14E-02&1,48E-03&7,38E-03&3,04E-03&1,86E+03&4,14E+04\\ \hline
 			1000&1,04E-02&1,46E-03&6,68E-03&2,74E-03&1,80E+03&3,93E+04\\ \hline
 		\end{tabular}
-	\caption{Tabla de resultados de las simulaciones de conducción y radiación de campo cercano para diferentes alturas del nano-espaciador. Flujos de calor del TPV $Si-SiO_2-Si$ para diferentes alturas del nano-espaciador y para los casos sin $R_c$, con $R_c$ de \cite{nf_TPV_Pillars_SiO2}, sin $R_c$ pero con las proporciones de las porosidades de \cite{ThermalConductivity_SiO2_2018} para un 25\% y un 50\%.}
+	\caption{Tabla de resultados de las simulaciones de conducción y radiación de campo cercano para diferentes alturas del nano-espaciador. Flujos de calor del TPV $Si-SiO_2-Si$ para diferentes alturas del nano-espaciador, para los casos sin $R_c$ y con $R_c$ igual a $4 \cdot 10^{-6} \ m^2 K/W$ \cite{nf_TPV_Pillars_SiO2}, y sin $R_c$ pero con las proporciones de las porosidades de \cite{ThermalConductivity_SiO2_2018} para un 25\% y un 50\%.}
 	\label{tab:condTerSiSiO2Si}
 \end{table}
 \begin{figure}[H]
@@ -80,56 +129,38 @@ De las simulaciones de transmisión de calor de CFD, se obtienen los siguientes 
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiSi.png}
-		\caption{ }
+		\caption{Relación para Eg$>$0.7 eV}
 		\label{fig:rel_SiSiO2Si}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiSi_full.png}
-		\caption{ }
+		\caption{Relación en todo el rango disponible}
 		\label{fig:rel_SiSiO2Si_full}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiSi_Rc.png}
-		\caption{ }
+		\caption{Relación para Eg$>$0.7 eV y con $R_c$}
 		\label{fig:rel_SiSiO2Si_Rc}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiSi_Rc_full.png}
-		\caption{ }
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiSi_Rc_full_10.png}
+		\caption{Relación en todo el rango disponible y con $R_c$}
 		\label{fig:rel_SiSiO2Si_Rc_full}
 	\end{subfigure}
-	\caption{ }
+	\caption{Relación de la potencia radiada en un 1 $cm^2$ y conducción por cantidad de espaciadores en el centímetro cuadrado para el rango de Eg$>$ 0.7 eV sin $r_c$ (\subref{fig:rel_SiSiO2Si}) y con $R_c$ (\subref{fig:rel_SiSiO2Si_Rc}), y en todo el rango disponible de longitudes de onda sin (\subref{fig:rel_SiSiO2Si_full}) y con $R_c$ (\subref{fig:rel_SiSiO2Si_Rc_full}).}
 	\label{fig:relation_SiSiO2Si}
 \end{figure}
-
-\begin{figure}[H]
-	\centering
-	%% Si-SiO2-Si Eg
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiSi_Rc_full_10.png}
-		\caption{ }
-		\label{fig:rel_SiSiO2Si_Rc_full_10}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiSi_Rc_full_100.png}
-		\caption{ }
-		\label{fig:rel_SiSiO2Si_Rc_full_100}
-	\end{subfigure}
-	\caption{ }
-	\label{fig:relation_SiSiO2Si_zoomIn}
-\end{figure}
-
-\section{Caso 2: Sistema TPV de $Si-SiO_2-Ge$}
-\begin{table}[h]
+La cantidad de nano-espaciadores necesarios para varias relaciones entre la potencia conducida con y sin $R_c$ y la potencia radiada por campo cercano  se representan en las figuras \ref{fig:relation_SiSiO2Si}. Se observa como el efecto de la resistencia de contacto aumenta favorablemente el número de espaciadores necesarios para relaciones mayores de 10 y se observa como al aumentar la cantidad de radiación que se utiliza en la célula, aumenta el número de espaciadores que se pueden colocar para separar ambas placas, lo que implica que se puede mantener más estable la distancia de separación entre el emisor y la célula.\\\\
+ Para los casos con $R_c$ se pasa de unos 30 nano-espaciadores a unos 1000 nano-espaciadores máximos y como mínimo se pasa de unos $\sim$10 a más de 250 nano-espaciadores para una relación de 10.
+%%% AHORA EL CASO DE Si SiO2 y Ge
+\section{Resultados de las simulaciones para una TPV de Si-SiO2-Ge}
+\begin{table}[H]
 	\centering
 		\begin{tabular}{|c||c|c||c|c|}
 		\hline
@@ -223,7 +254,7 @@ Dist. (nm)&$P_{Normal}$&$P_{R_c-Empirico}$&$P_{Eg>0.7eV}$&$P_{full}$\\ \hline \h
 	\caption{ }
 	\label{fig:relation_SiSiO2Ge_zoomIn}
 \end{figure}
-\section{Caso 3: Sistema TPV de $SS-SiO_2-Ge$}
+\section{Caso 3: Sistema TPV de SS-SiO2-Ge}
 \begin{table}[h]
 	\centering
 		\begin{tabular}{|c||c|c|c|c||c|}
@@ -317,7 +348,7 @@ Dist. (nm)&$P_{Normal}$&$P_{R_c-Cal.Max}$&$P_{R_c-Cal.Inter}$&$P_{R_c-Empirico}$
 	\label{fig:rel_SsSiO2Ge_100}
 \end{figure}
 %%% 
-\section{Caso 4: Sistema TPV de $SiC-SiO_2-Ge$}
+\section{Caso 4: Sistema TPV de SiC-SiO2-Ge}
 \begin{table}[h]
 	\centering
 		\begin{tabular}{|c||c|c||c|c|}
