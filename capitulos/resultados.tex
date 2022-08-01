@@ -13,37 +13,39 @@ El procedimiento de extracción de resultados de CFD está definido en el punto 
 La conductividad térmica ($\sigma$) del $Si$ es 182.977 W/m\textdegree C y la del $SiO_2$ es 1.30067 W/m\textdegree C ambas a 25\textdegree C. De la simulación se extrae que el flujo de calor del sistema y la temperatura media máxima y mínima de las superficies de contacto del nano-espaciador con los otros componentes del sistema.\\\\
 La temperatura media máxima del nano-espaciador es 792.601\textdegree C, la temperatura media mínima del nano-espaciador es 32.3903\textdegree C y el flujo de calor es 0.00889793 W. Con los resultados de las temperaturas medias del nano-espaciador se obtiene un flujo de calor teórico de 0.00889905 W, obteniéndose un error relativo aproximado del 0.0126\%, por lo tanto el procedimiento es apropiado para la obtención de los resultados de las simulaciones de transmisión de calor por conducción.
 %%% SIMULACIONES DE TRANSMISIÓN DE CALOR POR CONDUCCIÓN EN CFD
-\section{Sistema TPV de Si-SiO2-Si}
-Primero se estudia un caso sencillo de un sistema TPV de emisor y célula de $Si$, el efecto de la resistencia de contacto entre emisor y nano-espaciador sobre el flujo de calor y el efecto de la porosidad del $SiO_2$ del nano-espaciador en la potencia de conducción. En segundo lugar se estudia la relación entre la potencia radiada en un 1$cm^2$ de emisor y célula, y la potencia conducida.\\
+\section{Resultados de las simulaciones para una TPV de Si-SiO2-Si}
+A continuación se estudian los efectos de la resistencia de contacto y la porosidad sobre un sistema sencillo compuesto por un emisor de $Si$ de 1 $mm$ lado y 0.2 $mm$ de altura con la cara superior a 800 \textdegree C, un nano-espaciador de 3 $\mu m$ de lado y una célula de $Si$ de las mismas dimensiones que el emisor con la cara inferior a 25\textdegree C.\\\\
+La resistencia de contacto usada es de unos $4\cdot 10^{-6} \ m^2 K/W$ \cite{nf_TPV_Pillars_SiO2} que es aplicada a la superficie superior del nano-espaciador que entra en contacto con la superficie inferior del emisor, solo se considera en dicha superficie porque el nano-espaciador será depositado sobre la superficie de la célula en la fase de fabricación.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=1.0\textwidth]{figuras/Resultados/conduccion/pdf/Prc_SiSiO2Si.pdf}
-		\caption{ }
+		\caption{Sin y con Resistencia un eje }
 		\label{fig:Prc_SiSiO2Si}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=1.0\textwidth]{figuras/Resultados/conduccion/pdf/Prc2_SiSiO2Si.pdf}
-		\caption{ }
+		\caption{Sin y con Resistencia dos eje }
 		\label{fig:Prc2_SiSiO2Si}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=1.0\textwidth]{figuras/Resultados/conduccion/pdf/Ppor_SiSiO2Si.pdf}
-		\caption{ }
+		\caption{Efecto de la Porosidad }
 		\label{fig:Ppor_SiSiO2Si}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=1.0\textwidth]{figuras/Resultados/conduccion/pdf/relPpor_SiSiO2Si.pdf}
-		\caption{ }
+		\caption{Efecto de la Porosidad relativo }
 		\label{fig:relPpor_SiSiO2Si}
 	\end{subfigure}
 	\caption{ }
 	\label{fig:Pcond_SiSiO2Si}
 \end{figure}
+Para un área de 9$\mu m^2$ la resistencia de contacto total es aproximadamente de $444.44\cdot 10^3 \ K/W$ comparada con los $85.43\cdot 10^3 \ K/W$ de la mayor resistencia que presenta el nano-espaciador con 1000nm de altura y a 25\textdegree C es al menos 5 veces más grande, por lo cual, como se observa en las figuras \ref{fig:Prc_SiSiO2Si} y \ref{fig:Prc2_SiSiO2Si}, la resistencia de contacto domina sobre la resistencia del nano-espaciador dando así la forma aproximada de una recta porque la mayor caída de temperatura se dá en la superficie de contacto. 
 \[Rel=\frac{\left| P_{Porosidad}- P_{Normal} \right|}{P_{Normal}}\cdot 100\]
 \[P(d,p1(p),q1(p))=\frac{p1(p)}{d+q1(p)}\]
 \[p1(p)=-16.47\cdot p +11.03 \ q1(p)=-106.80\cdot p+74.68\]
@@ -401,5 +403,11 @@ relleno
 	\caption{nano-espaciador de Si}
 	\label{tab:nanoEspaciadorDeSi}
 \end{table}
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.6\textwidth]{figuras/Resultados/conduccion/relaciones_SiySiO2.png}
+	\caption{ }
+	\label{fig:relaciones_SiySiO2}
+\end{figure}
 
 \section{Discusión}
