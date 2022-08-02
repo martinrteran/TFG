@@ -160,6 +160,64 @@ La cantidad de nano-espaciadores necesarios para varias relaciones entre la pote
  Para los casos con $R_c$ se pasa de unos 30 nano-espaciadores a unos 1000 nano-espaciadores máximos y como mínimo se pasa de unos $\sim$10 a más de 250 nano-espaciadores para una relación de 10.
 %%% AHORA EL CASO DE Si SiO2 y Ge
 \section{Resultados de las simulaciones para una TPV de Si-SiO2-Ge}
+Ahora se procede a estudiar un caso más realista del sistema TPV con una célula de $Ge$ cuya banda energética es de 0.7 eV. Cuyos resultados de conducción son muy parecidos al caso de célula de $Si$ , siendo su relación de potencia (figura \ref{fig:relPrc_SiSiO2Ge}) un poco mayor.
+\begin{figure}[H]
+	\centering
+	%% Si-SiO2-Si Eg
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/conduccion/pdf/Prc2_SiSiO2Ge.pdf}
+		\caption{Potencias de conducción}
+		\label{fig:Prc_SiSiO2Ge}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=0.92\textwidth]{figuras/Resultados/conduccion/pdf/relPrc_SiSiO2Ge.pdf}
+		\caption{Relación de $P_{R_c}$ respecto a $P$}
+		\label{fig:relPrc_SiSiO2Ge}
+	\end{subfigure}
+	\caption{(\subref{fig:Prc_SiSiO2Ge}) Potencia de conducción con y si resistencia de contacto empírica \cite{nf_TPV_Pillars_SiO2}. (\subref{fig:relPrc_SiSiO2Ge}) Relación de la potencia de conducción del caso con resistencia de contacto respecto a la potencia de conducción sin resistencia de contacto.}
+	\label{fig:Pcond_SiSiO2Ge}
+\end{figure}
+De las simulaciones de radiación de campo cercano se obtienen también resultados muy parecidos a los obtenidos en el caso de la célula de $Si$ (figura \ref{fig:SiSi_vs_SiGe}), solo mostrándose hasta los $\sim$14$\mu m$ de longitud de onda, donde se observa como al disminuir la distancia de separación aumenta la potencia de radiación monocromática (figura \ref{fig:rad_SiGe}).
+\begin{figure}[H]
+\centering
+\begin{subfigure}[b]{0.49\textwidth}
+	\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/radiacion/SiGe.pdf}
+	\caption{Potencia monocromática para varias $d$}
+	\label{fig:rad_SiGe}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.49\textwidth}
+	\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/radiacion/SiSi_vs_SiGe.pdf}
+	\caption{Comparación de células de $Si$ y $Ge$}
+	\label{fig:SiSi_vs_SiGe}
+\end{subfigure}
+\caption{(\subref{fig:rad_SiGe}) Potencia radiada por campo cercano para diferentes separación entre placas para un emisor de $Si$ a 800\textdegree C y una célula de $Ge$ a 25\textdegree C. (\subref{fig:SiSi_vs_SiGe}) Comparación de la potencia radiada monocromática para una separación de 1000nm entre el sistema $Si-Si$ y $Si-Ge$.}
+\label{fig:rads_SiGe}
+\end{figure}
+Se realiza la integral en el rango de longitudes de onda cuya energía es mayor a los 0.7 eV, obteniéndose potencias alrededor de los $10^3 \ W/m^2$ (figura \ref{fig:p_Eg_SiGe}). Para todo el rango disponible de longitudes de onda se obtiene alrededor de los $10^4 \ W/m^2$ (figura \ref{fig:p_full_SiGe}).
+\begin{figure}[H]
+\centering
+\begin{subfigure}[b]{0.49\textwidth}
+	\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/radiacion/p_Eg_SiGe.pdf}
+	\caption{ }
+	\label{fig:p_Eg_SiGe}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth}
+	\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/radiacion/p_full_SiGe.pdf}
+	\caption{ }
+	\label{fig:p_full_SiGe}
+\end{subfigure}
+	\caption{ }
+	\label{fig:p_SiGe}
+\end{figure}
+
 \begin{table}[H]
 	\centering
 		\begin{tabular}{|c||c|c||c|c|}
@@ -181,25 +239,6 @@ Dist. (nm)&$P_{Normal}$&$P_{R_c-Empirico}$&$P_{Eg>0.7eV}$&$P_{full}$\\ \hline \h
 	\caption{cs}
 	\label{tab:cs}
 \end{table}
-\begin{figure}[H]
-	\centering
-	%% Si-SiO2-Si Eg
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=1.00\textwidth]{figuras/Resultados/conduccion/pdf/Prc_SiSiO2Ge.pdf}
-		\caption{ }
-		\label{fig:Prc_SiSiO2Ge}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=1.00\textwidth]{figuras/Resultados/conduccion/pdf/Prc2_SiSiO2Ge.pdf}
-		\caption{ }
-		\label{fig:Prc2_SiSiO2Ge}
-	\end{subfigure}
-	\caption{ }
-	\label{fig:Pcond_SiSiO2Ge}
-\end{figure}
 
 \begin{figure}[H]
 	\centering
@@ -254,7 +293,7 @@ Dist. (nm)&$P_{Normal}$&$P_{R_c-Empirico}$&$P_{Eg>0.7eV}$&$P_{full}$\\ \hline \h
 	\caption{ }
 	\label{fig:relation_SiSiO2Ge_zoomIn}
 \end{figure}
-\section{Caso 3: Sistema TPV de SS-SiO2-Ge}
+\section{Resultados de las simulaciones para una TPV de SS-SiO2-Ge}
 \begin{table}[h]
 	\centering
 		\begin{tabular}{|c||c|c|c|c||c|}
@@ -348,7 +387,7 @@ Dist. (nm)&$P_{Normal}$&$P_{R_c-Cal.Max}$&$P_{R_c-Cal.Inter}$&$P_{R_c-Empirico}$
 	\label{fig:rel_SsSiO2Ge_100}
 \end{figure}
 %%% 
-\section{Caso 4: Sistema TPV de SiC-SiO2-Ge}
+\section{Resultados de las simulaciones para una TPV de SiC-SiO2-Ge}
 \begin{table}[h]
 	\centering
 		\begin{tabular}{|c||c|c||c|c|}
@@ -413,7 +452,7 @@ relleno
 	\label{fig:relation_SiCSiO2Ge}
 \end{figure}
 
-\section{Resultados}
+\section{Resultados de las simulaciones para una TPV de Si-Si-Ge y SS-Si-Ge}
 %% comparar el efecto de cambiar el material del nano-espaciador
 \begin{table}[H]
 	\centering
