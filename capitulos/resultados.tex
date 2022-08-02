@@ -66,28 +66,28 @@ Hay que tomar en cuenta que la resistencia de contacto en la realidad no es cons
 %% Ahora a comentar sobre las porosidades
 Para diferentes porosidades la conductividad térmica varía, disminuyendo con el aumento del grado de porosidad \cite{ThermalConductivity_SiO2_2018}, por este motivo la potencia de conducción disminuye para todas las alturas de nano-espaciador. La relación o conductividad térmica normalizada para una porosidad del 25\% y 50\% son respectivamente 0.64 y 0.25 veces la conductividad térmica del material \cite{ThermalConductivity_SiO2_2018}.\\\\
 Como se puede observar en las figuras \ref{fig:Prc_SiSiO2Si} y \ref{fig:Prc2_SiSiO2Si} las relaciones de potencia no se cumplen completamente porque la temperatura en todo el nano-espaciador no es la misma lo que produce que la conductividad térmica a lo largo del espaciador sea distinta. Por tal motivo, al disminuir la altura del nano-espaciador aumenta la relación porque aumenta el gradiente de temperatura.\\\\
-Utilizando la aplicación \textbf{Curve Fitting} de MATLAB se obtiene un modelo matemático que relaciona la potencia de conducción respecto a la altura del nano-espaciador ($d$) y la porosidad del material del nano-espaciador ($\rho$), como se muestra en la ecuación \ref{eq:Pcond_d_p} donde $d$ es en nanómetros.
+Utilizando la aplicación \textbf{Curve Fitting} de MATLAB se obtiene un modelo matemático que relaciona la potencia de conducción respecto a la altura del nano-espaciador ($d$) y la porosidad del material del nano-espaciador ($\rho$), como se muestra en la ecuación \eqref{eq:Pcond_d_p} donde $d$ es en nanómetros.
 \begin{equation}
 P(d,\rho)=\frac{  16.47\cdot \rho-11.03 }{d-106.80\cdot \rho +74.68}
 \label{eq:Pcond_d_p}
 \end{equation}
 %% RAD Si-SiO2-Si
 \subsection{Radiación de campo cercano}
-Para la radiación por campo cercano se utiliza la \textbf{calculadora de campo cercano} para dos placas gruesas de $Si$ para varias separaciones entre ellas. La radiación monocromática o potencia de radiación monocromática aumenta con la disminución de la distancia de separación como lo indica el componente exponencial en la ecuación \ref{eq:flujoEvasNF} de \cite{nfTPV_equations}, como se puede observar en la figura \ref{fig:rad_SiSi_ds}.
+Para la radiación por campo cercano se utiliza la \textbf{calculadora de campo cercano} para dos placas gruesas de $Si$ para varias separaciones entre ellas. La radiación monocromática o potencia de radiación monocromática aumenta con la disminución de la distancia de separación como lo indica el componente exponencial en la ecuación \eqref{eq:flujoEvasNF} de \cite{nfTPV_equations}, como se puede observar en la figura \ref{fig:rad_SiSi_ds}.
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.7\textwidth]{figuras/Resultados/radiacion/SiSi_ds.pdf}
 	\caption{Potencia de radiación monocromática para dos placas gruesas planas de $Si$ separadas diferentes distancias ($d$) en metros.}
 	\label{fig:rad_SiSi_ds}
 \end{figure}
-Realizando la integral para energías mayores a 0.7 eV se obtiene potencias del orden de $10^3 \ W/m^2$ (figura \ref{fig:prad_Eg_SiSi}) a diferencia de todo el rango disponible, hasta las $\sim$20 $\mu m$, cuyo orden es de $10^4 \ W/m^2$ (figura \ref{fig:prad_full_SiSi}), desaprovechándose una gran cantidad de energía.
+Realizando la integral de la potencia monocromática en el rango de longitudes de onda con energías mayores a 1.1 eV, energía de banda del $Si$, se obtiene en promedio potencias del orden de $60 \ W/m^2$ (figura \ref{fig:prad_Eg11_SiSi}) a diferencia de todo el rango disponible, hasta las $\sim$20 $\mu m$, cuyo orden es de $10^4 \ W/m^2$ (figura \ref{fig:prad_full_SiSi}), desaprovechándose una gran cantidad de energía.
 \begin{figure}[H]
 	\centering
 		\begin{subfigure}[b]{0.49\textwidth}
 	\centering
-		\includegraphics[width=1.00\textwidth]{figuras/Resultados/radiacion/p_Eg_SiSi.pdf}
-	\caption{Potencia para energía mayor a 0.7 eV}
-	\label{fig:prad_Eg_SiSi}
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/radiacion/p_11_SiSi.pdf}
+	\caption{Potencia para energía mayor a 1.1 eV}
+	\label{fig:prad_Eg11_SiSi}
 \end{subfigure}
 \hfill
 \begin{subfigure}[b]{0.49\textwidth}
@@ -96,9 +96,36 @@ Realizando la integral para energías mayores a 0.7 eV se obtiene potencias del 
 	\caption{Potencia hasta las $\sim$20 $\mu m$}
 	\label{fig:prad_full_SiSi}
 \end{subfigure}
-	\caption{(\subref{fig:prad_Eg_SiSi}) Potencia por unidad de área transmitida por radiación por efecto de campo cercano para radiación monocromática de energía mayor a los 0.7 eV. (\subref{fig:prad_full_SiSi}) Potencia por unidad de área transmitida por radiación por efecto de campo cercano para radiación monocromática en todo el rango de longitudes de onda disponible.}
+	\caption{(\subref{fig:prad_Eg11_SiSi}) Potencia por unidad de área transmitida por radiación por efecto de campo cercano para radiación monocromática de energía mayor a los 1.1 eV. (\subref{fig:prad_full_SiSi}) Potencia por unidad de área transmitida por radiación por efecto de campo cercano para radiación monocromática en todo el rango de longitudes de onda disponible.}
 	\label{fig:prad_SiSi}
 \end{figure}
+Las potencias obtenidas para el rango de longitudes de onda mayor a la banda energética del $Si$ son muy pequeñas (figura \ref{fig:prad_Eg11_SiSi}), produciendo que no sea viable este sistema porque las pérdidas por conducción son demasiado grandes para 10 nano-espaciadores o más en el mejor caso con resistencia de contacto (figura \ref{fig:rel_SiSi11_Rc}).
+\begin{figure}[H]
+	\centering
+\begin{subfigure}[b]{0.49\textwidth}
+	\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/rel_SiSi11.pdf}
+	\caption{Relación de potencias para Eg$>$1.1 eV}
+	\label{fig:rel_SiSi11}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.49\textwidth}
+	\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/rel_SiSi11_Rc.pdf}
+	\caption{Relación de potencias para Eg$>$1.1 eV con $R_c$}
+	\label{fig:rel_SiSi11_Rc}
+\end{subfigure}
+\caption{Relación de las potencias de radiación y conducción para un sistema TPV de 1$cm^2$ y célula de $Si$. (\subref{fig:rel_SiSi11}) Relación de las potencias para Eg$>$1.1 eV y si $R_c$. (\subref{fig:rel_SiSi11_Rc}) Relación de las potencias para Eg$>$1.1 eV y con $R_c$ \cite{nf_TPV_Pillars_SiO2}.}
+	\label{fig:rels_SiSi11}
+\end{figure}
+Por lo tanto se procede a calcular la potencia por unidad de área de la radiación en el rango de longitudes de onda de energías mayor e igual a 0.7 eV (banda energética del $Ge$), utilizándose estos nuevos resultados para el resto de comparaciones para así tener una primera referencia de como será el sistema TPV en la realidad.
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.65\textwidth]{figuras/Resultados/radiacion/p_Eg_SiSi.pdf}
+	\caption{Potencia por unidad de área de la radiación por campo cercano en el rango de longitudes de onda de energía mayor e igual a 0.7eV.}
+	\label{fig:p_Eg_SiSi}
+\end{figure}
+Como se puede observar en la figura \ref{fig:p_Eg_SiSi} al aumentar el rango de integración o disminuir la banda energética, aumenta la potencia que llega por radiación, lo que produce el aumento de energía que se puede convertir en electricidad.
 %% RELACION ENTRE COND Y RAD
 \subsection{Relación de transmisión por conducción y radiación}
 Para tener una primera mejor idea de los valores numéricos de los resultados obtenidos de las simulaciones de transmisión de calor por conducción y radiación de campo cercano se recolectan en la tabla \ref{tab:condTerSiSiO2Si}, estando en notación científica y con los decimales necesarios para una clara diferenciación de los resultados con el cambio de la distancia de separación entre emisor y célula.
@@ -199,25 +226,25 @@ De las simulaciones de radiación de campo cercano se obtienen también resultad
 \caption{(\subref{fig:rad_SiGe}) Potencia radiada por campo cercano para diferentes separación entre placas para un emisor de $Si$ a 800\textdegree C y una célula de $Ge$ a 25\textdegree C. (\subref{fig:SiSi_vs_SiGe}) Comparación de la potencia radiada monocromática para una separación de 1000nm entre el sistema $Si-Si$ y $Si-Ge$.}
 \label{fig:rads_SiGe}
 \end{figure}
-Se realiza la integral en el rango de longitudes de onda cuya energía es mayor a los 0.7 eV, obteniéndose potencias alrededor de los $10^3 \ W/m^2$ (figura \ref{fig:p_Eg_SiGe}). Para todo el rango disponible de longitudes de onda se obtiene alrededor de los $10^4 \ W/m^2$ (figura \ref{fig:p_full_SiGe}).
+Para la obtención de las potencias de radiación se procede a realizar la integral en el rango de longitudes de onda cuya energía es mayor a los 0.7 eV, obteniéndose potencias alrededor de los $10^3 \ W/m^2$ (figura \ref{fig:p_Eg_SiGe}). Para todo el rango disponible de longitudes de onda se obtiene alrededor de los $10^4 \ W/m^2$ con un máximo de $\sim$1.5$10^5 \ W/m^2$ (figura \ref{fig:p_full_SiGe} y tabla ref{tab:SiSiO2Ge}). 
 \begin{figure}[H]
 \centering
 \begin{subfigure}[b]{0.49\textwidth}
 	\centering
 		\includegraphics[width=1.00\textwidth]{figuras/Resultados/radiacion/p_Eg_SiGe.pdf}
-	\caption{ }
+	\caption{Potencia para Eg$>$0.7eV}
 	\label{fig:p_Eg_SiGe}
 \end{subfigure}
 \begin{subfigure}[b]{0.49\textwidth}
 	\centering
 		\includegraphics[width=1.00\textwidth]{figuras/Resultados/radiacion/p_full_SiGe.pdf}
-	\caption{ }
+	\caption{Potencia hasta $\sim$14$\mu m$}
 	\label{fig:p_full_SiGe}
 \end{subfigure}
-	\caption{ }
+	\caption[Potencias por unidad de área para la radiación de campo cercano para el sistema $Si-SiO_2-Ge$ para diferentes alturas del nano-espaciador]{Potencias por unidad de área para la radiación de campo cercano para el sistema $Si-SiO_2-Ge$ para diferentes alturas del nano-espaciador. (\subref{fig:p_Eg_SiGe}) Potencias en el rango de todas las longitudes de onda de energía mayor a 0.7 eV. (\subref{fig:p_full_SiGe}) Potencias en todo el rango disponible de longitudes de onda, hasta las $\sim$14$\mu m$.}
 	\label{fig:p_SiGe}
 \end{figure}
-
+Para facilitar la revisión de los resultados obtenidos de las simulaciones se agrupan en la tabla \ref{tab:SiSiO2Ge}, donde se presentan en notación científica para facilitar la observación de la magnitud de los resultados.
 \begin{table}[H]
 	\centering
 		\begin{tabular}{|c||c|c||c|c|}
@@ -236,65 +263,88 @@ Dist. (nm)&$P_{Normal}$&$P_{R_c-Empirico}$&$P_{Eg>0.7eV}$&$P_{full}$\\ \hline \h
 900&1,12E-02&1,48E-03&1,78E+03&3,67E+04\\ \hline 
 1000&1,02E-02&1,46E-03&1,73E+03&3,49E+04\\ \hline 
 		\end{tabular}
-	\caption{cs}
-	\label{tab:cs}
+	\caption{Tabla de las potencias de resultado de las simulaciones de transmisión de calor por radiación de campo cercano y conducción para el sistema TPV $Si-SiO_2-Ge$.}
+	\label{tab:SiSiO2Ge}
 \end{table}
-
+Hay que tener en cuenta que para un centímetro cuadrado las columnas de la transmisión de calor por radiación de la tabla \ref{tab:SiSiO2Ge} se ven multiplicadas por $10^{-4}$, por lo tanto, la potencia de radiación con $E_g>0.7eV$ en un centímetro cuadrado es solamente $\sim$10 mayor que la potencia conducida sin resistencia de contacto para un nano-espaciador, pero $\sim$100 veces mayor que la potencia conducida con resistencia de contacto.
 \begin{figure}[H]
 	\centering
 	%% Si-SiO2-Si Eg
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiGe.png}
-		\caption{ }
+		\caption{$E>0.7eV$}
 		\label{fig:rel_SiSiO2Ge}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiGe_full.png}
-		\caption{ }
+		\caption{rango completo}
 		\label{fig:rel_SiSiO2Ge_full}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiGe_Rc.png}
-		\caption{ }
+		\caption{$E>0.7eV$ y con $R_c$}
 		\label{fig:rel_SiSiO2Ge_Rc}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiGe_Rc_full.png}
-		\caption{ }
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiGe_Rc_full_10.png}
+		\caption{rango completo y con $R_c$}
 		\label{fig:rel_SiSiO2Ge_Rc_full}
 	\end{subfigure}
-	\caption{ }
+	\caption[Relaciones entre la potencia de conducción para diferentes cantidades de nano-espaciadores y la potencia de radiación en 1$cm^2$ para diferentes distancias de separación o alturas de nano-espaciador]{Relaciones entre la potencia de conducción para diferentes cantidades de nano-espaciadores y la potencia de radiación en 1$cm^2$ para diferentes distancias de separación o alturas de nano-espaciador. (\subref{fig:rel_SiSiO2Ge}) Relación de las potencias sin resistencia de contacto y la radiación en un rango de energía mayor a 0.7eV. (\subref{fig:rel_SiSiO2Ge_full}) Relación de las potencias sin resistencia de contacto y la radiación en todo el rango disponible. (\subref{fig:rel_SiSiO2Ge_Rc}) Relación de las potencias con resistencia de contacto \cite{nf_TPV_Pillars_SiO2} y la radiación en un rango de energía mayor a 0.7eV. (\subref{fig:rel_SiSiO2Ge_Rc_full}) Relación de las potencias con resistencia de contacto \cite{nf_TPV_Pillars_SiO2} y la radiación en todo el rango disponible.}
 	\label{fig:relation_SiSiO2Ge}
 \end{figure}
-
+Como se observa en las figuras \ref{fig:relation_SiSiO2Ge} la resistencia de contacto tiene un efecto muy favorable sobre el sistema TPV aumentando la relación entre las potencias y el número de espaciadores que se pueden utilizar para separar el emisor y la célula. También afecta a la forma de la curva de relaciones, cambiando el sentido del incremento de los números de espaciadores a una relación de 10 por cada distancia de separación porque cuando no existe resistencia de contacto la resistencia del nano-espaciador depende principalmente de su altura (figuras \ref{fig:rel_SiSiO2Ge} y \ref{fig:rel_SiSiO2Ge_full}) y cuando existe resistencia de contacto el flujo de calor por conducción es tan pequeño respecto al de radiación que se puede considerar casi una recta y depende principalmente de la radiación por campo cercano (figuras \ref{fig:rel_SiSiO2Ge_Rc} y \ref{fig:rel_SiSiO2Ge_Rc_full}). \\\\
+\section{Resultados de las simulaciones para una TPV de SS-SiO2-Ge}
+Un caso importante a estudiar es cuando el emisor es de acero inoxidable ($SS$) para la recuperación de calor residual porque en la industria se utiliza mucho el acero inoxidable como material para calderas, tuberías, entre otros componentes o máquinas que alcanzan altas temperaturas y que tienen que se enfriadas mediante un intercambiadores de calor que se conectan a turbinas de vapor para recuperar parte de la energía, presentando el problema de trabajar con fluidos y partes móviles que necesitan mantenimiento.\\\\
+Para las simulaciones de transmisión de calor por conducción se estudian los efectos de resistencias de contacto aún mayores, obtenidas las conductancias de contacto entre dos trozos de acero 304 y mediante las ecuaciones \eqref{eq:relacion_conductividadesTermicas} y \eqref{eq:relacion_Rc} se obtienen las resistencia de contacto para una presión de $\sim$1 GPa por ser un valor con menor error respecto al modelo matemático \cite{experimental_Rc_SS}, siendo dicho valor aproximadamente unos 1000 $W/(m^2 K)$ .\\\\
+La nueva resistencia de contacto calculada es $5.5\cdot 10^{-3} \ m^2 K/W$ y se toma un valor intermedio entre dicha resistencia de contacto y la resistencia de contacto empírica de $4\cdot 10^{-6} \ m^2 K/W$ \cite{nf_TPV_Pillars_SiO2} para obtener en mayor detalle los efectos de la resistencia de contacto sobre el flujo de calor por conducción, siendo el valor de dicha resistencia de contacto calculada intermedia unos $\sim 2.75\cdot 10^{-3} \ m^2 K/W$.
 \begin{figure}[H]
 	\centering
-	%% Si-SiO2-Si Eg
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiGe_Rc_full_10.png}
-		\caption{ }
-		\label{fig:rel_SiSiO2Ge_Rc_full_10}
+			\includegraphics[width=1.00\textwidth]{figuras/Resultados/conduccion/pdf/Prcs_SsSiO2Ge.pdf}
+		\caption{Potencias de conducción}
+		\label{fig:Prcs_SsSiO2Ge}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiGe_Rc_full_100.png}
-		\caption{ }
-		\label{fig:rel_SiSiO2Ge_Rc_full_100}
+			\includegraphics[width=1.00\textwidth]{figuras/Resultados/conduccion/pdf/relPrcs_SsSiO2Ge.pdf}
+		\caption{Relaciones de potencias con $R_c$ respecto sin $R_c$}
+		\label{fig:relPrcs_SsSiO2Ge}
 	\end{subfigure}
-	\caption{ }
-	\label{fig:relation_SiSiO2Ge_zoomIn}
+	\caption{ (\subref{fig:Prcs_SsSiO2Ge}) Potencias de conducción sin y con resistencias de contacto para un emisor de $SS$, las resistencias de contacto son de $4\cdot 10^{-6} \ m^2 K/W$ para la $R_c$ empírica, $5.5\cdot 10^{-3} \ m^2 K/W$ para la $R_c$ cal. max y $2.75\cdot 10^{-3} \ m^2 K/W$ para la $R_c$ cal. inter. (\subref{fig:relPrcs_SsSiO2Ge}) Relaciones de las potencias con $R_c$ respecto a la potencia conducida sin $R_c$.}
+	\label{fig:Pcond_SsSiO2Ge}
 \end{figure}
-\section{Resultados de las simulaciones para una TPV de SS-SiO2-Ge}
-\begin{table}[h]
+Al aumentar la resistencia de contacto disminuye el flujo de calor por conducción porque aumenta la resistencia térmica total como se puede observar e la figura \ref{fig:Prcs_SsSiO2Ge} donde las resistencia de contacto calculadas son tan pequeñas que casi no se ven. Para tener una mejor visualización de los efectos de las resistencias de contacto se calcula la relación de cada una respecto a la potencia conducida sin resistencia de contacto, obteniéndose a como es de esperar que para las resistencias de contacto calculadas, es decir, las de mayor valor, la relación es muy pequeña menos de un 0.03\%, a diferencia de la $R_c$ empírica que comparada con las relaciones de los casos de TPV $Si-SiO_2-Ge$ es un poco mayor, superando el 3\% como mínimo y aproximadamente uno 14.5\% en su máximo.\\\\
+Dada la alta complejidad de la variación de la resistencia de contacto no se obtiene un modelo matemático que relaciona la potencia de conducción por resistencia de contacto y por altura de nano-espaciador.\\\\
+Para la simulación de radiación de campo cercano solo se considera los resultados en el rango de energía mayor a 0.7eV o $\sim$1.8 $\mu m$ porque los datos de el índice de refracción $n$ y índice de extinción $k$ llegan hasta los 1.2 $\mu m$, realizando una extrapolación lineal hasta los 1.8$\mu m$ para poder obtener las potencias de radiación para diferentes distancias de separación.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+	\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/radiacion/SsGe.pdf}
+	\caption{Potencia monocromática}
+	\label{fig:SsGe}
+\end{subfigure}
+\begin{subfigure}[b]{0.49\textwidth}
+	\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/radiacion/p_Eg_SsGe.pdf}
+	\caption{Potencia hasta 0.7 eV}
+	\label{fig:p_Eg_SsGe}
+\end{subfigure}
+\caption{(\subref{fig:SsGe}) Potencia radiada monocromática por campo cercano para un emisor de $SS$ y una célula de $Ge$. (\subref{fig:p_Eg_SsGe}) Potencia radiada para un rango de longitudes de onda cuya energía es mayor a los 0.7eV ($\sim 1.8 \ \mu m$).}
+	\label{fig:rad_SsGe}
+\end{figure}
+Las potencias por unidad de área se encuentran en general en el rango de los miles de $W/m^2$, siendo inferior a la del $Si$ pero no por un factor de magnitud.
+\begin{table}[H]
 	\centering
 		\begin{tabular}{|c||c|c|c|c||c|}
 		\hline
@@ -312,81 +362,45 @@ Dist. (nm)&$P_{Normal}$&$P_{R_c-Cal.Max}$&$P_{R_c-Cal.Inter}$&$P_{R_c-Empirico}$
 900&1,11E-02&1,26800E-06&2,53381E-06&1,48E-03&1,14E+03\\ \hline 
 1000&1,01E-02&1,26799E-06&2,53374E-06&1,45E-03&1,08E+03\\ \hline 
 		\end{tabular}
-	\caption{daa}
-	\label{tab:daa}
+	\caption{Tabla de recopilación de los resultados de las simulaciones de transmisión de calor por conducción y radiación de campo cercano para una TPV de emisor de $SS$.}
+	\label{tab:SsSiO2Ge}
 \end{table}
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-			\includegraphics[width=1.00\textwidth]{figuras/Resultados/conduccion/pdf/relPrcs_SsSiO2Ge.pdf}
-		\caption{ }
-		\label{fig:relPrcs_SsSiO2Ge}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-			\includegraphics[width=1.00\textwidth]{figuras/Resultados/conduccion/pdf/Prcs_SsSiO2Ge.pdf}
-		\caption{ }
-		\label{fig:Prcs_SsSiO2Ge}
-	\end{subfigure}
-	\caption{ }
-	\label{fig:Pcond_SsSiO2Ge}
-\end{figure}
-
+ Se recopilan los resultados de las simulaciones en la tabla \ref{tab:SsSiO2Ge} y se observa que para un centímetro cuadrado de superficie de radiación las potencias se encuentran en el rango de los 0.1 $W$, no siendo suficientemente mayor para que para un nano-espaciador la relación de las potencias para todas las distancias sea $\sim$10 (figura \ref{fig:rel_SsSiO2Ge}), pero para los casos con resistencia de contacto sí que se cumple. 
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 			\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SS.png}
-		\caption{ }
+		\caption{Sin $R_c$}
 		\label{fig:rel_SsSiO2Ge}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 			\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SS_Rc_empirico.png}
-		\caption{ empirico}
+		\caption{$R_c$ empírica}
 		\label{fig:rel_SsSiO2Ge_Rc_emp}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 			\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SS_Rc.png}
-		\caption{ max}
+		\caption{$R_c$ calculada máxima}
 		\label{fig:rel_SsSiO2Ge_Rc_max}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
 			\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SS_Rc_Intermedio.png}
-		\caption{ intermedio}
+		\caption{$R_c$ calculada intermedia}
 		\label{fig:rel_SsSiO2Ge_Rc_inter}
 	\end{subfigure}
-	\caption{ }
+	\caption[Relación de las potencias de conducción y radiación para un emisor de $SS$ según el número de nano-espaciadores y la altura de los nano-espaciadores para un emisor y célula de 1 $cm^2$]{Relación de las potencias de conducción y radiación para un emisor de $SS$ según el número de nano-espaciadores y la altura de los nano-espaciadores para un emisor y célula de 1 $cm^2$. (\subref{fig:rel_SsSiO2Ge}) Relación de potencias sin $R_c$. (\subref{fig:rel_SsSiO2Ge_Rc_emp}) Relación de potencias con $R_c$ empírica \cite{nf_TPV_Pillars_SiO2}. (\subref{fig:rel_SsSiO2Ge_Rc_max}) Relación de potencias con $R_c$ calculada máxima. (\subref{fig:rel_SsSiO2Ge_Rc_inter}) Relación de potencias con $R_c$ calculada intermedia. }
 	\label{fig:relation_SsSiO2Ge}
 \end{figure}
+Para el caso que la $R_c$ empírica la cantidad máxima de nano-espaciadores para una relación de $\sim$10 entre las potencias no supera los 20 nano-espaciadores (figura \ref{fig:rel_SsSiO2Ge_Rc_emp}), a diferencia del TPV con emisor de $Si$ que casi llega a los 30 nano-espaciadores (figura \ref{fig:rel_SiSiO2Ge_Rc}).\\\\
+Para el resto de casos de $R_c$ la cantidad de nano-espaciadores para tener una relación de mínimo 10 supera la cantidad de mil, lo que implica que al disminuir el número de nano-espaciadores aumenta considerablemente la relación entre las potencias de conducción y radiación, siendo aproximadamente unos 2500 y 1000 nano-espaciadores para la $R_c$ máxima y la $R_c$ intermedia, respectivamente.
 
-\begin{figure}[H]
-	\centering
-	%% Si-SiO2-Si Eg
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SS_Rc_Intermedio_100.png}
-		\caption{intermedio }
-		\label{fig:rel_SsSiO2Ge_Rc_inter_100}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SS_Rc_100s.png}
-		\caption{ }
-		\label{fig:rel_SsSiO2Ge_Rc_max_100}
-	\end{subfigure}
-	\caption{ }
-	\label{fig:rel_SsSiO2Ge_100}
-\end{figure}
-%%% 
 \section{Resultados de las simulaciones para una TPV de SiC-SiO2-Ge}
 \begin{table}[h]
 	\centering

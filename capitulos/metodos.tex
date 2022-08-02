@@ -58,7 +58,7 @@ La resistencia de contacto ($R_c$) es difícil de modelar matemáticamente en un
 	\label{eq:relacion_Rc}
 \end{equation}
 %%% YOVANOVICH
-Para los casos que la resistencia de contacto es presentada como conductancia de contacto según un modelo matemático \cite{experimental_Rc_SS}, según la ecuación de Cooper reducida por Yovanovich (ecuación \ref{eq:modeloYovanovich}).
+Para los casos que la resistencia de contacto es presentada como conductancia de contacto según un modelo matemático \cite{experimental_Rc_SS}, según la ecuación de Cooper reducida por Yovanovich (ecuación \eqref{eq:modeloYovanovich}).
 \begin{subequations}
 \begin{equation}
 \dfrac{P}{H_c}=\left[ \dfrac{P}{c_1\left(1.62\sigma/m\right)^{c_2}} \right]^{\frac{1}{2+0.071c_2}}
@@ -71,7 +71,7 @@ Para los casos que la resistencia de contacto es presentada como conductancia de
 \label{eqs:ecuacionesRcYovanovich}
 \end{subequations}
 %% Valores de las constantes
-Donde $c_1$ es 10.6 GPa, $c_2$ es -0.40, $\sigma$ es la combinación RMS de la rugosidad de ambas superficies de los materiales con $\sigma_i$ siendo la rugosidad de la superficie $i$ (ecuación \ref{eq:mRMS}), $m$ es la combinación RMS de la media absoluta de la pendiente de la rugosidad con $m_i$ siendo la media de la pendiente absoluta de la rugosidad de la superficie $i$ (ecuación \ref{eq:sigmaRMS}), $H_c$ es la micro-dureza Vickers del material más duro y P es la presión aplicada \cite{experimental_Rc_SS}.
+Donde $c_1$ es 10.6 GPa, $c_2$ es -0.40, $\sigma$ es la combinación RMS de la rugosidad de ambas superficies de los materiales con $\sigma_i$ siendo la rugosidad de la superficie $i$ (ecuación \eqref{eq:mRMS}), $m$ es la combinación RMS de la media absoluta de la pendiente de la rugosidad con $m_i$ siendo la media de la pendiente absoluta de la rugosidad de la superficie $i$ (ecuación \eqref{eq:sigmaRMS}), $H_c$ es la micro-dureza Vickers del material más duro y P es la presión aplicada \cite{experimental_Rc_SS}.
 \begin{subequations}
 \begin{equation}
 m=\sqrt{m_1^2+m_2^2}
@@ -87,7 +87,7 @@ Las ecuaciones son para la conductancia de contacto ($h_c$) entre dos aceros ino
 Como se puede observar en las ecuaciones \ref{eqs:ecuacionesRcYovanovich}, el valor de $\sigma$ y $m$ se presentan siempre relacionados como $\sigma / m$, y se cumple que $\sigma /m =\sigma ' / m'$ porque al suponer que el caso de dos aceros tienen idénticas $m_i$ y $\sigma_i$, la relación $\sigma / m$ queda como $\sigma_i / m_i$, que resulta ser la misma relación para el caso de SS-$SiO_2$.\\\\
 \[ \frac{\sigma}{m}=\frac{\sqrt{\sigma_{SS}^2+\sigma_{SS}^2}}{\sqrt{m_{SS}^2+m_{SS}^2}}=\frac{\sigma_{SS}\sqrt{2}}{m_{SS}\sqrt{2}} =\frac{\sigma_{SS}}{m_{SS}}\]
 \[ \frac{\sigma'}{m'}=\frac{\sqrt{\sigma_{SS}^2+0^2}}{\sqrt{m_{SS}^2+0^2}}=\frac{\sigma_{SS}}{m_{SS}} \]
-Por lo tanto, considerando que $c_1$ y $c_2$ no varían con el cambio de material la relación de $h_c'$ respecto a $h_c$ se obtiene relacionando la ecuación \ref{eq:correlacionCooperSimplificadaYovanovich} del modelo a simular con la realidad.
+Por lo tanto, considerando que $c_1$ y $c_2$ no varían con el cambio de material la relación de $h_c'$ respecto a $h_c$ se obtiene relacionando la ecuación \eqref{eq:correlacionCooperSimplificadaYovanovich} del modelo a simular con la realidad.
 \[Cte=1.25\frac{m}{\sigma}\cdot \left(\dfrac{P}{H_c}\right)^{0.95} \]
 \[h_c=k_s\cdot Cte \qquad k_s=2\cdot \frac{k_1\cdot k_2}{k_1+k_2}\]
 Donde $Cte$ es una constante que es igual para el caso de los aceros y el caso SS-$SiO_2$. El valor de $k_s$ para el caso de de los aceros es $k_{SS}$, siendo $k_{SS}$ la conductividad térmica del acero inoxidable 304. 
@@ -214,7 +214,7 @@ El procedimiento seguido en este trabajo se encuentra detallado paos a paso en e
 %%%%%%%%%%%%     Conducción térmica
 \subsection{Para la conducción térmica}
 Las simulaciones de transmisión de calor por conducción se realizaron todas en CFD, existiendo unos 10 casos para cada combinación de materiales y resistencias de contacto, para cada uno de ellos se sigue un mismo conjunto de pasos. \\\\
-Primero hay que crear el modelo 3D de cada componente del sistema TPV a simular, siendo cada uno de ellos es un prisma de sección cuadrada. El nano-espaciador tiene de base un cuadrado de lado 3 $\mu m$ y de altura variable $h$, el emisor y la célula tiene el mismo modelo 3D, con base cuadrada de 1mm de lado con 0.2mm de altura. Para el cálculo de las longitudes del modelo 3D se utiliza la ecuación \ref{eq:relacion_longitud}.
+Primero hay que crear el modelo 3D de cada componente del sistema TPV a simular, siendo cada uno de ellos es un prisma de sección cuadrada. El nano-espaciador tiene de base un cuadrado de lado 3 $\mu m$ y de altura variable $h$, el emisor y la célula tiene el mismo modelo 3D, con base cuadrada de 1mm de lado con 0.2mm de altura. Para el cálculo de las longitudes del modelo 3D se utiliza la ecuación \eqref{eq:relacion_longitud}.
 %%% MODELADO 3D
 \subsubsection{Procedimiento modelado 3D}
 El procedimiento seguido para la obtención de los modelos 3D y la creación del modelo de simulación inicial para cada altura del nano-espaciador es:
