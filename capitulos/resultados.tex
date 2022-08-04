@@ -325,7 +325,7 @@ La nueva resistencia de contacto calculada es $5.5\cdot 10^{-3} \ m^2 K/W$ y se 
 \end{figure}
 Al aumentar la resistencia de contacto disminuye el flujo de calor por conducción porque aumenta la resistencia térmica total como se puede observar e la figura \ref{fig:Prcs_SsSiO2Ge} donde las resistencia de contacto calculadas son tan pequeñas que casi no se ven. Para tener una mejor visualización de los efectos de las resistencias de contacto se calcula la relación de cada una respecto a la potencia conducida sin resistencia de contacto, obteniéndose a como es de esperar que para las resistencias de contacto calculadas, es decir, las de mayor valor, la relación es muy pequeña menos de un 0.03\%, a diferencia de la $R_c$ empírica que comparada con las relaciones de los casos de TPV $Si-SiO_2-Ge$ es un poco mayor, superando el 3\% como mínimo y aproximadamente uno 14.5\% en su máximo.\\\\
 Dada la alta complejidad de la variación de la resistencia de contacto no se obtiene un modelo matemático que relaciona la potencia de conducción por resistencia de contacto y por altura de nano-espaciador.\\\\
-Para la simulación de radiación de campo cercano solo se considera los resultados en el rango de energía mayor a 0.7eV o $\sim$1.8 $\mu m$ porque los datos de el índice de refracción $n$ y índice de extinción $k$ llegan hasta los 1.2 $\mu m$, realizando una extrapolación lineal hasta los 1.8$\mu m$ para poder obtener las potencias de radiación para diferentes distancias de separación.
+Para la simulación de radiación de campo cercano solo se considera los resultados en el rango de energía mayor a 0.7eV o $\sim$1.8 $\mu m$ porque los datos de el índice de refracción $n$ y índice de extinción $k$ llegan hasta los 1.2 $\mu m$ \cite{ss_optical_2017}, realizando una extrapolación lineal hasta los 1.8$\mu m$ para poder obtener las potencias de radiación para diferentes distancias de separación.
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
@@ -400,8 +400,9 @@ Dist. (nm)&$P_{Normal}$&$P_{R_c-Cal.Max}$&$P_{R_c-Cal.Inter}$&$P_{R_c-Empirico}$
 \end{figure}
 Para el caso que la $R_c$ empírica la cantidad máxima de nano-espaciadores para una relación de $\sim$10 entre las potencias no supera los 20 nano-espaciadores (figura \ref{fig:rel_SsSiO2Ge_Rc_emp}), a diferencia del TPV con emisor de $Si$ que casi llega a los 30 nano-espaciadores (figura \ref{fig:rel_SiSiO2Ge_Rc}).\\\\
 Para el resto de casos de $R_c$ la cantidad de nano-espaciadores para tener una relación de mínimo 10 supera la cantidad de mil, lo que implica que al disminuir el número de nano-espaciadores aumenta considerablemente la relación entre las potencias de conducción y radiación, siendo aproximadamente unos 2500 y 1000 nano-espaciadores para la $R_c$ máxima y la $R_c$ intermedia, respectivamente.
-
+%%%%%%%%%%%    SiC-SiO2-Ge
 \section{Resultados de las simulaciones para una TPV de SiC-SiO2-Ge}
+Se estudia el caso para un emisor de Carburo de Silicio ($SiC$) por ser una material con alta conductividad térmica \cite{doi:Near_field_ThinFilm}
 \begin{table}[h]
 	\centering
 		\begin{tabular}{|c||c|c||c|c|}
