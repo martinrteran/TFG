@@ -323,7 +323,7 @@ La nueva resistencia de contacto calculada es $5.5\cdot 10^{-3} \ m^2 K/W$ y se 
 	\caption{ (\subref{fig:Prcs_SsSiO2Ge}) Potencias de conducción sin y con resistencias de contacto para un emisor de $SS$, las resistencias de contacto son de $4\cdot 10^{-6} \ m^2 K/W$ para la $R_c$ empírica, $5.5\cdot 10^{-3} \ m^2 K/W$ para la $R_c$ cal. max y $2.75\cdot 10^{-3} \ m^2 K/W$ para la $R_c$ cal. inter. (\subref{fig:relPrcs_SsSiO2Ge}) Relaciones de las potencias con $R_c$ respecto a la potencia conducida sin $R_c$.}
 	\label{fig:Pcond_SsSiO2Ge}
 \end{figure}
-Al aumentar la resistencia de contacto disminuye el flujo de calor por conducción porque aumenta la resistencia térmica total como se puede observar e la figura \ref{fig:Prcs_SsSiO2Ge} donde las resistencia de contacto calculadas son tan pequeñas que casi no se ven. Para tener una mejor visualización de los efectos de las resistencias de contacto se calcula la relación de cada una respecto a la potencia conducida sin resistencia de contacto, obteniéndose a como es de esperar que para las resistencias de contacto calculadas, es decir, las de mayor valor, la relación es muy pequeña menos de un 0.03\%, a diferencia de la $R_c$ empírica que comparada con las relaciones de los casos de TPV $Si-SiO_2-Ge$ es un poco mayor, superando el 3\% como mínimo y aproximadamente uno 14.5\% en su máximo.\\\\
+Al aumentar la resistencia de contacto disminuye el flujo de calor por conducción porque aumenta la resistencia térmica total como se puede observar e la figura \ref{fig:Prcs_SsSiO2Ge} donde las resistencia de contacto calculadas son tan pequeñas que casi no se ven. Para tener una mejor visualización de los efectos de las resistencias de contacto se calcula la relación de cada una respecto a la potencia conducida sin resistencia de contacto, obteniéndose a como es de esperar que para las resistencias de contacto calculadas, es decir, las de mayor valor, la relación es muy pequeña menos de un 0.03\%, a diferencia de la $R_c$ empírica que comparada con las relaciones de los casos de TPV $Si-SiO_2-Ge$ es un poco mayor, superando el 3\% como mínimo y aproximadamente uno 14.5\%.\\\\
 Dada la alta complejidad de la variación de la resistencia de contacto no se obtiene un modelo matemático que relaciona la potencia de conducción por resistencia de contacto y por altura de nano-espaciador.\\\\
 Para la simulación de radiación de campo cercano solo se considera los resultados en el rango de energía mayor a 0.7eV o $\sim$1.8 $\mu m$ porque los datos de el índice de refracción $n$ y índice de extinción $k$ llegan hasta los 1.2 $\mu m$ \cite{ss_optical_2017}, realizando una extrapolación lineal hasta los 1.8$\mu m$ para poder obtener las potencias de radiación para diferentes distancias de separación.
 \begin{figure}[H]
@@ -402,7 +402,36 @@ Para el caso que la $R_c$ empírica la cantidad máxima de nano-espaciadores par
 Para el resto de casos de $R_c$ la cantidad de nano-espaciadores para tener una relación de mínimo 10 supera la cantidad de mil, lo que implica que al disminuir el número de nano-espaciadores aumenta considerablemente la relación entre las potencias de conducción y radiación, siendo aproximadamente unos 2500 y 1000 nano-espaciadores para la $R_c$ máxima y la $R_c$ intermedia, respectivamente.
 %%%%%%%%%%%    SiC-SiO2-Ge
 \section{Resultados de las simulaciones para una TPV de SiC-SiO2-Ge}
-Se estudia el caso para un emisor de Carburo de Silicio ($SiC$) por ser una material con alta conductividad térmica \cite{doi:Near_field_ThinFilm}
+Se procede a estudiar el caso para un emisor de Carburo de Silicio ($SiC$) por ser una material con mayor conductividad térmica a 800\textdegree C que para un emisor de $Si$ y $SS$, cuyas conductividades térmicas a 800\textdegree C ronda entre los 26 y 30 $W/(m^2 K)$ a diferencia del $SiC$ que ronda los 60 $W/(m^2 K)$. Además el $SiC$ tiene un punto de fusión mayor que el $Si$ y el $SS$, siendo una característica del material de gran utilidad para su uso en baterías que almacenan la energía en forma de calor.\\\\
+A su vez el $SiC$ ha sido usado en \cite{doi:Near_field_ThinFilm}, que mediante una capa fina de $SiC$ depositada en el emisor se aumentó de flujo de calor por radiación de campo cercano entre el emisor y el receptor de $SiC$.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+			\includegraphics[width=1\textwidth]{figuras/Resultados/conduccion/pdf/Prc_SiCSiO2Ge.pdf}
+		\caption{Potencias de conducción}
+		\label{fig:Prc_SiCSiO2Ge}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+			\includegraphics[width=0.9\textwidth]{figuras/Resultados/conduccion/pdf/relPrc_SiCSiO2Ge.pdf}
+		\caption{Relación de potencia $R_c$}
+		\label{fig:relPrc_SiCSiO2Ge}
+	\end{subfigure}
+	\caption{(\subref{fig:Prc_SiCSiO2Ge}) Potencias de conducción para sin y con el efecto de la $R_c$ empírica, eje izquierdo para el caso sin $R_c$ y eje derecho para el caso con $R_c$. (\subref{fig:relPrc_SiCSiO2Ge}) Relación de la potencia de conducción con $R_c$ respecto a sin $R_c$.}
+	\label{fig:PrcCond_SiCSiO2Ge}
+\end{figure}
+Se realizan las simulaciones de transmisión de calor por conducción, obteniéndose resultados similares a los casos anteriores porque la mayor cantidad de caída de temperatura se produce en el nano-espaciador por tener una baja conductividad térmica respecto al emisor y la célula. Algo que si se nota es que la potencia máxima es $\sim 0.85\cdot 10^{-2}$ W mayor que para el emisor de $Si$ pero la relación entre las potencias con $R_c$ respecto a sin $R_c$ es menor, no superando el 14\% como valor máximo a los 1000nm.\\\\
+Para las simulaciones de transmisión de calor por radiación de campo cercano se obtienen curvas de potencias monocromáticas por unidad de área muy parecidas a las del emisor de $Si$ para las longitudes de onda más pequeñas o de alta energía, obteniéndose valores de potencia por unidad de área similares.
+\begin{figure}[h]
+	\centering
+		\includegraphics[width=1.00\textwidth]{figuras/Resultados/radiacion/SiCGe.pdf}
+	\caption{ }
+	\label{fig:rad_SiCGe}
+\end{figure}
+
+
 \begin{table}[h]
 	\centering
 		\begin{tabular}{|c||c|c||c|c|}
@@ -426,12 +455,7 @@ Dist. (nm)&$P_{Normal}$&$P_{R_c-Empirico}$&$P_{Eg>0.7eV}$&$P_{full}$\\ \hline \h
 \end{table}
 
 relleno
-\begin{figure}[H]
-	\centering
-		\includegraphics[width=0.6\textwidth]{figuras/Resultados/conduccion/pdf/Prc_SiCSiO2Ge.pdf}
-	\caption{ }
-	\label{fig:Prc_SiCSiO2Ge}
-\end{figure}
+
 
 \begin{figure}[H]
 	\centering
