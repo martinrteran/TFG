@@ -2,29 +2,29 @@
 %\vspace{-1cm}
 En este capítulo se exponen los materiales utilizados para cada componente del sistema, las herramientas utilizadas para el modelado 3D del nano-espaciador, simulación de la transmisión de calor por conducción y simulación de transmisión de calor por radiación por campo cercano, y los motivos de uso de dichos materiales y herramientas.
 \section{Materiales}
-Se listan y desarrolla los materiales a utilizar para cada uno de los componentes del sistema TPV, incluyendo los criterios seguidos de su selección.
+Se listan y desarrolla los materiales utilizados para simular cada uno de los componentes del sistema y los criterios seguidos para su eleccións.
 \subsection{Nano-espaciador}
-El nano-espaciador es de Dióxido de Silicio ($SiO_2$) \cite{doi:10.1063/1.1141498}, un material que ha sido utilizado en varias ocasiones en sistemas de campo cercano de TPVs o TEC por ser un material cerámico con una baja conductividad térmica, buena resistencia ante choques de calor y alta fuerza de compresión. La conductividad térmica es menor a 10 W/m\textdegree C en el rango de temperatura de trabajo, entre 25 a 800\textdegree C.\\\\
+Suponemos que los nano-espaciadores son de Dióxido de Silicio ($SiO_2$) \cite{doi:10.1063/1.1141498}, un material que ha sido utilizado en varias ocasiones en sistemas de campo cercano de TPVs o TEC por ser un material cerámico con una baja conductividad térmica, buena resistencia ante choques de calor y alta fuerza de compresión. La conductividad térmica es menor a 10 W/m\textdegree C en el rango de temperatura de trabajo, entre 25 a 800\textdegree C.\\\\
 A su vez se considera el $SiO_2$ con tres porosidades distintas, la primera es con una porosidad del 0\%, segundo con una porosidad del 25\% y tercero con una porosidad del 50\%, calculando la nueva conductividad térmica para los casos de porosidad distinta al 0\% según el modelo CP en \cite{ThermalConductivity_SiO2_2018}.
 
 \subsection{Célula}
-La célula es en una primera instancia de Silicio (Si) para la realización de unas pruebas de simulación iniciales, se utiliza Silicio para dichas pruebas por ser muy conocido y utilizado en la fabricación de células fotovoltaicas. En el resto de simulaciones se utiliza Germanio (Ge), que es un semiconductor como el Si pero que es capaz de absorber una mayor cantidad de radiación por tener una banda energética (Band Gap) de 0.66eV a 300K, a diferencia del Si que es unos 1.11eV a 300K. La capacidad de absorber más radiación es importante en la termofotovolaica porque la mayor cantidad de radiación es infrarroja.\\
+Suponemos inicialmente que las células son de Silicio (Si), para llevar a cabo unos cálculos preliminares utilizando un material ampliamente conocido y utilizado en la fabricación de células fotovoltaicas. En el resto de simulaciones se utiliza Germanio (Ge), que es un semiconductor como el Si pero que es capaz de absorber una mayor cantidad de radiación por tener una banda energética (Band Gap) de 0.66eV a 300K, a diferencia del Si que es unos 1.11eV a 300K. La capacidad de absorber más radiación es importante en la termofotovolaica porque la mayor cantidad de radiación es infrarroja.\\
 
 También se utiliza el Ge por ser el material de las células termofotovoltaicas a disposición en el Instituto de Energía Solar (IES).
 \subsection{Emisor}
-Para el emisor se utilizan Silicio, Acero inoxidable 304L (SS) y Carburo de Silicio (SiC). Se utilizá Si para las pruebas de simulación iniciales para tener un punto de partida, para luego pasar al \textit{SS} por ser un material que se utiliza mucho en la industria, incluyendo al transporte, y por último el SiC que es una cerámica que ha se ha utilizado para el aumento de potencia de radiación en campo cercano, aunque es mayor para una capa fina de SiC cercano a la frecuencia de resonancia \cite{doi:Near_field_ThinFilm}.
+Para simular el emisor supondremos varios materiales: Silicio, Acero inoxidable 304L (SS) y Carburo de Silicio (SiC). Se utilizá Si para las pruebas de simulación iniciales para tener un punto de partida, para luego pasar al \textit{SS} por ser un material que se utiliza mucho en la industria, incluyendo al transporte, y por último el SiC que es una cerámica que ha se ha utilizado para el aumento de potencia de radiación en campo cercano \cite{doi:Near_field_ThinFilm}.
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.6\textwidth]{figuras/rad_mat/EgRad.png}
-	\caption{Potencias por unidad de área para una célula de Ge y diferentes materiales de emisor para un rango de longitudes de onda desde aproximadamente 0.2 $\mu m$ hasta 1.8 $\mu m$ (0.7 eV) con distancias de separación de 100nm y 1000nm según las ecuaciones de \cite{nfTPV_equations} implementadas en la calculadora de campo cercano.}
+	\caption{Potencias por unidad de área para una célula de Ge y diferentes materiales de emisor para un rango de longitudes de onda desde aproximadamente 0.2 $\mu m$ hasta 1.8 $\mu m$ (0.7 eV) con distancias de separación de 100nm y 1000nm según las ecuaciones de \cite{nfTPV_equations} calculadas a partir de las ecuaciones \eqref{eq:flujoPropNF} y \eqref{eq:flujoEvasNF}.}
 	\label{fig:EgRad}
 \end{figure}
-Se tomaron en cuenta otros materiales con mayor potencia de radiación (figura \ref{fig:EgRad}) o propiedades térmicas que han sido descartados por varias razones, entre ellas ser muy caros, tener baja potencia de radiación de campo cercano respecto a una célula de Ge, entre otros. %, similar conductividad térmica al SiC, Si o SS, punto de fusión menor o cercano a los 800\textdegree C, o por ser demasiado blandos. 
+También se analizaron otros materiales adicionales que finalmente fueron descartados por ser muy caros, o proporcionar una baja potencia radiada (figura \ref{fig:EgRad}), etc. %, similar conductividad térmica al SiC, Si o SS, punto de fusión menor o cercano a los 800\textdegree C, o por ser demasiado blandos. 
 Dichos materiales son los siguientes:
 
 \begin{itemize}
 	\item \textbf{Antimoniuro de Galio (GaSb)}: Semiconductor con punto de fusión de 710\textdegree C que es menor a los 800\textdegree C que se encuentra el emisor, por lo cual no se puede utilizar porque empezará a pasar a estado líquido antes de llegar a la temperatura deseada.
-	\item \textbf{Grafito}: es un material relativamente barato con una buena conductividad térmica, alto punto de fusión, pero es muy blando respecto al $SiO_2$, tiene como dureza máxima unos 50 HV (dureza Vickers) en comparación a la dureza del $SiO_2$ de unos 500 HV, por lo cual el nano-espaciador se hará paso por el emisor.
+	\item \textbf{Grafito}: es un material relativamente barato con una buena conductividad térmica, alto punto de fusión, pero es muy blando respecto al $SiO_2$, tiene como dureza máxima unos 50 HV (dureza Vickers) en comparación a la dureza del $SiO_2$ de unos 500 HV, por lo cual cuando se aplique presión a los dispositivos el nano-espaciador se hará paso por el emisor.
 	\item \textbf{Tungsteno (W)}: El coste del material es medio, como máximo unos 56.4€/kg, su dureza Vickers es de unos 350 HV que es adecuada por no ser tan inferior a la del $SiO_2$, su conductividad térmica es más alta que la del nano-espaciador pero la potencia radiativa en campo cercano es baja, más cercana a la del acero.
 	\item \textbf{Alumina ($Al_2O_3$)}: Es un material muy caro, aproximadamente 16000€/kg o más, disminuyendo considerablemente la viabilidad del sistema.
 \end{itemize}
@@ -32,7 +32,7 @@ Dichos materiales son los siguientes:
 \section{Herramientas}
 
 Los herramientas o programas utilizados durante el desarrollo del trabajo son variados y por diferentes motivos, a continuación se da una breve descripción y se explican los motivos de la utilización de cada programa.\\\\
-Para la obtención de datos de los materiales se utilizan Granta EduPack 2021 R2, la página web Refractive Index y el resto de datos de los materiales que no se encuentren en dichas herramientas se obtienen de artículos de investigación. Para el modelado 3D se utiliza Autodesk Inventor 2021, para las simulaciones de la transmisión de calor por conducción se utiliza Autodesk CFD 2021, para la transmisión de calor por radiación se utiliza la Calculadora de campo cercano y para el análisis de datos se utiliza MATLAB.\\\\
+Para la obtención de las propiedades ópticas y térmicas de los materiales se utilizan Granta EduPack 2021 R2, la página web Refractive Index y el resto de datos de los materiales que no se encuentren en dichas herramientas se obtienen de artículos de investigación. Para el modelado 3D se utiliza Autodesk Inventor 2021, para las simulaciones de la transmisión de calor por conducción se utiliza Autodesk CFD 2021, para la transmisión de calor por radiación se utiliza un script de Matlab que resuelve las ecuaciones \eqref{eq:flujoPropNF} y \eqref{eq:flujoEvasNF} a partir de las propiedades ópticas (n-k datos) de los materiales implementado en la calculadora de campo cercano, y para el análisis de datos se utiliza MATLAB.\\\\
 Unas herramientas a destacar son TexStudio y TexnicCenter utilizadas para la redacción de este trabajo por la facilidad que presenta el escribir ecuaciones, actualizaciones de figuras y la menor necesidad de recursos que Word. También hay que destacar el uso de Git para el control de versiones del documento.\\
 %%%  GRANTA EDUPACK 2021 R2
 \subsection{Granta EduPack 2021 R2}
@@ -67,7 +67,7 @@ Se utiliza el programa para el modelado 3D de los nano-espaciadores, el emisor, 
 %\subsection{Simulaciones de transmisión de calor por conducción}
 %Para la simulación de transmisión de calor se usa el programa Autodesk Computational Fluid Dynamics (CFD), que aún ser usado principalmente para simulaciones con fluidos también permite simular solo transmisión de calor por conducción en sólidos y permite usar los diseños de Autodesk Inventor para simular, siendo fácilmente creado el provecto de CFD desde Inventor en la pestaña nueva de simulación, que se crea automáticamente con la instalación de CFD, y haciendo click sobre \textit{Active Model Assessment Tool}. Usándose exclusivamente para las simulaciones de conducción porque no puede simular la transmisión de calor por campo cercano.
 \subsection{Autodesk CFD}
-Es un software desarrollado por Autodesk que se usa para crear simulaciones computacional de la dinámica de fluidos para la predicción del comportamiento complejo de fluidos (líquidos y gases), el programa también simula la transmisión de calor por conducción en sólidos, convección en fluidos y de radiación con la ayuda de un medio fluido. \\
+Es un software desarrollado por Autodesk que se usa para crear simulaciones computacional de la dinámica de fluidos para la predicción del comportamiento complejo de fluidos (líquidos y gases), el programa también simula la transmisión de calor por conducción en sólidos, convección en fluidos y de radiación. \\
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=3cm]{figuras/CFD.png}
@@ -80,7 +80,6 @@ Se utiliza el programa para las simulaciones de transmisión de calor por conduc
 	\item Fácil control del mallado.
 	\item Control de los pasos de la simulación, la frecuencia de guardado de datos y el número de iteraciones.
 	\item Fácil obtención de los datos de los flujos de calor y las temperaturas del espaciador en formato CSV.
-	\item Obtención de un modelo de simulación desde Autodesk Inventor,
 \end{itemize}
 
 \subsection{MATLAB}
@@ -91,20 +90,20 @@ MATLAB es un programa o plataforma de programación de \textit{MathWorks} que pe
 	\caption{Icono de MATLAB}
 	\label{fig:MatlabIcon}
 \end{figure}
-Se utiliza MATLAB para el análisis de los resultados obtenidos de las simulaciones de transmisión de calor por conducción y radiación, para realizar gráficas, para realizar cálculos y para desarrollar la aplicación de la calculadora de campo cercano. El principal motivo de usar MATLAB es porque el código principal de cálculo de transferencia de calor por radiación de campo cercano proporcionado está desarrollado en MATLAB.
+Se utiliza MATLAB para el análisis de los resultados obtenidos de las simulaciones de transmisión de calor por conducción y radiación, para realizar gráficas, para realizar cálculos y para desarrollar la aplicación de la calculadora de campo cercano. El principal motivo de usar MATLAB es para calcular la transmisión de calor en condiciones de campo cercano.
 
 \subsection{Calculadora de campo cercano}
-Para las simulaciones de transmisión de calor por radiación de campo cercano entre dos placas paralelas de área infinita utilizando un código proporcionado que está escrito en MATLAB que cumple con las ecuaciones de campo cercano de \cite{nfTPV_equations} para dos placas planas gruesas y a partir de dicho código se desarrolla una aplicación en el App Designer de MATLAB para facilitar el proceso de calcular cualquier combinación de materiales para el emisor y la célula para ciertas distancias de separación. Se aprovecha la Toolbox Parallel Processing para realizar los cálculos con hilos y así disminuir los tiempos de simulación.\\\\
+Para las simulaciones de transmisión de calor por radiación de campo cercano entre dos placas paralelas de área infinita se utiliza un código escrito en MATLAB que ya estaba implementado y que cumple con las ecuaciones de campo cercano para dos placas planas gruesas (ecuaciones \eqref{eq:flujoPropNF} y \eqref{eq:flujoEvasNF}). A partir de dicho código se desarrolla una aplicación en el App Designer de MATLAB que facilita el proceso, porque mejora la interfaz de usuario y disminuye los tiempos de simulación al realizar los cálculos con hilos (Parallel Processing Toolbox), permitiendo así realizar combinaciones de materiales y distancias de manera sencilla.\\\\
 Los motivos que impulsaron para desarrollar la aplicación son el simplificar el proceso de simular la radiación por campo cercano para diferentes combinaciones de materiales y distancia de separación, y la obtención de la potencia total para el rango de longitudes de onda deseadas para todas las combinaciones.\\
 
-La aplicación se divide en tres pestañas \textit{Potencia Radiada}, \textit{Potencia} y \textit{Materiales}. En cuanto se abre la aplicación se presenta abierta la pestaña de \textit{Potencia Radiada} (figura \ref{fig:pestana_PotenciaRadiada}), donde se seleccionan los materiales del emisor y el receptor, las distancias de separación de los cuerpos y la temperatura del emisor en grados Kelvin, ya que la del receptor es fija a 300K y no influye en los cálculos. También muestra la gráfica de los resultados obtenidos de la simulación para cualquier combinación excepto cuando se eligen varios materiales y un rango de distancias.\\ 
+La aplicación se divide en tres pestañas \textit{Potencia Radiada}, \textit{Potencia} y \textit{Materiales}. En cuanto se abre la aplicación se presenta abierta la pestaña de \textit{Potencia Radiada} (figura \ref{fig:pestana_PotenciaRadiada}), donde se seleccionan los materiales del emisor y el receptor, las distancias de separación de los cuerpos y la temperatura del emisor en grados Kelvin, ya que la del receptor es fija a 300K. También muestra la gráfica de los resultados obtenidos de la simulación para cualquier combinación excepto cuando se eligen varios materiales en un rango de distancias porque todavía no está implementado para este caso de dos rangos.\\ 
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.80\textwidth]{figuras/pestana_PotenciaRadiada.png}
 	\caption{Pestaña \textit{Potencia Radiada} de la calculadora de campo cercano}
 	\label{fig:pestana_PotenciaRadiada}
 \end{figure}
-Para la selección del rango de los materiales se abre una nueva ventana de una GUI donde se utiliza dos árboles de casillas de selección para los materiales del emisor y el receptor del sistema de transmisión de calor por radiación de campo cercano (figura \ref{fig:ventana_mat}). Para la selección del rango de distancias se abre una nueva ventana de una GUI donde se el paso entre para variar las distancias límites es 100nm, las distancias máxima y mínima son 1000nm y 100nm (figura \ref{fig:ventana_dist}).Antes de realizar los cálculos se realiza una interpolación lineal de los valores de n y k de los materiales para que coincidan los puntos para cada longitud de onda.\\\\
+Para la selección del rango de los materiales se abre una nueva ventana de una GUI donde se utiliza dos árboles de casillas de selección para los materiales del emisor y el receptor del sistema de transmisión de calor por radiación de campo cercano (figura \ref{fig:ventana_mat}). Para la selección del rango de distancias se abre una nueva ventana de una GUI donde se selecciona en múltiplos de 100 el valor máximo y el valor mínimo del rango de distancias a simular, las distancias máxima y mínima son 1000nm y 100nm respectivamente (figura \ref{fig:ventana_dist}).Antes de realizar los cálculos se realiza una interpolación lineal de los valores de n y k de los materiales para que coincidan los puntos para cada longitud de onda.\\\\
 \begin{figure}[H]%
 \centering
 \begin{subfigure}[b]{0.48\textwidth}
@@ -123,7 +122,7 @@ Para la selección del rango de los materiales se abre una nueva ventana de una 
 \caption{(\subref{fig:ventana_dist}) Ventana para la selección del rango de las distancias de separación entre el emisor y el receptor. (\subref{fig:ventana_mat}) Ventana para la selección de los materiales para el emisor y el receptor.}%
 \label{fig:ventanas_d_mat}%
 \end{figure}
-La pestaña de \textit{Potencia} (figura \ref{fig:pestana_Potencia})contiene una calculadora para pasar de electrón-voltios a longitud de onda y viceversa, unos campos para controlar el rango de longitudes de onda para realizar la integral de la potencia radiada y una gráfica para mostrar los resultados obtenidos de integrar. La integral se realiza por el método del trapezoide. Los resultados obtenidos de la potencia, los de la potencia radiada o ambos se pueden guardar en un archivo excel.
+La pestaña de \textit{Potencia} (figura \ref{fig:pestana_Potencia})contiene una calculadora para pasar de electrón-voltios a longitud de onda y viceversa, unos campos para controlar el rango de longitudes de onda para realizar la integral de la potencia radiada monocromática y una gráfica para mostrar los resultados obtenidos de integrar. La integral se realiza por el método del trapezoide. Los resultados obtenidos de la potencia integrada (figura \ref{fig:pestana_Potencia}), los de la radiación espectral o ambos se pueden guardar en un archivo excel.
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.70\textwidth]{figuras/pestana_Potencia.png}
@@ -137,5 +136,5 @@ La pestaña de \textit{Materiales} se usa para observar en una tabla o gráfica,
 	\caption{Pestaña de los datos de n y k  de los materiales disponibles}
 	\label{fig:pestana_materiales}
 \end{figure}
-Para obtener una mejor fidelidad de los resultados de la simulaciones se limita el rango de los datos dentro de las longitudes de onda que comparten todos los materiales del conjunto que se va a simular, teniendo en cuenta que para el acero inoxidable se extrapolaron los datos de $n$ y $k$ desde 1.2 $\mu m$ hasta los 1.8$\mu m$ que equivalen a 0.7 eV.\\\\
+Para obtener una mejor fidelidad de los resultados de la simulaciones se limita el rango de los datos dentro de las longitudes de onda que comparten todos los materiales del conjunto que se va a simular.\\\\
 Cabe destacar que la aplicación sigue en fase de desarrollo y todavía no se ha terminado de agregar todas las funcionalidades deseadas, y arreglar los bugs que todavía tiene.

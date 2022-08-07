@@ -192,7 +192,7 @@ Hay cuatro casos de simulaciones de transmisión de campo cercano que se puede r
 	\label{fig:graficar_ejemplo2}
 \end{figure}
 %% Guardar resultados
-El procedimiento seguido en este trabajo se encuentra detallado paos a paso en el Apéndice xxxx. Para la extracción de los datos obtenidos de potencia por unidad de área se hace clic sobre el botón de \textbf{guardar} (figura \ref{fig:SaveButton_Cut}) estando en la pestaña \textbf{Potencia}, para guardar la potencia radiada se hace clic del botón de \textbf{guardar} estando en la pestaña de \textbf{Potencia Radiada} y para guardar todos los datos se hace clic sobre el botón de \textbf{guardar todos} (figura \ref{fig:SaveAllicon}).
+El procedimiento seguido en este trabajo se encuentra detallado paso a paso en el Apéndice xxxx. Para la extracción de los datos obtenidos de potencia por unidad de área se hace clic sobre el botón de \textbf{guardar} (figura \ref{fig:SaveButton_Cut}) estando en la pestaña \textbf{Potencia}, para guardar la potencia radiada se hace clic del botón de \textbf{guardar} estando en la pestaña de \textbf{Potencia Radiada} y para guardar todos los datos se hace clic sobre el botón de \textbf{guardar todos} (figura \ref{fig:SaveAllicon}).
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.48\textwidth}
@@ -217,9 +217,9 @@ Las simulaciones de transmisión de calor por conducción se realizaron todas en
 Primero hay que crear el modelo 3D de cada componente del sistema TPV a simular, siendo cada uno de ellos es un prisma de sección cuadrada. El nano-espaciador tiene de base un cuadrado de lado 3 $\mu m$ y de altura variable $h$, el emisor y la célula tiene el mismo modelo 3D, con base cuadrada de 1mm de lado con 0.2mm de altura. Para el cálculo de las longitudes del modelo 3D se utiliza la ecuación \eqref{eq:relacion_longitud}.
 %%% MODELADO 3D
 \subsubsection{Procedimiento modelado 3D}
-El procedimiento seguido para la obtención de los modelos 3D y la creación del modelo de simulación inicial para cada altura del nano-espaciador es:
+El procedimiento seguido para la obtención de los modelos 3D en Inventor y la creación del modelo de simulación inicial para cada altura del nano-espaciador es:
 \begin{enumerate}
-	\item Crear las bases cuadradas con la longitud de lado respectiva, 10m para emisor o célula y 3cm para el nano-espaciador. 
+	\item Crear las bases cuadradas con la longitud de lado respectiva, 10m para emisor o célula y 3cm para el nano-espaciador en la escala del modelo 3D en Inventor. 
 	\item Extrudir el prisma la longitud correspondiente, 2m para el emisor/célula y $h_0$ para el nano-espaciador, siendo $h$ un valor inicial cualquier en el rango de 1mm a 10mm.
 	\item Crear un ensamblaje de emisor-espaciador-célula, estando la base del nano-espaciador en el centro de las bases de los otros dos componentes (figura \ref{fig:modelado3D}).
 	%% PASOS PARA EL ENSAMBLAJE
@@ -372,9 +372,9 @@ El procedimiento a seguir para cada modelo de la simulación de transmisión de 
 		\item Abrir la herramienta \textbf{Wall Calculator} con un clic (figura \ref{fig:paneles_resultados}).
 		\item Seleccionar las casillas de potencia y temperatura.
 		\item Seleccionar la opción de superficie del \textbf{Model entity selection}.
-		\item Seleccionar la superficie superior del emisor y la inferior de la célula, parecerán los números correspondientes a dichas superficies en el \textbf{Wall Calculator} (figura \ref{fig:ventana_wall_calculator_control}).
+		\item Seleccionar la superficie superior del emisor y la inferior de la célula, aparecerá los números correspondientes a dichas superficies en el \textbf{Wall Calculator} (figura \ref{fig:ventana_wall_calculator_control}).
 		\item Hacer clic en \textbf{Calculate}, esto nos llevará a la pestaña de \textbf{Output}.
-		\item Hacer clic en \textbf{Write to file...} y guardar el archivo de salida que contiene las potencias y temperaturas medias de las superficies seleccionadas (figura \ref{fig:ventana_wall_calculator_resultados}).
+		\item Hacer clic en \textbf{Write to file} y guardar el archivo de salida que contiene las potencias y temperaturas medias de las superficies seleccionadas (figura \ref{fig:ventana_wall_calculator_resultados}).
 	\end{enumerate}
 		%%% VENTANA DEL WALL CALCULATOR
 	\begin{figure}[H]
