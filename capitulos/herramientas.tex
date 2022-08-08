@@ -8,7 +8,7 @@ Suponemos que los nano-espaciadores son de Dióxido de Silicio ($SiO_2$) \cite{d
 A su vez se considera el $SiO_2$ con tres porosidades distintas, la primera es con una porosidad del 0\%, segundo con una porosidad del 25\% y tercero con una porosidad del 50\%, calculando la nueva conductividad térmica para los casos de porosidad distinta al 0\% según el modelo CP en \cite{ThermalConductivity_SiO2_2018}.
 
 \subsection{Célula}
-Suponemos inicialmente que las células son de Silicio (Si), para llevar a cabo unos cálculos preliminares utilizando un material ampliamente conocido y utilizado en la fabricación de células fotovoltaicas. En el resto de simulaciones se utiliza Germanio (Ge), que es un semiconductor como el Si pero que es capaz de absorber una mayor cantidad de radiación por tener una banda energética (Band Gap) de 0.66eV a 300K, a diferencia del Si que es unos 1.11eV a 300K. La capacidad de absorber más radiación es importante en la termofotovolaica porque la mayor cantidad de radiación es infrarroja.\\
+Suponemos inicialmente que las células son de Silicio (Si) para llevar a cabo unos cálculos preliminares utilizando un material ampliamente conocido y utilizado en la fabricación de células fotovoltaicas. En el resto de simulaciones se utiliza Germanio (Ge), que es un semiconductor como el Si pero que es capaz de absorber una mayor cantidad de radiación por tener una banda energética (Band Gap) de 0.66eV a 300K, a diferencia del Si que es unos 1.11eV a 300K. La capacidad de absorber más radiación es importante en la termofotovolaica porque la mayor cantidad de radiación es infrarroja.\\
 
 También se utiliza el Ge por ser el material de las células termofotovoltaicas a disposición en el Instituto de Energía Solar (IES).
 \subsection{Emisor}
@@ -63,7 +63,7 @@ Se utiliza el programa para el modelado 3D de los nano-espaciadores, el emisor, 
 	\item No necesita una conexión constante a internet para su uso.
 	\item Acoplamiento con Autodesk CFD, permitiendo el lanzar modelos de Inventor a CFD. 
 \end{itemize}
-
+Una desventaja de este programa es la limitación que presenta en las unidades mínimas de trabajo ($mm$), no pudiendo realizar modelos en escala nanométrica por lo que se utilizan distancias geométricas mayores, teniendo que adaptar los valores de las propiedades térmicas de los materiales para tener ese cambio de escala en cuenta.
 %\subsection{Simulaciones de transmisión de calor por conducción}
 %Para la simulación de transmisión de calor se usa el programa Autodesk Computational Fluid Dynamics (CFD), que aún ser usado principalmente para simulaciones con fluidos también permite simular solo transmisión de calor por conducción en sólidos y permite usar los diseños de Autodesk Inventor para simular, siendo fácilmente creado el provecto de CFD desde Inventor en la pestaña nueva de simulación, que se crea automáticamente con la instalación de CFD, y haciendo click sobre \textit{Active Model Assessment Tool}. Usándose exclusivamente para las simulaciones de conducción porque no puede simular la transmisión de calor por campo cercano.
 \subsection{Autodesk CFD}
@@ -137,4 +137,4 @@ La pestaña de \textit{Materiales} se usa para observar en una tabla o gráfica,
 	\label{fig:pestana_materiales}
 \end{figure}
 Para obtener una mejor fidelidad de los resultados de la simulaciones se limita el rango de los datos dentro de las longitudes de onda que comparten todos los materiales del conjunto que se va a simular.\\\\
-Cabe destacar que la aplicación sigue en fase de desarrollo y todavía no se ha terminado de agregar todas las funcionalidades deseadas, y arreglar los bugs que todavía tiene.
+Cabe destacar que la aplicación sigue en fase de desarrollo.

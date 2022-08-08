@@ -1,12 +1,12 @@
 \chapter{Métodos}\label{chapter:Metodos}
-En este capítulo se detallan los criterios seguidos para la elección de la geometría de los espaciadores y su escala, los cálculos realizados para la obtención de las propiedades de los materiales utilizados en las simulaciones de transmisión de calor por conducción según la escala utilizada en el modelado 3D del nano-espaciador, los procedimientos seguidos para realizar las simulaciones y el procedimiento seguido para la extracción de los datos de la simulación de CFD.
+En este capítulo se detallan los criterios seguidos para la elección de la geometría de los espaciadores y su escala, los cálculos realizados para adaptar las propiedades de los materiales a las limitaciones de escala de los programas de simulación, los procedimientos seguidos para realizar las simulaciones y el procedimiento seguido para la extracción de los datos de la simulación de CFD.
 \section{Criterios de geometría y escala} 
-La base del nano-espaciador es cuadrada por ser la más sencilla de fabricar por deposición catódica y para realizar cálculos por ser sus ecuaciones de área y volumen la más sencilla de los polígonos regulares cerrados. El lado de la base del nano-espaciador son de 3$\mu m$ por ser la unidad mínima que se es capaz de depositar en la célula para disminuir las pérdidas por conducción.\\\\
-Para el modelado 3D en Inventor se toma como distancia mínima el milímetro, correspondiente a 100nm de la realidad que es la distancia mínima de todos componentes del sistema, para el caso de altura mínima del nano-espaciador a simular.
+La base del nano-espaciador es cuadrada por ser la más sencilla de fabricar por procesos fotolitográficos y para realizar cálculos por ser sus ecuaciones de área y volumen la más sencilla de los polígonos regulares cerrados. El lado de la base del nano-espaciador son de 3$\mu m$ por ser el límite de resolución de la mayoría de equipos de fotolitografía, es decir, es la mínima distancia que se puede definir mediante fotolitografía.\\\\
+Se utiliza 100nm como la distancia mínima para definir la altura mínima de los nano-espaciadores, correspondiente a 1mm de la escala del modelo 3D en Inventor. Por lo tanto, el factor de escala que se aplica a las unidades de longitud es $10^4$, que se toma en cuenta a la hora de definir las propiedades térmicas que involucren unidades de longitud, como es la conductividad térmica ($W/m2$).
 %%% CALCULOS DE LAS PROPIEDADES DE LOS MATERIALES
 \section{Cálculos de las propiedades de los materiales para las simulaciones}
 Para obtener los nuevos parámetros de distancias, áreas y volúmenes del modelo 3D del nano-espaciador se procede a obtener las relaciones de escala entre el modelo y la realidad. También se obtienen las relaciones de las propiedades más significativas de los materiales de la realidad y las simulaciones de transmisión de calor por conducción, siendo la principal propiedad la conductividad térmica. Otras propiedades que se toman en cuenta son la densidad y el calor específico, teniendo que destacar la resistencia de contacto por unidad de área entre el nano-espaciador y el emisor.\\\\
-Para diferenciar la realidad del modelo 3D o del modelo a simular se utilizará el apostrofe después de la variable correspondiente, por ejemplo, para la longitud real se usa $L$ y para la longitud en el modelo 3D se usa $L'$.\\\\
+Para diferenciar las dimensiones reales de las dimensiones utilizadas en el modelo 3D se utilizará el apostrofe después de la variable correspondiente, por ejemplo, para la longitud real se usa $L$ y para la longitud en el modelo 3D se usa $L'$.\\\\
 La relación de longitudes entre el modelo 3D y la realidad es:
 \begin{equation}
 {L'}/{L}={1mm}/{100nm}=10^4
@@ -58,7 +58,7 @@ La resistencia de contacto ($R_c$) es difícil de modelar matemáticamente en un
 	\label{eq:relacion_Rc}
 \end{equation}
 %%% YOVANOVICH
-Para los casos que la resistencia de contacto es presentada como conductancia de contacto según un modelo matemático \cite{experimental_Rc_SS}, según la ecuación de Cooper reducida por Yovanovich (ecuación \eqref{eq:modeloYovanovich}).
+Para los casos que la resistencia de contacto es presentada como conductancia de contacto ($h_c$) según un modelo matemático \cite{experimental_Rc_SS}, según la ecuación de Cooper reducida por Yovanovich (ecuación \eqref{eq:modeloYovanovich}).
 \begin{subequations}
 \begin{equation}
 \dfrac{P}{H_c}=\left[ \dfrac{P}{c_1\left(1.62\sigma/m\right)^{c_2}} \right]^{\frac{1}{2+0.071c_2}}
@@ -71,25 +71,37 @@ Para los casos que la resistencia de contacto es presentada como conductancia de
 \label{eqs:ecuacionesRcYovanovich}
 \end{subequations}
 %% Valores de las constantes
-Donde $c_1$ es 10.6 GPa, $c_2$ es -0.40, $\sigma$ es la combinación RMS de la rugosidad de ambas superficies de los materiales con $\sigma_i$ siendo la rugosidad de la superficie $i$ (ecuación \eqref{eq:mRMS}), $m$ es la combinación RMS de la media absoluta de la pendiente de la rugosidad con $m_i$ siendo la media de la pendiente absoluta de la rugosidad de la superficie $i$ (ecuación \eqref{eq:sigmaRMS}), $H_c$ es la micro-dureza Vickers del material más duro y P es la presión aplicada \cite{experimental_Rc_SS}.
+Donde $c_1$ es 10.6 GPa, $c_2$ es -0.40, $\sigma$ es la combinación RMS de la rugosidad de ambas superficies de los materiales con $\sigma_i$ siendo la rugosidad de la superficie $i$ (ecuación \eqref{eq:sigmaRMS}), $m$ es la combinación RMS de la media absoluta de la pendiente de la rugosidad con $m_i$ siendo la media de la pendiente absoluta de la superficie $i$ (ecuación \eqref{eq:mRMS}), $k_s$ es la media armónica de la conductividad térmica con $k_i$ siendo la conductividad térmica del material $i$ (ecuación \eqref{eq:condArmonica}), $H_c$ es la micro-dureza Vickers del material más duro y P es la presión aplicada.
+
 \begin{subequations}
+\begin{minipage}{0.299\textwidth}
 \begin{equation}
 m=\sqrt{m_1^2+m_2^2}
 \label{eq:mRMS}
 \end{equation}
+\end{minipage}
+\hfill
+\begin{minipage}{0.28\textwidth}
 \begin{equation}
 \sigma=\sqrt{\sigma_1^2+\sigma_2^2}
 \label{eq:sigmaRMS}
 \end{equation}
+\end{minipage}
+\hfill
+\begin{minipage}{0.28\textwidth}
+\begin{equation}
+k_s=2\cdot \frac{k_1\cdot k_2}{k_1+k_2}
+\label{eq:condArmonica}
+\end{equation}
+\end{minipage}
 \label{eqs:RMS}
 \end{subequations}
-Las ecuaciones son para la conductancia de contacto ($h_c$) entre dos aceros inoxidables 304(SS304), entonces para tener una mejor idea como la resistencia de contacto afecta a la conducción de calor se supone que el nano-espaciador de $SiO_2$ es liso, por ende, su $m_i$ y su $\sigma_i$ son nulas. Por lo tanto, se calcula la relación de las ecuaciones para el caso de los dos aceros y para el caso de SS-$SiO_2$.\\\\
+Estas son las únicas expresiones analíticas que se han encontrado en la literatura para calcular la conductancia térmica de contacto entre dos superficies, las cuales han sido validadas para el caso concreto de dos superficies de acero inoxidable 304 (SS) \cite{experimental_Rc_SS}. Para tener una mejor idea como la resistencia de contacto afecta a la conducción de calor simplificamos las ecuaciones suponiendo que el nano-espaciador de $SiO_2$ es liso, por ende, su $m_i$ y su $\sigma_i$ son nulas. Por lo tanto, se calcula la relación de las ecuaciones para el caso de los dos aceros y para el caso de SS-$SiO_2$.\\\\
 Como se puede observar en las ecuaciones \ref{eqs:ecuacionesRcYovanovich}, el valor de $\sigma$ y $m$ se presentan siempre relacionados como $\sigma / m$, y se cumple que $\sigma /m =\sigma ' / m'$ porque al suponer que el caso de dos aceros tienen idénticas $m_i$ y $\sigma_i$, la relación $\sigma / m$ queda como $\sigma_i / m_i$, que resulta ser la misma relación para el caso de SS-$SiO_2$.\\\\
 \[ \frac{\sigma}{m}=\frac{\sqrt{\sigma_{SS}^2+\sigma_{SS}^2}}{\sqrt{m_{SS}^2+m_{SS}^2}}=\frac{\sigma_{SS}\sqrt{2}}{m_{SS}\sqrt{2}} =\frac{\sigma_{SS}}{m_{SS}}\]
 \[ \frac{\sigma'}{m'}=\frac{\sqrt{\sigma_{SS}^2+0^2}}{\sqrt{m_{SS}^2+0^2}}=\frac{\sigma_{SS}}{m_{SS}} \]
 Por lo tanto, considerando que $c_1$ y $c_2$ no varían con el cambio de material la relación de $h_c'$ respecto a $h_c$ se obtiene relacionando la ecuación \eqref{eq:correlacionCooperSimplificadaYovanovich} del modelo a simular con la realidad.
-\[Cte=1.25\frac{m}{\sigma}\cdot \left(\dfrac{P}{H_c}\right)^{0.95} \]
-\[h_c=k_s\cdot Cte \qquad k_s=2\cdot \frac{k_1\cdot k_2}{k_1+k_2}\]
+\[Cte=1.25\frac{m}{\sigma}\cdot \left(\dfrac{P}{H_c}\right)^{0.95} \qquad \Longrightarrow \qquad h_c=k_s\cdot Cte\]
 Donde $Cte$ es una constante que es igual para el caso de los aceros y el caso SS-$SiO_2$. El valor de $k_s$ para el caso de de los aceros es $k_{SS}$, siendo $k_{SS}$ la conductividad térmica del acero inoxidable 304. 
 \[ \frac{h_c'}{h_c}=\frac{k_s'}{k_s}\cdot \frac{Cte}{Cte}=\frac{2 \cdot \frac{k_{SS}\cdot k_{SiO_2}}{k_{SS}+k_{SiO_2}}}{k_{SS}}\]
 \begin{equation}
