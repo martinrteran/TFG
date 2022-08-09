@@ -92,7 +92,7 @@ MATLAB es un programa o plataforma de programación de \textit{MathWorks} que pe
 \end{figure}
 Se utiliza MATLAB para el análisis de los resultados obtenidos de las simulaciones de transmisión de calor por conducción y radiación, para realizar gráficas, para realizar cálculos y para desarrollar la aplicación de la calculadora de campo cercano. El principal motivo de usar MATLAB es para calcular la transmisión de calor en condiciones de campo cercano.
 
-\subsection{Calculadora de campo cercano}
+\subsection{Calculadora de campo cercano} \label{sec:calc_campo_cercano}
 Para las simulaciones de transmisión de calor por radiación de campo cercano entre dos placas paralelas de área infinita se utiliza un código escrito en MATLAB que ya estaba implementado y que cumple con las ecuaciones de campo cercano para dos placas planas gruesas (ecuaciones \eqref{eq:flujoPropNF} y \eqref{eq:flujoEvasNF}). A partir de dicho código se desarrolla una aplicación en el App Designer de MATLAB que facilita el proceso, porque mejora la interfaz de usuario y disminuye los tiempos de simulación al realizar los cálculos con hilos (Parallel Processing Toolbox), permitiendo así realizar combinaciones de materiales y distancias de manera sencilla.\\\\
 Los motivos que impulsaron para desarrollar la aplicación son el simplificar el proceso de simular la radiación por campo cercano para diferentes combinaciones de materiales y distancia de separación, y la obtención de la potencia total para el rango de longitudes de onda deseadas para todas las combinaciones.\\
 
