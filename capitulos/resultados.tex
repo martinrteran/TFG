@@ -418,7 +418,7 @@ Las densidades de nano-espaciadores obtenidas son menores que para la nTPV de $S
 Para los casos con $R_c$ calculadas, las densidades de nano-espaciadores para una relación mínima de potencias de un orden de magnitud son del orden de $10^4 \ n^{\circ}esp/cm^2$ y disminuyendo al orden de los miles de $n^{\circ}esp/cm^2$ para relaciones de potencias de dos ordenes de magnitud. Para las relaciones de las potencias de dos ordenes de magnitud las densidades de nano-espaciadores a una altura de nano-espaciadores de 100nm son $\sim$ 2500 $n^{\circ} esp/cm^2$ para la nTPV con $R_c$ intermedia y $\sim$ 1000 $n^{\circ} esp/cm^2$ para la nTPV con $R_c$ máxima (figuras \ref{fig:rels_SsSiO2Ge_Prc1vsPrc2} \subref{fig:rel_SsSiO2Ge_Rc_inter} y \subref{fig:rel_SsSiO2Ge_Rc_max}).\\\\
 Se observa que la relación entre las densidades de nano-espaciadores para ambos casos de $R_c$ calculada es aproximadamente igual a la relación entre ambas resistencias de contacto porque son constantes y solo afectan a la conducción en las simulaciones. El conocer estas relaciones es de utilidad para poder determinar en una primera instancia que valor de resistencia de contacto sería necesario como mínimo para tener la relación de potencias deseada con una cierta cantidad de nano-espaciadores de cierta altura.\\\\
 También es importante tener en cuenta la variación de la densidad de nano-espaciadores o de la potencia de radiación entre su valor máximo y mínimo para una relación de potencias de un orden de magnitud porque las superficies tanto del emisor como de la célula presentan curvaturas que provocan un aumento o disminución de las distancias de separación entre ambos componentes, por ende, un aumento o disminución de las potencias de radiación útiles para su conversión en electridad.\\\\
-Se realizan los cálculos del peor caso de estas variaciones, cuando la densidad va de su valor máximo a su valor mínimo. Para el caso con $R_c$ empírica la variación de las densidades  es de aproximadamente 12 $n^{\circ} esp/cm^2$ que representa una disminución del 66.67\% respecto al valor pico, para el caso con $R_c$ calculada intermedia la variación es de $\sim$8500 $n^{\circ} esp/cm^2$  que es una disminución del 70.83\% y para el caso de $R_c$ calculada máxima la variación de densidad es aproximadamente unos 18$\cdot 10^3 \ n^{\circ}esp/cm^2$ que es una disminución del 72\%. Aunque al aumentar la $R_c$ aumenta la disminución porcentual de las densidades, no es algo tan preocupante sí la densidad de nano-espaciadores es lo suficientemente alta para poder mantener mejor la separación entre ambas placas manteniendo una relación de potencias de producción vs pérdidas alta, es decir, la relación entre las potencias sea al menos de un orden de magnitud.\\\\
+Se realizan los cálculos del peor caso de estas variaciones, cuando la densidad va de su valor máximo a su valor mínimo. Para el caso con $R_c$ empírica la variación de las densidades  es de aproximadamente 12 $n^{\circ} esp/cm^2$ que representa una disminución del 66.67\% respecto al valor pico, para el caso con $R_c$ calculada intermedia la variación es de $\sim$8500 $n^{\circ} esp/cm^2$  que es una disminución del 70.83\% y para el caso de $R_c$ calculada máxima la variación de densidad es aproximadamente unos 18$\cdot 10^3 \ n^{\circ}esp/cm^2$ que es una disminución del 72\%. Aunque al aumentar la $R_c$ aumenta la disminución porcentual de las densidades, no es algo tan importante mientras la densidad de nano-espaciadores es lo suficientemente alta para poder mantener mejor la separación entre ambas placas manteniendo una relación de potencias de producción vs pérdidas alta, es decir, la relación entre las potencias sea al menos de un orden de magnitud.\\\\
 Por último, se recopilan y agrupan los resultados obtenidos de las simulaciones en la tabla \ref{tab:SsSiO2Ge} para tener una mejor idea de los valores numéricos y de la magnitud de los resultados.
 \begin{table}[H]
 	\centering
@@ -444,20 +444,23 @@ Dist. (nm)&$P_{Normal}$&$P_{R_c-Cal.Max}$&$P_{R_c-Cal.Inter}$&$P_{R_c-Empirico}$
 \vfill \newpage
 %%%%%%%%%%%    SiC-SiO2-Ge
 \section{Resultados de las simulaciones para una nTPV de SiC-SiO2-Ge}
-Se procede a estudiar el caso para un emisor de Carburo de Silicio ($SiC$) por ser una material con mayor conductividad térmica a 800\textdegree C que para un emisor de $Si$ y $SS$, cuyas conductividades térmicas a 800\textdegree C ronda entre los 26 y 30 $W/(m^2 K)$ a diferencia del $SiC$ que ronda los 60 $W/(m^2 K)$. Además el $SiC$ tiene un punto de fusión mayor que el $Si$ y el $SS$, siendo una característica del material de gran utilidad para su uso en baterías que almacenan la energía en forma de calor.\\\\
-A su vez el $SiC$ ha sido usado en \cite{doi:Near_field_ThinFilm}, que mediante una capa fina de $SiC$ depositada en el emisor se aumentó de flujo de calor por radiación de campo cercano entre el emisor y el receptor de $SiC$.
+Se procede a estudiar el caso de una nTPV con un emisor de Carburo de Silicio ($SiC$) por ser una material con mayor conductividad térmica que el $Si$ y el $SS$ a 800\textdegree C, que rondan unos 60 $W/(m^2 K)$ para el emisor de $SiC$, 26 $W/(m^2 K)$ para el $Si$ y 30 $W/(m^2 K)$ para el $SS$. Además el $SiC$ tiene un punto de fusión mayor que el $Si$ y el $SS$, siendo una característica del material de gran utilidad para su uso en baterías para almacenar la energía en forma de calor.\\\\
+Otra razón de estudiar la nTPV con emisor de $SiC$ es por su utilización en \cite{doi:Near_field_ThinFilm} en una capa fina depositada sobre el emisor de una nTPV para aumentar el flujo de calor por radiación de campo cercano simulado entre el emisor y el receptor de $SiC$ grueso.
+%%%%%    CFD
+\subsection{Simulaciones de CFD}
+\graphicspath{ {./figuras/Resultados/conduccion/pdf/} }
 \begin{figure}[H]
 	\centering
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-			\includegraphics[width=1\textwidth]{figuras/Resultados/conduccion/pdf/Prc_SiCSiO2Ge.pdf}
+			\includegraphics[width=1.00\textwidth]{Pn_SiCSiO2Ge.pdf}
 		\caption{Potencias de conducción}
 		\label{fig:Prc_SiCSiO2Ge}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[b]{0.49\textwidth}
 		\centering
-			\includegraphics[width=0.9\textwidth]{figuras/Resultados/conduccion/pdf/relPrc_SiCSiO2Ge.pdf}
+			\includegraphics[width=1.00\textwidth]{Prc_SiCSiO2Ge.pdf}
 		\caption{Relación de potencia $R_c$}
 		\label{fig:relPrc_SiCSiO2Ge}
 	\end{subfigure}
@@ -465,15 +468,61 @@ A su vez el $SiC$ ha sido usado en \cite{doi:Near_field_ThinFilm}, que mediante 
 	\label{fig:PrcCond_SiCSiO2Ge}
 \end{figure}
 Se realizan las simulaciones de transmisión de calor por conducción, obteniéndose resultados similares a los casos anteriores porque la mayor cantidad de caída de temperatura se produce en el nano-espaciador por tener una baja conductividad térmica respecto al emisor y la célula. Algo que si se nota es que la potencia máxima es $\sim 0.85\cdot 10^{-2}$ W mayor que para el emisor de $Si$ pero la relación entre las potencias con $R_c$ respecto a sin $R_c$ es menor, no superando el 14\% como valor máximo a los 1000nm.\\\\
-Para las simulaciones de transmisión de calor por radiación de campo cercano se obtienen curvas de potencias monocromáticas por unidad de área muy parecidas a las del emisor de $Si$ para las longitudes de onda más pequeñas o de alta energía, obteniéndose valores de potencia por unidad de área similares.
-\begin{figure}[h]
+\subsection{Radiación de campo cercano}
+Se realizan las simulaciones de transmisión de calor por radiación de campo cercano para el emisor de $SiC$, obteniéndose valores de potencia radiada monocromática similares al del emisor de $Si$ para longitudes de onda menores a 2$\mu m$ (figura \ref{fig:rad_SiCGe}) y también tiene valores similares de la potencia radiada integrada en el rango espectral de energía mayor a 0.7eV frente a las distancias de separación respecto al emisor de $Si$ (figura \ref{fig:Prad_SiCGe}).
+%%%           GRAFICAS
+\graphicspath{ {./figuras/Resultados/radiacion} }
+\begin{figure}[H]
 	\centering
-		\includegraphics[width=1.00\textwidth]{figuras/Resultados/radiacion/SiCGe.pdf}
-	\caption{ }
-	\label{fig:rad_SiCGe}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{SiCvsSi.pdf}
+		\caption{Potencia integrada}
+		\label{fig:Prad_SiCGe}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{SiCvsSi_rad.pdf}
+		\caption{Radiación}
+		\label{fig:rad_SiCGe}
+	\end{subfigure}
+	\caption{(\subref{fig:Prad_SiCGe}) Potencias integradas en el rango espectral de energía mayor a 0.7eV para un emisor de $SiC$ y un emisor de $Si$ frente a las distancias de separación entre emisor y receptor. (\subref{fig:rad_SiCGe}) Potencia de radiación monocromática para un emisor de $Si$ y $SiC$ con un receptor de $Ge$ para una distancia de separación de 100nm frente longitudes de onda.}
+	\label{fig:rads_SiCGe}
 \end{figure}
-
-
+Aunque las potencias radiadas monocromáticas, es decir, frente a las longitudes de onda, difieren al aumentar la longitud de onda ($\lambda$), no supone una gran diferencia entre ambos emisores porque en el rango energético de interés ($E>0.7eV$) las curvas son bastante similares, provocando que las potencias integradas en dicho rango energético sean similares también.
+\begin{figure}[H]
+	\centering
+		\includegraphics[width=0.65\textwidth]{figuras/Resultados/radiacion/SiCSiC.pdf}
+	\caption{Potencias de radiación monocromática frente a las longitudes de onda para un sistema de $SiC-SiC$ frente a diferentes distancias de separación entre placas.}
+	\label{fig:SiCSiC}
+\end{figure}
+También se simula un sistema con receptor de $SiC$ y emisor de $SiC$ para observar los efectos de la frecuencia de resonancia ($\omega_{res}$) sobre las potencias de radiación frente a las longitudes de onda. Se observa en la figura \ref{fig:SiCSiC} que la $\omega_{res}$ es aproximadamente $1.57\cdot 10^{14} \ rad/s$ ($\lambda = 12\mu m$) porque existe un pico de potencia monocromática máxima que disminuye al aumentar la distancia de separación entre emisor y receptor, pudiéndose aprovechar dicha potencia para la conversión en electricidad si mediante una combinación de materiales se consigue que la frecuencia se encuentre dentro del rango espectral útil.
+%%%    DENSIDAD
+\subsection{Densidad de nano-espaciadores}
+Se procede a calcular las densidades de nano-espaciadores por centímetro cuadrado para la nTPV con emisor de $SiC$ para los casos de sin $R_c$ y con $R_c$ de $4\cdot 10^{-6} \ m^2 K/W$ \cite{nf_TPV_Pillars_SiO2}. Obteniéndose unos resultados muy parecidos a los de la nTPV de emisor de $Si$ porque los resultados obtenidos de las simulaciones también son bastante cercanos.
+\graphicspath{ {./figuras/Resultados/RelacionCondRad} }
+\begin{figure}[H]
+	\centering
+	%% Si-SiO2-Si Eg
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{SiC_Ge.png}
+		\caption{ }
+		\label{fig:rel_SiCSiO2Ge}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.49\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{SiC_Rc.png}
+		\caption{ }
+		\label{fig:rel_SiCSiO2Ge_Rc}
+	\end{subfigure}
+	\caption{Densidades de nano-espaciadores $n^{\circ}esp/cm^2$ frente a las alturas de los nano-espaciadores para todas las relaciones de la potencia de radiación en el rango espectral de energías mayores e igual a 0.7 eV respecto a las potencias de conducción (dependientes en la densidad de nano-espaciadores) mayores a 3 para el caso sin $R_c$ (\subref{fig:rel_SiCSiO2Ge}) y mayores a 10 para el caso con $R_c$ (\subref{fig:rel_SiCSiO2Ge_Rc}). Donde las barras de colores laterales de cada gráfica representan los colores asociados a cada uno de los valores de las relaciones de las potencias, con los contornos de las relaciones más significativas representadas en las gráficas.}
+	\label{fig:relation_SiCSiO2Ge}
+\end{figure}
+La principal diferencia es en las densidades de nano-espaciadores para el caso de la nTPV sin $R_c$ (figura \ref{fig:rel_SiCSiO2Ge}), siendo esta menor que la del emisor de $Si$ para todo el rango de alturas de los nano-espaciadores porque la conductividad térmica del $SiC$ a 800\textdegree C es mayor que para el $Si$ por lo tanto la resistencia térmica del sistema disminuye, teniendo así unas menores densidades. Para el caso de la nTPV con $R_c$, las diferencias no son tan notables como en el caso sin $R_c$ porque la componente con mayor relevancia es la resistencia de contacto.\\\\
+Por último, se agrupan los resultados obtenidos de las simulaciones de transferencia de calor por conducción y radiación de campo cercano en la tabla \ref{tab:SiCSiO2Ge}, los resultados se muestran en notación científica para simplificar el análisis de los mismos y el grado de magnitud.
 \begin{table}[h]
 	\centering
 		\begin{tabular}{|c||c|c||c|c|}
@@ -492,32 +541,12 @@ Dist. (nm)&$P_{Normal}$&$P_{R_c-Empirico}$&$P_{Eg>0.7eV}$&$P_{full}$\\ \hline \h
 900&1,17E-02&1,49E-03&1,81E+03&3,80E+04\\ \hline 
 1000&1,06E-02&1,46E-03&1,75E+03&3,61E+04\\ \hline 
 		\end{tabular}
-	\caption{dac}
-	\label{tab:dac}
+	\caption{Tabla de recopilación de los resultados de las simulaciones de transmisión de calor por conducción y radiación de campo cercano para una nTPV de emisor de $SS$.}
+	\label{tab:SiCSiO2Ge}
 \end{table}
 
-relleno
-
-
-\begin{figure}[H]
-	\centering
-	%% Si-SiO2-Si Eg
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiC_Ge.png}
-		\caption{ }
-		\label{fig:rel_SiCSiO2Ge}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.49\textwidth}
-		\centering
-		\includegraphics[width=1.00\textwidth]{figuras/Resultados/RelacionCondRad/SiC_Ge_full.png}
-		\caption{ }
-		\label{fig:rel_SiCSiO2Ge_Rc}
-	\end{subfigure}
-	\caption{ }
-	\label{fig:relation_SiCSiO2Ge}
-\end{figure}
+\vfill \newpage
+%%%     NUMERO DE NANO-ESPACIADORES
 \section{Número de nano-espaciadores para soportar la carga}
 \section{Resultados de las simulaciones para una nTPV de Si-Si-Ge y SS-Si-Ge}
 %% comparar el efecto de cambiar el material del nano-espaciador
