@@ -42,9 +42,36 @@
 \usepackage{epstopdf}
 \usepackage{array}
 \usepackage{multirow}
+\usepackage[acronym]{glossaries}
 \sloppy
 \epstopdfsetup{outdir=./pdf}
 %\graphicspath{ {./graficasCasos_images/} }
+\makeglossaries 
+%\makenoidxglossaries 
+\newacronym{teg}{TEG}{Generador Termoel\'{e}ctrico}
+\newacronym{tic}{TIC}{Termoi\'{o}nico}
+\newacronym{pv}{PV}{fotovoltaico}
+\newacronym{tpv}{TPV}{Termo-fotovoltaico}
+\newacronym{ntpv}{nTPV}{Termo-fotovoltaico de campo cercano}
+\newacronym{nftpv}{NFTPV}{Termo-fotovoltaico de campo cercano}
+\newacronym{nf-tpv}{NF-TPV}{Termo-fotovoltaico de campo cercano}
+\newacronym{ictpv}{ICTPV}{C\'{e}lulas termofotovoltaicas interbandas en cascada}
+\newacronym{nitpv}{nTiPV}{Dispositivo termoiónico-fotovoltaico de campo cercano}
+\newacronym{voc}{$V_{OC}$}{tensi\'{o}n de circuito abierto}
+\newacronym{bsr}{BSR}{Capa trasera reflectante}
+\newacronym{rc}{$R_c$}{Resistencia de contacto}
+\newacronym{rcemp}{$R_{cEmp}$}{Resistencia de contacto emp\'{i}rica}
+\newacronym{rcCal}{$R_{cCal}$}{Resistencia de contacto calculada}
+\newacronym{rcCalMax}{$R_{cCalMax}$}{Resistencia de contacto calculada m\'{a}xima}
+\newacronym{rccalInt}{$R_{cCalInt}$}{Resistencia de contacto calculada intermedia}
+\newacronym{hc}{$h_c$}{Conductancia de contacto}
+\newacronym{sio2}{$SiO_2$}{dióxido de silicio}	\newacronym{sic}{$SiC$}{carburo de silicio}
+\newacronym{si}{$Si$}{silicio}	\newacronym{ge}{$Ge$}{germanio} \newacronym{ss}{SS}{Acero inoxidable}
+\newacronym{bg}{BG}{ancho de banda}
+\newacronym{ebg}{$E_g$}{energía del ancho de banda}
+\newacronym{ies}{IES}{Instituto de Energía Solar}
+\newacronym{tfg}{TFG}{Trabajo de Fin de Grado}
+%\makenoidxglossaries
 %empieza el documento
 \begin{document}  
 
@@ -101,7 +128,7 @@
 %Glosario, lista de símbolos, notas, etc.
 
 %estilo de bibliografía: plana, alfa...
-\bibliographystyle{plain}
+\bibliographystyle{ieeetr}%plain}
 
 %genera doble hoja en blanco
 \cleardoublepage
@@ -115,6 +142,6 @@
 
 % Se incluye los anexos
 %\include{capitulos/anexo}
-
+%\printnoidxglossary[type=\acronymtype,title=Acronyms]
 %fin del documento
 \end{document}

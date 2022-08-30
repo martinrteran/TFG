@@ -116,7 +116,7 @@ Integrando la potencia en el rango espectral de longitudes de onda con energías
 	\caption{Potencias por unidad de área transmitida por radiación por efecto de campo cercano para el rango espectral de energía mayor a 1.1 eV (\subref{fig:prad_Eg11_SiSi}) y para todo el rango espectral (\subref{fig:prad_full_SiSi}) frente a las diferentes distancias de separación.}
 	\label{fig:prad_SiSi}
 \end{figure}
-Las potencias radiadas obtenidas para el rango de longitudes de onda mayor a la banda energética del $Si$ son muy pequeñas (figura \ref{fig:prad_Eg11_SiSi}), produciendo que no sea viable este sistema porque las pérdidas por conducción son demasiado grandes. Esto se puede visualizar en la figura \ref{fig:rel_SiSi11_Rc}, donde ni siquiera asumiendo la presencia de un único nano-espaciador con Rc se consigue que la potencia radiada sea al menos un orden de magnitud más alta que la potencia transferida por conducción (no se alcanza un factor 10).
+Las potencias radiadas obtenidas para el rango de longitudes de onda mayor a la bandgap del $Si$ son muy pequeñas (figura \ref{fig:prad_Eg11_SiSi}), produciendo que no sea viable este sistema porque las pérdidas por conducción son demasiado grandes. Esto se puede visualizar en la figura \ref{fig:rel_SiSi11_Rc}, donde ni siquiera asumiendo la presencia de un único nano-espaciador con Rc se consigue que la potencia radiada sea al menos un orden de magnitud más alta que la potencia transferida por conducción (no se alcanza un factor 10).
 \begin{figure}[H]
 	\centering
 \begin{subfigure}[b]{0.49\textwidth}
@@ -161,7 +161,7 @@ Para tener una primera mejor idea de los valores numéricos de los resultados ob
 \vfill \newpage
 %%% AHORA EL CASO DE Si SiO2 y Ge
 \section{Resultados de las simulaciones para una nTPV de Si-SiO2-Ge}\label{sec:res_SiSiO2Ge}
-A continuación se procede a estudiar un caso más realista del sistema nTPV descrito en la sección anterior con una célula de $Ge$ en vez de una de $Si$, cuya banda energética es de 0.7 eV respecto a los 1.1 eV del $Si$.
+A continuación se procede a estudiar un caso más realista del sistema nTPV descrito en la sección anterior con una célula de $Ge$ en vez de una de $Si$, cuya bandgap es de 0.7 eV respecto a los 1.1 eV del $Si$.
 \subsection{Simulaciones de CFD}
 Se realizan las simulaciones de transmisión de calor por conducción en CFD, obteniéndose una reducción considerable de la potencia de la nTPV con $R_c$ (figura \ref{fig:Prc_SiSiO2Ge}) respecto a sin $R_c$ (figura \ref{fig:Pn_SiSiO2Ge}), como en el caso de la célula de $Si$ (figuras \ref{fig:PcondRc_SiSiO2Si} \subref{fig:Prc_SiSiO2Si} y \subref{fig:Prc2_SiSiO2Si}).
 \graphicspath{ {./figuras/Resultados/conduccion/pdf/} }
@@ -227,7 +227,7 @@ Para la obtención de las potencias de radiación se procede a realizar la integ
 	\caption[Potencias por unidad de área para la radiación de campo cercano para el sistema $Si-SiO_2-Ge$ frente a las diferentes alturas del nano-espaciador]{Potencias por unidad de área para la radiación de campo cercano para el sistema $Si-SiO_2-Ge$ frente a las diferentes alturas del nano-espaciador. (\subref{fig:p_Eg_SiGe}) Potencias en el rango espectral de todas las longitudes de onda de energía mayor a 0.7 eV. (\subref{fig:p_full_SiGe}) Potencias en todo el rango espectral, hasta las $\sim$14$\mu m$.}
 	\label{fig:p_SiGe}
 \end{figure}
-Como para el caso de la nTPV de $Si-SiO_2-Si$ la diferencia de la potencia entre integrar hasta los 0.7 eV del rango espectral e integrar en todo el rango espectral es significativa. Al cambiar la célula de $Si$ por una de menor energía de banda de $Ge$ se aumenta la cantidad de potencia que se puede convertir en electricidad. También se observa una disminución de las potencias alrededor de los 600nm (figura \ref{fig:p_Eg_SiGe}), a diferencia de la célula de $Si$ que aumenta (\ref{fig:prad_Eg11_SiSi}).
+Como para el caso de la nTPV de $Si-SiO_2-Si$ la diferencia de la potencia entre integrar hasta los 0.7 eV del rango espectral e integrar en todo el rango espectral es significativa. Al cambiar la célula de $Si$ por una de menor bandgap de $Ge$ se aumenta la cantidad de potencia que se puede convertir en electricidad. También se observa una disminución de las potencias alrededor de los 600nm (figura \ref{fig:p_Eg_SiGe}), a diferencia de la célula de $Si$ que aumenta (\ref{fig:prad_Eg11_SiSi}).
 %%%   DENSIDAD DE NANO-ESPACIADORES
 \subsection{Densidad de nano-espaciadores}
 Para tener una mejor percepción de las ventajas que presenta el usar una célula de $Ge$ frente a una de $Si$ se calcula la densidad de nano-espaciadores frente a las alturas del nano-espaciador para todas las relaciones de la potencia de radiación respecto a la de conducción mayores que 3 o 10.\\\\
