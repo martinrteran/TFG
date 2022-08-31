@@ -21,7 +21,7 @@ También se analizaron otros materiales adicionales que finalmente fueron descar
 Dichos materiales son los siguientes:
 
 \begin{itemize}
-	\item \textbf{Antimoniuro de Galio (GaSb)}: Semiconductor con punto de fusión de 710\textdegree C que es menor a los 800\textdegree C que se encuentra el emisor, por lo cual no se puede utilizar porque empezará a pasar a estado líquido antes de llegar a la temperatura deseada.
+	\item \textbf{Antimoniuro de Galio (GaSb)}: semiconductor con punto de fusión de 710\textdegree C que es menor a los 800\textdegree C que se encuentra el emisor, por lo cual no se puede utilizar porque empezará a pasar a estado líquido antes de llegar a la temperatura deseada.
 	\item \textbf{Grafito}: es un material relativamente barato con una buena conductividad térmica, alto punto de fusión, pero es muy blando respecto al $SiO_2$, tiene como dureza máxima unos 50 HV (dureza Vickers) en comparación a la dureza del $SiO_2$ de unos 500 HV, por lo cual cuando se aplique presión a los dispositivos el nano-espaciador penetrarán el emisor.
 	\item \textbf{Tungsteno (W)}: El coste del material es medio, como máximo unos 56.4€/kg, su dureza Vickers es de unos 350 HV que es adecuada por no ser tan inferior a la del $SiO_2$, su conductividad térmica es más alta que la del nano-espaciador pero la potencia radiativa en campo cercano es baja, más cercana a la del acero.
 	\item \textbf{Alumina ($Al_2O_3$)}: Es un material muy caro, aproximadamente 16000€/kg o más, disminuyendo considerablemente la viabilidad del sistema.
@@ -39,20 +39,20 @@ La base de datos utilizada es la \textit{Level 3} de las avanzadas porque recopi
 Dado la gran cantidad de datos a disposición y la facilidad de obtención de los datos de los materiales, especialmente los datos que están disponibles con la variación de la temperatura, se utiliza este programa.
 %%%   REFRACTIVE INDEX
 \subsection{Refractive Index}
-Esta página web (https://refractiveindex.info) recopila de artículos científicos los índices de refracción (n) e índices de extinción (k) de diferentes materiales en diferentes rangos de longitudes de onda, teniendo a disposición hipervínculos a los artículos de donde se extrajo los datos y la opción de descargar dichos datos.\\\\
-El motivos de su utilización son la facilidad para la obtención de los índices de refracción y extinción, necesarios para los cálculos del flujo térmico de radiación por campo cercano, y la disponibilidad de los artículos utilizados para contrastar los valores presentados.
+Esta página web están recopilados de artículos científicos los índices de refracción (n) e índices de extinción (k) de diferentes materiales en diferentes rangos de longitudes de onda, teniendo a disposición hipervínculos a los artículos de donde se extrajo los datos y la opción de descargar dichos datos.\\\\
+%El motivos de su utilización son la facilidad para la obtención de los índices de refracción y extinción, necesarios para los cálculos del flujo térmico de radiación por campo cercano, y la disponibilidad de los artículos utilizados para contrastar los valores presentados.
 
 %\subsection{Modelado 3D}
 %Para el modelado 3D de cada componente del sistema (emisor, célula y nano-espaciador) se utiliza Autodesk Inventor 2021 por la facilidades que presenta autoDesk de utilizar los archivos de un programa de la misma compañía en otro programa para continuar con el estudio del sistema.ç
 %%%  Autodesk INVENTOR 2021
 \subsection{Autodesk Inventor Professional 2021}
 Es un software de Diseño 3D Asistido por Ordenador (CAD 3D) que ofrece herramientas para el diseño de piezas, ensamblajes, mecanismos, documentación y simulación de los sistemas. También permite el utilizar herramientas de entorno añadidas para simulaciones más complejas, el fácil acoplamiento para el uso de otros programas de Autodesk y el uso de parámetros en el diseño y modelado de las piezas.
-\begin{figure}[H]
-	\centering
-		\includegraphics[width=3cm]{figuras/inventorpro.png}
-	\caption{Icono de Autodesk Inventor Professional 2021}
-	\label{fig:inventorpro}
-\end{figure}
+%\begin{figure}[H]
+	%\centering
+		%\includegraphics[width=3cm]{figuras/inventorpro.png}
+	%\caption{Icono de Autodesk Inventor Professional 2021}
+	%\label{fig:inventorpro}
+%\end{figure}
 Se utiliza el programa para el modelado 3D de los nano-espaciadores, el emisor, la célula y el sistema TPV completo. Los motivos de utilización del programa son:
 
 \begin{itemize}
@@ -66,12 +66,12 @@ Una desventaja de este programa es la limitación que presenta en las unidades m
 %Para la simulación de transmisión de calor se usa el programa Autodesk Computational Fluid Dynamics (CFD), que aún ser usado principalmente para simulaciones con fluidos también permite simular solo transmisión de calor por conducción en sólidos y permite usar los diseños de Autodesk Inventor para simular, siendo fácilmente creado el provecto de CFD desde Inventor en la pestaña nueva de simulación, que se crea automáticamente con la instalación de CFD, y haciendo click sobre \textit{Active Model Assessment Tool}. Usándose exclusivamente para las simulaciones de conducción porque no puede simular la transmisión de calor por campo cercano.
 \subsection{Autodesk CFD}
 Es un software desarrollado por Autodesk que se usa para crear simulaciones computacional de la dinámica de fluidos para la predicción del comportamiento complejo de fluidos (líquidos y gases), el programa también simula la transmisión de calor por conducción en sólidos, convección en fluidos y de radiación. \\
-\begin{figure}[H]
-	\centering
-		\includegraphics[width=3cm]{figuras/CFD.png}
-	\caption{Icono de Autodesk CFD}
-	\label{fig:CFD}
-\end{figure}
+%\begin{figure}[H]
+	%\centering
+		%\includegraphics[width=3cm]{figuras/CFD.png}
+	%\caption{Icono de Autodesk CFD}
+	%\label{fig:CFD}
+%\end{figure}
 Se utiliza el programa para las simulaciones de transmisión de calor por conducción en vez de el entorno Nastran de Inventor por las siguientes razones:
 \begin{itemize}
 	\item Utilización de escalas pequeñas de los parámetros de los materiales.
@@ -82,12 +82,12 @@ Se utiliza el programa para las simulaciones de transmisión de calor por conduc
 
 \subsection{MATLAB}
 MATLAB es un programa o plataforma de programación de \textit{MathWorks} que permite desarrollar cálculos numéricos, desarrollar algoritmos, analizar datos y crear modelos matemáticos de sistemas para cálculo o simulaciones utilizando su propio lenguaje de programación. A su vez, MATLAB proporciona una tienda de paquetes donde los usuarios puede subir aplicaciones desarrolladas en MATLAB que permiten aprovechar aún más los recursos del sistema y facilitar el trabajo, ya sea analizar datos, obtener modelos matemáticos, entre otros.\\
-\begin{figure}[H]
-	\centering
-		\includegraphics[width=3cm]{figuras/MatlabIcon.png}
-	\caption{Icono de MATLAB}
-	\label{fig:MatlabIcon}
-\end{figure}
+%\begin{figure}[H]
+	%\centering
+		%\includegraphics[width=3cm]{figuras/MatlabIcon.png}
+	%\caption{Icono de MATLAB}
+	%\label{fig:MatlabIcon}
+%\end{figure}
 Se utiliza MATLAB para el análisis de los resultados obtenidos de las simulaciones de transmisión de calor por conducción y radiación, para realizar gráficas, para realizar cálculos y para desarrollar la aplicación de la calculadora de campo cercano. El principal motivo de usar MATLAB es para calcular la transmisión de calor en condiciones de campo cercano.
 
 \subsection{Calculadora de campo cercano} \label{sec:calc_campo_cercano}
