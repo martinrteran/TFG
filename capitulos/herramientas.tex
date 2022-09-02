@@ -2,29 +2,40 @@
 %\vspace{-1cm}
 En este capítulo se exponen los materiales utilizados para cada componente del sistema, las herramientas utilizadas para el modelado 3D del nano-espaciador, simulación de la transmisión de calor por conducción y simulación de transmisión de calor por radiación por campo cercano, y los motivos de uso de dichos materiales y herramientas.
 \section{Materiales}
-Se listan y desarrolla los materiales utilizados para simular cada uno de los componentes del sistema y los criterios seguidos para su eleccións.
-\subsection{Nano-espaciador}
-Suponemos que los nano-espaciadores son de dióxido de silicio (\gls{sio2}) \cite{doi:10.1063/1.1141498}, un material que ha sido utilizado en varias ocasiones en sistemas de campo cercano de \acrshort{tpv} o \acrshort{tic} por ser un material cerámico con una baja conductividad térmica y alta resistencia a la fuerza de compresión. La conductividad térmica es menor a 10 W/m\textdegree C en el rango de temperatura de trabajo, entre 25 a 800\textdegree C.\\\\
-
+Para una \acrshort{ntpv} es imprescindible una selección adecuada de los materiales de cada componente, para así conseguir la mayor cantidad de eficiencia y potencia eléctrica. A continuación se listan y desarrollan los materiales de cada uno de los componentes de la \acrshort{ntpv} utilizados en este trabajo, y los criterios seguidos para la elección de cada uno. Siendo estos componentes que integran la \acrshort{ntpv} un emisor, una célula \acrshort{tpv} y los nano-espaciadores.
+\subsection{Nano-espaciadores}
+Los nano-espaciadores tienen que tener una resistencia térmica de conducción alta, para poder disminuir las pérdidas por conducción. También tienen que ser resistentes a la compresión que se ven sometidos por el peso de los componentes y la expansión térmica. Por último, tienen que permitir el paso de la luz con energía mayor a la \acrshort{bg} de la célula a utilizar, para así aumentar el flujo de radiación útil a la célula.\\\\
+Para este trabajo suponemos que los nano-espaciadores son de dióxido de silicio (\gls{sio2}) \cite{doi:10.1063/1.1141498}, un material que ha sido utilizado en varias ocasiones en sistemas de campo cercano de \acrshort{tpv} o \acrshort{tic} por ser un material cerámico con una baja conductividad térmica y alta resistencia a la fuerza de compresión. La conductividad térmica es menor a 10 W/m\textdegree C en el rango de temperatura de trabajo, entre 25 a 800\textdegree C.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%               Célula TPV                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Célula fotovoltaica}
-Suponemos inicialmente que las células son de silicio (\gls{si}) para llevar a cabo unos cálculos preliminares, se utiliza \gls{si} por ser un material ampliamente conocido y utilizado en la fabricación de células fotovoltaicas. En el resto de simulaciones se utiliza germanio (\gls{ge}), que es capaz de absorber una mayor cantidad de radiación por tener una \acrshort{bg} de 0.66eV a 300K, a diferencia del \gls{si} que es unos 1.11eV a 300K. El tener una menor \acrshort{bg} es importante en la TPV porque permite absorber parte de la radiación infrarroja.\\\\
+Las células para una \acrshort{tpv} tienen que poder absorber la mayor cantidad de radiación infrarroja, por ser donde se encuentra la mayor cantidad de potencia de radiación de estos sistemas con emisores a altas temperaturas.\\\\
+Para este trabajo suponemos inicialmente que las células son de silicio (\gls{si}) para llevar a cabo unos cálculos preliminares, se utiliza \gls{si} por ser un material ampliamente conocido y utilizado en la fabricación de células fotovoltaicas. En el resto de simulaciones se utiliza germanio (\gls{ge}), que es capaz de absorber una mayor cantidad de radiación por tener una \acrshort{bg} de 0.66eV a 300K, a diferencia del \gls{si} que es unos 1.11 eV a 300 K. El tener una menor \acrshort{bg} es importante en la TPV porque permite absorber parte de la radiación infrarroja.\\\\
 Otro motivo por el cual se utiliza el \gls{ge} es porque es el material de las células \acrshort{tpv} a disposición en el Instituto de Energía Solar (\acrshort{ies}), que es el centro de investigación donde se desarrolla este \acrshort{tfg}.
 \subsection{Emisor TPV}
-Para simular el emisor supondremos varios materiales: \gls{si} , aceros inoxidables 304 (\acrshort{ss}) y \gls{sic}. Se utiliza \gls{si} para las pruebas de simulación iniciales para tener un punto de partida, para luego pasar al \textit{SS} por ser un material muy utilizado en la industria, incluyendo al transporte, y por último el \gls{sic} que es una cerámica que se ha utilizado para el aumento de potencia de radiación en campo cercano \cite{doi:Near_field_ThinFilm}.
+El material del emisor está limitado principalmente al campo de aplicación de la \acrshort{tpv} y a la potencia de radiación en el rango espectral útil. Para este trabajo se consideran varios materiales según sus potencias de radiación en el rango espectral de energía mayor a 0.7 eV para unas distancias de separación de 100 nm y 1000 nm, como se puede observar en la figura \ref{fig:EgRad}.
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.6\textwidth]{figuras/rad_mat/EgRad.png}
 	\caption[Potencias por unidad de área para una célula de Ge y diferentes materiales de emisor para un rango de longitudes de onda desde aproximadamente 0.2 $\mu m$ hasta 1.8 $\mu m$ (0.7 eV) con distancias de separación de 100nm y 1000nm según las ecuaciones \eqref{eq:flujoPropNF} y \eqref{eq:flujoEvasNF}]{Potencias por unidad de área para una célula de Ge y diferentes materiales de emisor para un rango de longitudes de onda desde aproximadamente 0.2 $\mu m$ hasta 1.8 $\mu m$ (0.7 eV) con distancias de separación de 100nm y 1000nm según las ecuaciones de \cite{nfTPV_equations} calculadas a partir de las ecuaciones \eqref{eq:flujoPropNF} y \eqref{eq:flujoEvasNF}.}
 	\label{fig:EgRad}
 \end{figure}
-También se analizaron otros materiales adicionales que finalmente fueron descartados por ser muy caros, o proporcionar una baja potencia radiada (figura \ref{fig:EgRad}), etc. %, similar conductividad térmica al SiC, Si o SS, punto de fusión menor o cercano a los 800\textdegree C, o por ser demasiado blandos. 
-Dichos materiales son los siguientes:
+Entre todos los materiales de emisor que se pueden observar en la figura \ref{fig:EgRad}, se seleccionan para este trabajo se seleccionan los siguientes tres materiales:
+\begin{itemize}
+	\item \textbf{\gls{si}}: es un material que es abundante y que se encuentra entre los materiales de emisor con mayor potencia de radiación. Se utilizará para realizar las pruebas de simulación iniciales, para así tener un punto de partida.
+	\item \textbf{Acero inoxidable 304 (\acrshort{ss})}: aunque no genere mucha potencia de radiación, es un material muy utilizado en la industria, incluyendo al transporte. Siendo de gran interés para sistemas de recuperación de calor que utilizan TPV.
+	\item \textbf{\gls{sic}}: presenta una potencia radiada similar a la del \gls{si}, pero tiene un punto de fusión mayor que el del \gls{si}. Se utiliza principalmente porque presenta mayores potencias frente a la frecuencia cuando el receptor es de \gls{sic}, por el efecto de la \gls{wres}, como se observa en las simulaciones de \cite{doi:Near_field_ThinFilm}.
+\end{itemize}
+
+A su vez se analizaron otros materiales adicionales que finalmente fueron descartados por ser muy caros, proporcionar una baja potencia radiada, etc. %, similar conductividad térmica al SiC, Si o SS, punto de fusión menor o cercano a los 800\textdegree C, o por ser demasiado blandos. 
+Algunos de estos materiales son los siguientes:
 
 \begin{itemize}
-	\item \textbf{Antimoniuro de Galio (GaSb)}: semiconductor con punto de fusión de 710\textdegree C que es menor a los 800\textdegree C que se encuentra el emisor, por lo cual no se puede utilizar porque empezará a pasar a estado líquido antes de llegar a la temperatura deseada.
-	\item \textbf{Grafito}: es un material relativamente barato con una buena conductividad térmica, alto punto de fusión, pero es muy blando respecto al $SiO_2$, tiene como dureza máxima unos 50 HV (dureza Vickers) en comparación a la dureza del $SiO_2$ de unos 500 HV, por lo cual cuando se aplique presión a los dispositivos el nano-espaciador penetrarán el emisor.
-	\item \textbf{Tungsteno (W)}: El coste del material es medio, como máximo unos 56.4€/kg, su dureza Vickers es de unos 350 HV que es adecuada por no ser tan inferior a la del $SiO_2$, su conductividad térmica es más alta que la del nano-espaciador pero la potencia radiativa en campo cercano es baja, más cercana a la del acero.
-	\item \textbf{Alumina ($Al_2O_3$)}: Es un material muy caro, aproximadamente 16000€/kg o más, disminuyendo considerablemente la viabilidad del sistema.
+	\item \textbf{Antimoniuro de Galio (GaSb)}: es un semiconductor con punto de fusión de 710\textdegree C, que es menor a los 800\textdegree C que se encuentra el emisor, por lo cual no se puede utilizar porque empezará a pasar a estado líquido antes de llegar a la temperatura deseada.
+	\item \textbf{Grafito}: es un material relativamente barato con un alto punto de fusión y una alta potencia de radiación, como se puede observar en la figura \ref{fig:EgRad}, pero presenta el problema que es muy blando respecto al $SiO_2$, teniendo como dureza máxima unos 50 HV (dureza Vickers) en comparación a los 500 HV del $SiO_2$.\\\ Por lo tanto, cuando se aplique presión a los dispositivos, el nano-espaciador penetrarán el emisor, produciendo que disminuya la distancia de separación y aumente la posibilidad de contacto entre el emisor y la célula.
+	\item \textbf{Tungsteno (W)}: es un material con coste medio, siendo como máximo unos 56.4€/kg. Su dureza Vickers es de unos 350 HV que es adecuada por no ser tan inferior a la del $SiO_2$, su conductividad térmica es más alta que la del nano-espaciador, pero la potencia radiativa en campo cercano es baja, más cercana a la del acero.
+	\item \textbf{Alumina ($Al_2O_3$)}: es un material que presenta la sexta potencia radiada más grande para 100 nm de separación, pero presenta el inconveniente de que es muy caro, aproximadamente 16000€/kg o más, disminuyendo considerablemente la viabilidad del sistema.
 \end{itemize}
 
 \section{Herramientas}
@@ -39,7 +50,7 @@ La base de datos utilizada es la \textit{Level 3} de las avanzadas porque recopi
 Dado la gran cantidad de datos a disposición y la facilidad de obtención de los datos de los materiales, especialmente los datos que están disponibles con la variación de la temperatura, se utiliza este programa.
 %%%   REFRACTIVE INDEX
 \subsection{Refractive Index}
-Esta página web están recopilados de artículos científicos los índices de refracción (n) e índices de extinción (k) de diferentes materiales en diferentes rangos de longitudes de onda, teniendo a disposición hipervínculos a los artículos de donde se extrajo los datos y la opción de descargar dichos datos.\\\\
+En esta página web están recopilados de artículos científicos los índices de refracción (\gls{n}) y coeficientes de extinción (\gls{k}) de diferentes materiales en diferentes rangos de longitudes de onda, teniendo a disposición hipervínculos a los artículos de donde se extrajo los datos y la opción de descargar dichos datos.\\\\
 %El motivos de su utilización son la facilidad para la obtención de los índices de refracción y extinción, necesarios para los cálculos del flujo térmico de radiación por campo cercano, y la disponibilidad de los artículos utilizados para contrastar los valores presentados.
 
 %\subsection{Modelado 3D}
