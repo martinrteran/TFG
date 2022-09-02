@@ -58,7 +58,7 @@ La resistencia de contacto ($R_c$) es difícil de modelar matemáticamente en un
 	\label{eq:relacion_Rc}
 \end{equation}
 %%% YOVANOVICH
-Para los casos en los que la resistencia de contacto es presentada como conductancia de contacto ($h_c$) según un modelo matemático \cite{experimental_Rc_SS}, según la ecuación de Cooper reducida por Yovanovich (ecuación \eqref{eq:modeloYovanovich}).
+Para los casos en los que la resistencia de contacto es presentada como conductancia de contacto (\gls{hc}) según un modelo matemático \cite{experimental_Rc_SS}, según la ecuación de Cooper reducida por Yovanovich (ecuación \eqref{eq:modeloYovanovich}).
 \begin{subequations}
 \begin{equation}
 \dfrac{P}{H_c}=\left[ \dfrac{P}{c_1\left(1.62\sigma/m\right)^{c_2}} \right]^{\frac{1}{2+0.071c_2}}
@@ -96,11 +96,11 @@ k_s=2\cdot \frac{k_1\cdot k_2}{k_1+k_2}
 \end{minipage}
 \label{eqs:RMS}
 \end{subequations}
-Estas son las únicas expresiones analíticas que se han encontrado en la literatura para calcular la conductancia térmica de contacto entre dos superficies, las cuales han sido validadas para el caso concreto de dos superficies de acero inoxidable 304 (SS) \cite{experimental_Rc_SS}. Para tener una mejor idea como la resistencia de contacto afecta a la conducción de calor simplificamos las ecuaciones suponiendo que el nano-espaciador de $SiO_2$ es liso, por ende, su $m_i$ y su $\sigma_i$ son nulas. Por lo tanto, se calcula la relación de las ecuaciones para el caso de los dos aceros y para el caso de SS-$SiO_2$.\\\\
+Estas son las únicas expresiones analíticas que se han encontrado en la literatura para calcular la \gls{hc} entre dos superficies, las cuales han sido validadas para el caso concreto de dos superficies de acero inoxidable 304 (SS) \cite{experimental_Rc_SS}. Para tener una mejor idea como la resistencia de contacto afecta a la conducción de calor simplificamos las ecuaciones suponiendo que el nano-espaciador de $SiO_2$ es liso, por ende, su $m_i$ y su $\sigma_i$ son nulas. Por lo tanto, se calcula la relación de las ecuaciones para el caso de los dos aceros y para el caso de SS-$SiO_2$.\\\\
 Como se puede observar en las ecuaciones \ref{eqs:ecuacionesRcYovanovich}, el valor de $\sigma$ y $m$ se presentan siempre relacionados como $\sigma / m$, y se cumple que $\sigma /m =\sigma ' / m'$ porque al suponer que el caso de dos aceros tienen idénticas $m_i$ y $\sigma_i$, la relación $\sigma / m$ queda como $\sigma_i / m_i$, que resulta ser la misma relación para el caso de SS-$SiO_2$.\\\\
 \[ \frac{\sigma}{m}=\frac{\sqrt{\sigma_{SS}^2+\sigma_{SS}^2}}{\sqrt{m_{SS}^2+m_{SS}^2}}=\frac{\sigma_{SS}\sqrt{2}}{m_{SS}\sqrt{2}} =\frac{\sigma_{SS}}{m_{SS}}\]
 \[ \frac{\sigma'}{m'}=\frac{\sqrt{\sigma_{SS}^2+0^2}}{\sqrt{m_{SS}^2+0^2}}=\frac{\sigma_{SS}}{m_{SS}} \]
-Por lo tanto, considerando que $c_1$ y $c_2$ no varían con el cambio de material la relación de $h_c'$ respecto a $h_c$ se obtiene relacionando la ecuación \eqref{eq:correlacionCooperSimplificadaYovanovich} del modelo a simular con la realidad.
+Por lo tanto, considerando que $c_1$ y $c_2$ no varían con el cambio de material la relación de $h_c'$ respecto a \gls{hc} se obtiene relacionando la ecuación \eqref{eq:correlacionCooperSimplificadaYovanovich} del modelo a simular con la realidad.
 \[Cte=1.25\frac{m}{\sigma}\cdot \left(\dfrac{P}{H_c}\right)^{0.95} \qquad \Longrightarrow \qquad h_c=k_s\cdot Cte\]
 Donde $Cte$ es una constante que es igual para el caso de los aceros y el caso SS-$SiO_2$. El valor de $k_s$ para el caso de de los aceros es $k_{SS}$, siendo $k_{SS}$ la conductividad térmica del acero inoxidable 304. 
 \[ \frac{h_c'}{h_c}=\frac{k_s'}{k_s}\cdot \frac{Cte}{Cte}=\frac{2 \cdot \frac{k_{SS}\cdot k_{SiO_2}}{k_{SS}+k_{SiO_2}}}{k_{SS}}\]

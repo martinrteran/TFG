@@ -152,12 +152,18 @@ Se siguen los siguientes pasos:
 			\item Hacer click sobre el botón \textbf{Calculate} y esperar a que termine de ejecutarse la simulación.
 \end{enumerate}
 
-\chapter{Acrónimos}
+\chapter{Lista de siglas}
 
-\let\cleardoublepage\clearpage
+%\let\cleardoublepage\clearpage
 \glsaddall
-\cleardoublepage
-\printglossary[type=\acronymtype,title=Acr\'{o}nimos]
+%\cleardoublepage
+%\setglossarysection{chapter}
+\setlength{\glsdescwidth}{\textwidth}
+\printglossary[type=\acronymtype,title=Acr\'{o}nimos,style=longheader]%superheader]%myacronymstyle]
 %\printnoidxglossary[type=\acronymtype,title=Acr\'{o}nimos]%,sort=use]%[type=\acronymtype]
-
+\let\cleardoublepage\clearpage
+\chapter{Tabla de Símbolos}
+\setlength{\glsdescwidth}{15cm}
+\printglossary[type=symbolslist,style=symbunitlong]
+\let\cleardoublepage\clearpage
 %\printglossary
