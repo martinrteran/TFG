@@ -1,8 +1,9 @@
 \chapter{Métodos}\label{chapter:Metodos}
 En este capítulo se detallan los criterios seguidos para la elección de la geometría de los espaciadores y su escala, los cálculos realizados para adaptar las propiedades de los materiales a las limitaciones de escala de los programas de simulación, los procedimientos seguidos para realizar las simulaciones y el procedimiento seguido para la extracción de los datos de la simulación de CFD.
-\section{Criterios de geometría y escala} 
-La base del nano-espaciador es cuadrada por ser la más sencilla de fabricar por procesos fotolitográficos y para realizar cálculos por ser sus ecuaciones de área y volumen la más sencilla de los polígonos regulares cerrados. El lado de la base del nano-espaciador son de 3$\mu m$ por ser el límite de resolución de la mayoría de equipos de fotolitografía, es decir, es la mínima distancia que se puede definir mediante fotolitografía.\\\\
-Se utiliza 100nm como la distancia mínima para definir la altura mínima de los nano-espaciadores, correspondiente a 1mm de la escala del modelo 3D en Inventor. Por lo tanto, el factor de escala que se aplica a las unidades de longitud es $10^4$, que se toma en cuenta a la hora de definir las propiedades térmicas que involucren unidades de longitud, como es la conductividad térmica ($W/m2$).
+\section{Criterios de geometría y escala}
+Los criterios de geometría y escala se basan principalmente en el proceso de fabricación de los nano-espaciadores por fotolitografía, que es la técnica que se utilizará en el desarrollo de los primeros experimentos que intentarán corroborar los resultados obtenidos en este trabajo de simulación, esto en una siguiente etapa de la investigación.\\\\
+La base del nano-espaciador es cuadrada por ser la geometría más sencilla de fabricar mediante procesos fotolitográficos y para realizar cálculos, por ser sus ecuaciones de área y volumen las más sencilla de los polígonos regulares cerrados. El lado de la base del nano-espaciador son de 3 $\mu m$ por ser el límite de resolución de la mayoría de equipos de fotolitografía, es decir, es la mínima distancia que se puede definir mediante fotolitografía.\\\\
+Se utiliza 100 nm como la distancia mínima para definir la altura mínima de los nano-espaciadores, correspondiente a 1 mm de la escala del modelo 3D en Inventor. Por lo tanto, el factor de escala que se aplica a las unidades de longitud es $10^4$, que se toma en cuenta a la hora de definir las propiedades térmicas que involucren unidades de longitud, como es la conductividad térmica ($W/m2$).
 %%% CALCULOS DE LAS PROPIEDADES DE LOS MATERIALES
 \section{Cálculos de las propiedades de los materiales para las simulaciones}
 Para obtener los nuevos parámetros de distancias, áreas y volúmenes del modelo 3D del nano-espaciador se procede a obtener las relaciones de escala entre el modelo y la realidad. También se obtienen las relaciones de las propiedades más significativas de los materiales de la realidad y las simulaciones de transmisión de calor por conducción, siendo la principal propiedad la conductividad térmica. Otras propiedades que se toman en cuenta son la densidad y el calor específico, teniendo que destacar la resistencia de contacto por unidad de área entre el nano-espaciador y el emisor.\\\\
@@ -58,7 +59,8 @@ La resistencia de contacto ($R_c$) es difícil de modelar matemáticamente en un
 	\label{eq:relacion_Rc}
 \end{equation}
 %%% YOVANOVICH
-Para los casos en los que la resistencia de contacto es presentada como conductancia de contacto (\gls{hc}) según un modelo matemático \cite{experimental_Rc_SS}, según la ecuación de Cooper reducida por Yovanovich (ecuación \eqref{eq:modeloYovanovich}).
+Para los casos que el emisor de la \acrshort{nptc} sea de \gls{ss}, la $R_c$ es obtenida a través de la conductancia de contacto (\gls{hc}) según un modelo matemático \cite{experimental_Rc_SS}, y según la ecuación de Cooper reducida por Yovanovich (ecuación \eqref{eq:modeloYovanovich}).
+
 \begin{subequations}
 \begin{equation}
 \dfrac{P}{H_c}=\left[ \dfrac{P}{c_1\left(1.62\sigma/m\right)^{c_2}} \right]^{\frac{1}{2+0.071c_2}}
@@ -70,11 +72,11 @@ Para los casos en los que la resistencia de contacto es presentada como conducta
 \end{equation}
 \label{eqs:ecuacionesRcYovanovich}
 \end{subequations}
+
 %% Valores de las constantes
 Donde $c_1$ es 10.6 GPa, $c_2$ es -0.40, $\sigma$ es la combinación RMS de la rugosidad de ambas superficies de los materiales con $\sigma_i$ siendo la rugosidad de la superficie $i$ (ecuación \eqref{eq:sigmaRMS}), $m$ es la combinación RMS de la media absoluta de la pendiente de la rugosidad con $m_i$ siendo la media de la pendiente absoluta de la superficie $i$ (ecuación \eqref{eq:mRMS}), $k_s$ es la media armónica de la conductividad térmica con $k_i$ siendo la conductividad térmica del material $i$ (ecuación \eqref{eq:condArmonica}), $H_c$ es la micro-dureza Vickers del material más duro y P es la presión aplicada.
-
 \begin{subequations}
-\begin{minipage}{0.299\textwidth}
+\begin{minipage}{0.29\textwidth}
 \begin{equation}
 m=\sqrt{m_1^2+m_2^2}
 \label{eq:mRMS}

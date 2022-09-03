@@ -27,7 +27,8 @@
 \usepackage{multirow}
 \usepackage[acronym,toc,section=chapter,
 						nonumberlist,nopostdot,
-						nomain,symbols]{glossaries}
+						nomain,symbols,
+						nogroupskip]{glossaries}
 \usepackage{siunitx}
 \usepackage{tabu}
 %para generar índice con hipervínculos
@@ -105,7 +106,7 @@
     \endfoot%
   }%
   % indicate what to do at the start of each logical group
-  \renewcommand*{\glsgroupskip}{\tabularnewline}% What to do between groups
+  \renewcommand*{\glsgroupskip}{0pt}% What to do between groups
   \renewcommand*{\glossentry}[1]{%
     \glsentryitem{##1}% Entry number if required
     \glstarget{##1}{\glossentrysymbol{##1}} &

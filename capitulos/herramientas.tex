@@ -108,7 +108,7 @@ Los motivos que impulsaron el desarrollar de la aplicación son el simplificar e
 La aplicación se divide en tres pestañas \textit{Potencia Radiada}, \textit{Potencia} y \textit{Materiales}. En cuanto se abre la aplicación se presenta abierta la pestaña de \textit{Potencia Radiada} (figura \ref{fig:pestana_PotenciaRadiada}), donde se seleccionan los materiales del emisor y el receptor, las distancias de separación de los cuerpos y la temperatura del emisor en grados Kelvin, ya que la del receptor es fija a 300K. También muestra la gráfica de los resultados obtenidos de la simulación para cualquier combinación excepto cuando se eligen varios materiales en un rango de distancias porque todavía no está implementado para este caso de dos rangos.\\ 
 \begin{figure}[H]
 	\centering
-		\includegraphics[width=0.80\textwidth]{figuras/pestana_PotenciaRadiada.png}
+		\includegraphics[width=0.80\textwidth]{figuras/pestana_PotenciaRadiada2.png}
 	\caption{Pestaña \textit{Potencia Radiada} de la calculadora de campo cercano}
 	\label{fig:pestana_PotenciaRadiada}
 \end{figure}
@@ -131,7 +131,7 @@ Para la selección del rango de los materiales se abre una nueva ventana de una 
 \caption{(\subref{fig:ventana_dist}) Ventana para la selección del rango de las distancias de separación entre el emisor y el receptor. (\subref{fig:ventana_mat}) Ventana para la selección de los materiales para el emisor y el receptor.}%
 \label{fig:ventanas_d_mat}%
 \end{figure}
-La pestaña de \textit{Potencia} (figura \ref{fig:pestana_Potencia})contiene una calculadora para pasar de electrón-voltios a longitud de onda y viceversa, unos campos para controlar el rango de longitudes de onda para realizar la integral de la potencia radiada monocromática y una gráfica para mostrar los resultados obtenidos de integrar. La integral se realiza por el método del trapezoide. Los resultados obtenidos de la potencia integrada (figura \ref{fig:pestana_Potencia}), los de la radiación espectral o ambos se pueden guardar en un archivo excel.
+La pestaña de \textit{Potencia} (figura \ref{fig:pestana_Potencia}) contiene una calculadora para pasar de electrón-voltios a longitud de onda y viceversa, unos campos para controlar el rango espectral en longitudes de onda para realizar la integral de la potencia radiada y una gráfica para mostrar los resultados obtenidos de integrar. La integral se realiza por el método del trapezoide. Los resultados obtenidos de la potencia integrada (figura \ref{fig:pestana_Potencia}), los de la radiación espectral o ambos se pueden guardar en un archivo excel.
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.70\textwidth]{figuras/pestana_Potencia.png}
