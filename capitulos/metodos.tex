@@ -59,13 +59,14 @@ La resistencia de contacto ($R_c$) es difícil de modelar matemáticamente en un
 	\label{eq:relacion_Rc}
 \end{equation}
 %%% YOVANOVICH
-Para los casos que el emisor de la \acrshort{ntpv} es de \acrshort{ss}, la $R_c$ es obtenida aplicando la inversa de la conductancia de contacto (\gls{hc}). La \gls{hc} se obtiene según un modelo matemático presentado en \cite{experimental_Rc_SS} y según la ecuación de Cooper reducida por Yovanovich (ecuación \eqref{eq:ecuacionesRcYovanovich}).\\
+De la literatura, solo se encontró en \cite{experimental_Rc_SS} expresiones analíticas para calcular la conductancia de contacto (\gls{hc}) entre dos superficies, las cuales han sido validadas para el caso concreto de dos superficies de SS. Pudiéndose obtener la $R_c'$ aplicando la inversa a la $h_c$ del modelo ($h_c'$).\\\\
+Estas expresiones analíticas solo se aplicarán al modelo de simulación de la nTPV de emisor de SS, es decir, nTPV de $SS-SiO_2-Ge$, que para la obtención de la $h_c'$, y por ende la $R_c'$, se relacionan la $h_c'$ con la $h_c$ del caso concreto de SS \cite{experimental_Rc_SS}. Para obtener esta relación, simplificamos las ecuaciones suponiendo que el nano-espaciador de $SiO_2$ es liso, por ende, su pendiente media de la rugosidad ($m_i$) y su rugosidad ($\sigma_i$) son nulas.\\\\
+La \gls{hc} se obtiene según un modelo matemático presentado en \cite{experimental_Rc_SS} y según la ecuación de Cooper reducida por Yovanovich (ecuación \eqref{eq:ecuacionesRcYovanovich}).\\
 \begin{equation}
 \dfrac{h_c\sigma}{k_sm}=1.25\left(\dfrac{P}{H_c}\right)^{0.95}
 \label{eq:ecuacionesRcYovanovich}
 \end{equation}
 Donde $\sigma$ es la combinación RMS de la rugosidad de ambas superficies de los materiales, que está definida en la ecuación \eqref{eq:sigmaRMS}, $m$ es la combinación RMS de la media absoluta de la pendiente de la rugosidad, definida en la ecuación \eqref{eq:mRMS}, $k_s$ es la media armónica de la conductividad térmica, cuya ecuación está definida en la ecuación \eqref{eq:condArmonica}, $H_c$ es la micro-dureza Vickers del material más duro y \gls{p} es la presión aplicada.\\
-
 \begin{subequations}
 \begin{minipage}{0.298\textwidth}
 \begin{equation}
@@ -91,15 +92,13 @@ k_s=2\cdot \frac{k_1\cdot k_2}{k_1+k_2}
 \end{subequations}
 
 
-La presión de contacto adimensional, es decir, la relación entre la \gls{p} y la $H_c$ de la ecuación \eqref{eq:ecuacionesRcYovanovich}, se obtiene a partir del modelo propuesto por Song y Yovanovich, recopilados en \cite{experimental_Rc_SS}, donde $c_1$ es 10.6 GPa y $c_2$ es -0.40. Este modelo es:
+La presión de contacto adimensional, es decir, la relación entre la \gls{p} y la $H_c$ de la ecuación \eqref{eq:ecuacionesRcYovanovich}, se obtiene a partir del modelo propuesto por Song y Yovanovich, recopilados en \cite{experimental_Rc_SS}, según la ecuación \eqref{eq:modeloYovanovich} donde $c_1$ es 10.6 GPa y $c_2$ es -0.40.
 \begin{equation}
 \dfrac{P}{H_c}=\left[ \dfrac{P}{c_1\left(1.62\sigma/m\right)^{c_2}} \right]^{\frac{1}{2+0.071c_2}}
 \label{eq:modeloYovanovich}
 \end{equation}
 
 %% Valores de las constantes
-Estas son las únicas expresiones analíticas que se han encontrado en la literatura para calcular la \gls{hc} entre dos superficies, las cuales han sido validadas para el caso concreto de dos superficies de SS \cite{experimental_Rc_SS}.\\\\
-Para tener una mejor idea como la resistencia de contacto afecta a la conducción de calor, simplificamos las ecuaciones suponiendo que el nano-espaciador de $SiO_2$ es liso, por ende, su $m_i$ y su $\sigma_i$ son nulas. Por ende, se calcula la relación de las ecuaciones para el caso de los dos aceros y para el caso de SS-$SiO_2$.\\\\
 Como se puede observar en las ecuaciones \ref{eq:ecuacionesRcYovanovich} y \ref{eq:modeloYovanovich}, el valor de $\sigma$ y $m$ se presentan siempre relacionados como $\sigma / m$, y se cumple que $\sigma /m =\sigma ' / m'$ porque al suponer que el caso de dos aceros tienen idénticas $m_i$ y $\sigma_i$, la relación $\sigma / m$ queda como $\sigma_i / m_i$, que resulta ser la misma relación para el caso de SS-$SiO_2$.\\\\
 \[ \frac{\sigma}{m}=\frac{\sqrt{\sigma_{SS}^2+\sigma_{SS}^2}}{\sqrt{m_{SS}^2+m_{SS}^2}}=\frac{\sigma_{SS}\sqrt{2}}{m_{SS}\sqrt{2}} =\frac{\sigma_{SS}}{m_{SS}}\]
 \[ \frac{\sigma'}{m'}=\frac{\sqrt{\sigma_{SS}^2+0^2}}{\sqrt{m_{SS}^2+0^2}}=\frac{\sigma_{SS}}{m_{SS}} \]
@@ -108,7 +107,7 @@ Por lo tanto, considerando que $c_1$ y $c_2$ no varían con el cambio de materia
 %%%%
 \[Cte=1.25\frac{m}{\sigma}\cdot \left(\dfrac{P}{H_c}\right)^{0.95} \qquad \Longrightarrow \qquad h_c=k_s\cdot Cte\]
 %%
-Donde $Cte$ es una constante que es igual para el caso de los aceros y el caso SS-$SiO_2$. El valor de $k_s$ para el caso de de los aceros es $k_{SS}$, siendo $k_{SS}$ la conductividad térmica del \acrshort{ss}. 
+Donde $Cte$ es una constante que es igual para el caso de los aceros, como para el caso SS-$SiO_2$. El valor de $k_s$ para el caso de de los aceros es $k_{SS}$, siendo $k_{SS}$ la conductividad térmica del \acrshort{ss}. 
 %%
 \[ \frac{h_c'}{h_c}=\frac{k_s'}{k_s}\cdot \frac{Cte}{Cte}=\frac{2 \cdot \frac{k_{SS}\cdot k_{SiO_2}}{k_{SS}+k_{SiO_2}}}{k_{SS}}\]
 \begin{equation}
