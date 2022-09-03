@@ -1,3 +1,6 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          Procedimientos simulaciones radiación                           % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter[Procedimientos simulaciones radiación]{Procedimientos seguidos para la realización de las simulaciones de radiación de campo cercano}\label{ch:procedimientosSimRad}
 
 En este apéndice se detallan los pasos genéricos seguidos para la realización de las simulaciones de radiación de campo cercano y la obtención de los resultados de las potencias integradas en un respectivo rango espectral utilizando la aplicación \textbf{calculadora de campo cercano}, descrita en la sección \ref{sec:calc_campo_cercano}.
@@ -17,97 +20,106 @@ Los procedimientos para la realización de las simulaciones de transmisión de c
 	\item Selección del rango de distancias a simular.
 	\item Hacer clic sobre el botón \textbf{Calculate}.
 \end{itemize}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Distancia fija y un par de materiales}
-Se siguen los siguientes pasos:
+%        Distancia fija y un par de materiales           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Distancia fija y un par de materiales} \label{DfMf}
+Este caso consiste en una sola distancia de separación, un material para el emisor y otro material para el receptor.
+Para proceder con la simulación se siguen los siguientes pasos:
 \begin{enumerate}
 	\item Seleccionar el material de la placa superior en \textbf{Superior plate} (figura \ref{unParMat}). 
 	\item Seleccionar el material de la placa inferior en \textbf{Inferior plate}.
 	\item Seleccionar la distancia (figura \ref{unaDistancia}). 
 %%%%%
-\begin{figure}[H]
-\centering
-\begin{subfigure}[b]{.48\textwidth}
-	\centering
-		\includegraphics{figuras/unaDistancia.PNG}
-	\caption{ }
-	\label{unaDistancia}
-\end{subfigure} \hfill
-\begin{subfigure}[b]{.48\textwidth}
-	\centering
-		\includegraphics{figuras/unParMat.PNG}
-		\caption{ }
-	\label{unParMat}
-\end{subfigure}
-\caption{Seleccionador de una distancia de separación en nanometros (\subref{unaDistancia}) y seleccionar de los materiales de emisor (Superior plate) y receptor (Inferior plate) (\subref{unParMat}) de la calculadora de campo cercano.}
-\label{fig:sencillo}
-\end{figure}	
+		\begin{figure}[H]
+			\centering
+			\begin{subfigure}[b]{.48\textwidth}
+				\centering
+					\includegraphics{figuras/unaDistancia.PNG}
+				\caption{ }
+				\label{unaDistancia}
+			\end{subfigure} \hfill
+			\begin{subfigure}[b]{.48\textwidth}
+				\centering
+					\includegraphics{figuras/unParMat.PNG}
+					\caption{ }
+				\label{unParMat}
+			\end{subfigure}
+			\caption{Seleccionador de una distancia de separación en nanometros (\subref{unaDistancia}) y seleccionar de los materiales de emisor (Superior plate) y receptor (Inferior plate) (\subref{unParMat}) de la calculadora de campo cercano.}
+			\label{fig:sencillo}
+		\end{figure}	
+%%%
 	\item Hacer click sobre el botón \textbf{Calculate}.
 	\item Esperar que el indicador de estado pase de \textit{Running...}, color rojo del indicador (figura \ref{fig:indicador_Running2}), a \textit{StdBy}, color verde del indicador (figura \ref{fig:indicador_StdBy2}), es decir, esperar que termine la simulación.
-	\end{enumerate}
+\end{enumerate}
 		%% figuras de estados
 	\begin{figure}[H]
-	\centering
-	%% Figura 1
-	\begin{subfigure}[b]{0.3\textwidth}
-	\centering
-	\includegraphics[width=\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/estado_changed}%
-	\caption{Changed}%
-	\label{fig:indicador_Changed2}%
-	\end{subfigure}
-	\hfill
-	%% Figura 2
-	\begin{subfigure}[b]{0.3\textwidth}
-	\centering
-	\includegraphics[width=\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/estado_running}%
-	\caption{Running}%
-	\label{fig:indicador_Running2}%
-	\end{subfigure}
-	\hfill
-	%% Figura 3
-	\begin{subfigure}[b]{0.3\textwidth}
-	\centering
-	\includegraphics[width=0.9\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/estado_stdby}%
-	\caption{StdBy}%
-	\label{fig:indicador_StdBy2}%
-	\end{subfigure}
-	\hfill
-	\caption{Indicadores del estado actual del sistema. (\subref{fig:indicador_Changed2}) Indicador del estado \textbf{Changed} o estado de cambio, se activa cuando se produce algún cambio en los datos seleccionados para simular. (\subref{fig:indicador_Running2}) Indicador del estado \textbf{Running} o corriendo, se activa cuando estando en el estado \textbf{Changed} se hace clic al botón \textbf{Calculate} y corre la simulación. (\subref{fig:indicador_StdBy2}) Indicador del estado \textbf{StdBy}, se activa cuando termina la simulación, avisando que está a la espera de algún cambio.}
-	\label{fig:indicadorLED2}
+		\centering
+		%% Figura 1
+		\begin{subfigure}[b]{0.3\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/estado_changed}%
+			\caption{Changed}%
+			\label{fig:indicador_Changed2}%
+		\end{subfigure}
+		\hfill
+		%% Figura 2
+		\begin{subfigure}[b]{0.3\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/estado_running}%
+			\caption{Running}%
+			\label{fig:indicador_Running2}%
+		\end{subfigure}
+		\hfill
+		%% Figura 3
+		\begin{subfigure}[b]{0.3\textwidth}
+			\centering
+			\includegraphics[width=0.9\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/estado_stdby}%
+			\caption{StdBy}%
+			\label{fig:indicador_StdBy2}%
+		\end{subfigure}
+		\hfill
+		\caption{Indicadores del estado actual del sistema. (\subref{fig:indicador_Changed2}) Indicador del estado \textbf{Changed} o estado de cambio, se activa cuando se produce algún cambio en los datos seleccionados para simular. (\subref{fig:indicador_Running2}) Indicador del estado \textbf{Running} o corriendo, se activa cuando estando en el estado \textbf{Changed} se hace clic al botón \textbf{Calculate} y corre la simulación. (\subref{fig:indicador_StdBy2}) Indicador del estado \textbf{StdBy}, se activa cuando termina la simulación, avisando que está a la espera de algún cambio.}
+		\label{fig:indicadorLED2}
 	\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%       Rango de distancias y un par de materiales         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Rango de distancias y un par de materiales}
-\begin{enumerate}
-	\item Seleccionar el material de la placa superior en \textbf{Superior plate} (figura \ref{unParMat}).
-	\item Seleccionar el material de la placa inferior en \textbf{Inferior plate}.
-	\item Hacer click sobre el checkbox \textbf{Distance Range} (figura \ref{fig:check_distances2}).
-	\item Hacer click sobre el botón \textbf{set} del \textbf{Distance Range}, que produce que aparezca la ventana de la figura \ref{fig:set_distances2}.
-	\item Seleccionar el rango de distancias deseado o el checkbox \textbf{Full Range}, según lo que se desee. Para este trabajo se selecciona el checkbox \textbf{Full Range}.
-	\item Hacer click en \textbf{Accept} de la nueva ventana.
-	\item Hacer click sobre el botón \textbf{Calculate} y esperar a que termine de ejecutarse la simulación.
-\end{enumerate}
-	\begin{figure}[H]%
-	\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-			\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/check_distances2.png}
-		\caption{Checkbox de distancias}
-		\label{fig:check_distances2}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-			\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/set_distances_fullrange.png}
-		\caption{Set de distancias}
-		\label{fig:set_distances2}
-	\end{subfigure}
-	\caption{(\subref{fig:check_distances2}) Casilla para la selección de la opción de simular un rango de distancias. (\subref{fig:set_distances2}) Ventana para la selección del rango de distancias a simular.}%
-	\label{fig:checkboxes2}%
-	\end{figure}
+\section{Rango de distancias y un par de materiales}\label{DrMf}
+Este caso de simulación consiste en un rango de distancias de separación de 100 nm de paso y la combinación de un material del emisor con otro material del receptor.
+Para proceder con la simulación se siguen los siguientes pasos:
+	\begin{enumerate}
+		\item Seleccionar el material de la placa superior en \textbf{Superior plate} (figura \ref{unParMat}).
+		\item Seleccionar el material de la placa inferior en \textbf{Inferior plate}.
+		\item Hacer click sobre el checkbox \textbf{Distance Range} (figura \ref{fig:check_distances2}).
+		\item Hacer click sobre el botón \textbf{set} del \textbf{Distance Range}, que produce que aparezca la ventana de la figura \ref{fig:set_distances2}.
+		\item Seleccionar el rango de distancias deseado o el checkbox \textbf{Full Range}, según lo que se desee. Para este trabajo se selecciona el checkbox \textbf{Full Range}.
+		\item Hacer click en \textbf{Accept} de la nueva ventana.
+		\item Hacer click sobre el botón \textbf{Calculate} y esperar a que termine de ejecutarse la simulación.
+	\end{enumerate}
+	%%%%%%     FIGURAS   
+		\begin{figure}[H]%
+		\begin{subfigure}[b]{0.48\textwidth}
+			\centering
+				\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/check_distances2.png}
+			\caption{Checkbox de distancias}
+			\label{fig:check_distances2}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.48\textwidth}
+			\centering
+				\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/set_distances_fullrange.png}
+			\caption{Set de distancias}
+			\label{fig:set_distances2}
+		\end{subfigure}
+		\caption{(\subref{fig:check_distances2}) Casilla para la selección de la opción de simular un rango de distancias. (\subref{fig:set_distances2}) Ventana para la selección del rango de distancias a simular.}%
+		\label{fig:checkboxes2}%
+		\end{figure}
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%        Distancia fija y varios materiales       %
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\section{Distancia fija y varios materiales}
+	\section{Distancia fija y varios materiales}\label{DfMr}
+Este caso de simulación consiste en una sola distancia de separación y varias combinaciones de los materiales del emisor con los del receptor. Para proceder con la simulación se siguen los siguientes pasos:
 	\begin{enumerate}
 			\item Hacer click sobre el checkbox \textbf{Materials Range} (figura \ref{fig:check_materials2}).
 			\item Hacer click sobre el botón \textbf{set} del \textbf{Materials Range}, que produce que aparezca la ventana de la figura \ref{fig:set_materials2}.
@@ -116,27 +128,29 @@ Se siguen los siguientes pasos:
 			\item Hacer clic en \textbf{Accept} de la ventana emergente.
 			\item Seleccionar la distancia (figura \ref{unaDistancia}). 
 			\item Hacer click sobre el botón \textbf{Calculate} y esperar a que termine de ejecutarse la simulación.
-	\end{enumerate}
-	%%%%%%%%%%%%%%%%%
+	\end{enumerate}			
+	%%%%%%%%%%%%%%%%%   FIGURAS  
 	\begin{figure}[H]%
-	\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-			\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/set_materilas2.png}
-		\caption{Set de materiales}
-		\label{fig:set_materials2}
-	\end{subfigure}\hfill
 		\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-			\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/check_materials2.png}
-		\caption{Checkbox de materiales}
-		\label{fig:check_materials2}
-	\end{subfigure}
-	\caption{(\subref{fig:set_materials2}) Ventana para la selección de las combinaciones de materiales a simula, siendo \textbf{UpFace} el emisor y \textbf{DownFace} la célula.	(\subref{fig:check_materials2}) Casilla para la selección de la opción de simular una combinación de materiales.}%
-	\label{fig:sets2}%
+			\centering
+				\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/set_materilas2.png}
+			\caption{Set de materiales}
+			\label{fig:set_materials2}
+		\end{subfigure}\hfill
+			\begin{subfigure}[b]{0.48\textwidth}
+			\centering
+				\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/check_materials2.png}
+			\caption{Checkbox de materiales}
+			\label{fig:check_materials2}
+		\end{subfigure}
+		\caption{(\subref{fig:set_materials2}) Ventana para la selección de las combinaciones de materiales a simula, siendo \textbf{UpFace} el emisor y \textbf{DownFace} la célula.	(\subref{fig:check_materials2}) Casilla para la selección de la opción de simular una combinación de materiales.}%
+		\label{fig:sets2}%
 	\end{figure}	
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%      Rango de materiales y varios materiales     %
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Rango de materiales y varios materiales}
+\section{Rango de materiales y varios materiales}\label{DrMr}
+Este caso de simulación consiste en un rango de distancias de separación de 100 nm de paso y varias combinaciones de materiales del emisor con los del receptor. Para proceder con la simulación se siguen los siguientes pasos:
 \begin{enumerate}
 			\item Hacer click sobre el checkbox \textbf{Materials Range} (figura \ref{fig:check_materials2}).
 			\item Hacer click sobre el checkbox \textbf{Distance Range} (figura \ref{fig:check_distances2}).
@@ -151,7 +165,57 @@ Se siguen los siguientes pasos:
 			\item Hacer click en \textbf{Accept} de la nueva ventana.
 			\item Hacer click sobre el botón \textbf{Calculate} y esperar a que termine de ejecutarse la simulación.
 \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Integración de la potencia en un rango espectral        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Integraci\'{o}n de la potencia en un rango espectral}
+Para proceder a la integración de las potencias obtenidas de las simulaciones, se siguen los siguientes pasos:
+	%% Se acaba la figura
+	\begin{enumerate}
+	\item Ir a la pestaña de \textbf{Potencia}.
+	\item Introducir el rango de longitudes de onda para calcular la potencia por unidad de área, siendo elegido desde el mínimo hasta 1.8 $\mu m$ que es el rango de longitudes de onda que absorbe la célula de Ge (figura \ref{fig:graficar_ejemplo2}).
+	\item Hacer clic en el botón \textbf{Graph} para calcular y graficar las potencias (figura \ref{fig:graficar_ejemplo2}).
+\end{enumerate}
+%% Graficas de la pestaña de potencia
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.30\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/graficar_ejemplo2.png}
+	\caption{Preferencias para el cálculo de la potencia}
+	\label{fig:graficar_ejemplo2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%        Guardado de los datos          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Guardado de los datos}
+Para la extracción o guardado de los resultados obtenidos de las simulaciones, es decir, las potencias de transmisión de calor por radiación. Para guardar todos los datos disponibles de la última simulación ejecutada, las potencias frente a la longitud de onda y las potencias integradas en un rango espectral, se hace clic sobre el botón de \textbf{guardar todos}, que se observa en la figura \ref{fig:SaveAllicon}.
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=0.4\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/SaveButton_Cut.jpg}
+		\caption{Botón de guardar actual}
+		\label{fig:SaveButton_Cut}
+	\end{subfigure}
+  \hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+			\includegraphics[width=0.40\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/SaveAllicon.jpg}
+		\caption{Botón de guardar todos los resultados}
+		\label{fig:SaveAllicon}
+	\end{subfigure}
+	\caption{(\subref{fig:SaveButton_Cut}) Botón de guardar los resultados obtenidos de los cálculos o la simulación, dependiendo de la pestaña que se encuentre el usuario de la calculadora de campo cercano. (\subref{fig:SaveAllicon}) Botón de guardar todos los resultados obtenidos de los cálculos y simulación.}
+	\label{fig:saveButtons}
+\end{figure}
+Para guardar exclusivamente las potencias frente a la longitud de onda, se procede  air a dicha pestaña y hacer clic sobre el botón de \textbf{guardar}, que se observa en la figura \ref{fig:SaveButton_Cut}. Y para guardar exclusivamente las potencias integradas en un rango espectral, se hace clic sobre el mismo botón \textbf{guardar}.
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                          Procedimientos simulaciones radiación                           % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter[Procedimientos del modelado 3D]{Procedimientos seguidos para la realización del modelado 3D}\label{ch:procedimientosModelado3D}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            Lista Siglas            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \chapter{Lista de siglas}
 
 %\let\cleardoublepage\clearpage

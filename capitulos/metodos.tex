@@ -167,6 +167,7 @@ Las simulaciones de transmisión de calor por radiación de campo cercano se rea
 	\item Asegurar que la temperatura del emisor sea la deseada.
 	\item Hacer clic en el botón \textbf{Calculate} para ejecutar la simulación.
 	\item Esperar que el indicador de estado pase de \textit{Running...}, color rojo del indicador (figura \ref{fig:indicador_Running}), a \textit{StdBy}, color verde del indicador (figura \ref{fig:indicador_StdBy}), es decir, esperar que termine la simulación.
+	\end{enumerate}
 	%% figuras de estados
 	\begin{figure}[H]
 	\centering
@@ -197,38 +198,8 @@ Las simulaciones de transmisión de calor por radiación de campo cercano se rea
 	\caption{Indicadores del estado actual del sistema. (\subref{fig:indicador_Changed}) Indicador del estado \textbf{Changed} o estado de cambio, se activa cuando se produce algún cambio en los datos seleccionados para simular. (\subref{fig:indicador_Running}) Indicador del estado \textbf{Running} o corriendo, se activa cuando estando en el estado \textbf{Changed} se hace clic al botón \textbf{Calculate} y corre la simulación. (\subref{fig:indicador_StdBy}) Indicador del estado \textbf{StdBy}, se activa cuando termina la simulación, avisando que está a la espera de algún cambio.}
 	\label{fig:indicadorLED}
 	\end{figure}
-	%% Se acaba la figura
-	\item Ir a la pestaña de \textbf{Potencia}.
-	\item Introducir el rango de longitudes de onda para calcular la potencia por unidad de área, siendo elegido desde el mínimo hasta 1.8 $\mu m$ que es el rango de longitudes de onda que absorbe la célula de Ge (figura \ref{fig:graficar_ejemplo2}).
-	\item Hacer clic en el botón \textbf{Graph} para calcular y graficar las potencias (figura \ref{fig:graficar_ejemplo2}).
-\end{enumerate}
-%% Graficas de la pestaña de potencia
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.30\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/graficar_ejemplo2.png}
-	\caption{Preferencias para el cálculo de la potencia}
-	\label{fig:graficar_ejemplo2}
-\end{figure}
 %% Guardar resultados
-El procedimiento seguido en este trabajo se encuentra detallado paso a paso en el Apéndice \ref{ch:procedimientosSimRad}. Para la extracción de los datos obtenidos de potencia por unidad de área se hace clic sobre el botón de \textbf{guardar} (figura \ref{fig:SaveButton_Cut}) estando en la pestaña \textbf{Potencia}, para guardar la potencia radiada se hace clic del botón de \textbf{guardar} estando en la pestaña de \textbf{Potencia Radiada} y para guardar todos los datos se hace clic sobre el botón de \textbf{guardar todos} (figura \ref{fig:SaveAllicon}).
-\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-		\includegraphics[width=0.4\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/SaveButton_Cut.jpg}
-		\caption{Botón de guardar actual}
-		\label{fig:SaveButton_Cut}
-	\end{subfigure}
-  \hfill
-	\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-			\includegraphics[width=0.40\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/SaveAllicon.jpg}
-		\caption{Botón de guardar todos los resultados}
-		\label{fig:SaveAllicon}
-	\end{subfigure}
-	\caption{(\subref{fig:SaveButton_Cut}) Botón de guardar los resultados obtenidos de los cálculos o la simulación, dependiendo de la pestaña que se encuentre el usuario de la calculadora de campo cercano. (\subref{fig:SaveAllicon}) Botón de guardar todos los resultados obtenidos de los cálculos y simulación.}
-	\label{fig:saveButtons}
-\end{figure}
+El procedimiento seguido en este trabajo se encuentra detallado paso a paso en el Apéndice \ref{ch:procedimientosSimRad}.
 %%%%%%%%%%%%     Conducción térmica
 \subsection{Para la conducción térmica}
 Las simulaciones de transmisión de calor por conducción se realizaron todas en CFD, existiendo unos 10 casos para cada combinación de materiales y resistencias de contacto, para cada uno de ellos se sigue un mismo conjunto de pasos. \\\\
