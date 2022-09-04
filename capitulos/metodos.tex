@@ -121,85 +121,17 @@ Para este trabajo los datos utilizados de las conductividades térmicas de los m
 A continuación se describen los procedimientos seguidos en este trabajo para la realización de la simulación de la transmisión de calor por radiación de campo cercano, la simulación de la transmisión de calor por conducción y la extracción de los datos de las simulaciones.\\
 \subsection{Para la radiación de campo cercano}
 %Aquí tendrías que meter las simulaciones de campo cercano y hablar del método (está descrito en un paper que te pasé
-Las simulaciones de transmisión de calor por radiación de campo cercano se realizan para una combinación de varios materiales de emisor y célula en un rango de distancias de 100nm a 1000nm. Para la realización de las simulaciones y la obtención de la potencia se siguen los siguientes pasos:
+Las simulaciones de transmisión de calor por radiación de campo cercano se realizan para una combinación de varios materiales de emisor y célula en un rango de distancias de 100nm a 1000nm. Para la realización de las simulaciones y la obtención de la potencia se siguen los siguientes pasos, los cuales se encuentran detallados en el apéndice \ref{ch:procedimientosSimRad}:
 \begin{enumerate}
 	\item Abrir la aplicación de la Calculadora de campo cercano.
-	\item Seleccionar la cajetilla de \textbf{Materials Range} (figura \ref{fig:check_materials}). 
-	\item Seleccionar la cajetilla de \textbf{Distance Range} (figura \ref{fig:check_distances}).
-	\begin{figure}[H]%
-	\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-			\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/check_distances2.png}
-		\caption{Rango de distancias}
-		\label{fig:check_distances}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-			\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/check_materials2.png}
-		\caption{Rango de materiales}
-		\label{fig:check_materials}
-	\end{subfigure}
-	\caption{(\subref{fig:check_distances}) Casilla para la selección de la opción de simular un rango de distancias. (\subref{fig:check_materials}) Casilla para la selección de la opción de simular una combinación de materiales.}%
-	\label{fig:checkboxes}%
-	\end{figure}
-	\item Hacer clic en el \textbf{set} de \textbf{Materials Range}.
-	\item Seleccionar los materiales para el emisor (UpFace) y la célula (DownFace), y hacer clic en aceptar (figura \ref{fig:set_materials}).
-	\item Hacer clic en el \textbf{set} de \textbf{Distance Range}.	
-	\item Seleccionar el rango de distancias a simular de 100 a 1000 o seleccionar la casilla \textbf{Full Range} y hacer clic en aceptar (figura \ref{fig:set_distances}).%% Figuras de las ventanas para los SETs
-	\begin{figure}[H]%
-	\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-			\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/set_distances_fullrange.png}
-		\caption{Set de distancias}
-		\label{fig:set_distances}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-			\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/set_materilas2.png}
-		\caption{Set de materiales}
-		\label{fig:set_materials}
-	\end{subfigure}
-	\caption{(\subref{fig:set_distances}) Ventana para la selección del rango de distancias a simular. (\subref{fig:set_materials}) Ventana para la selección de las combinaciones de materiales a simula, siendo \textbf{UpFace} el emisor y \textbf{DownFace} la célula.}%
-	\label{fig:sets}%
-	\end{figure}
+	\item Seleccionar los materiales para el emisor y el receptor que se desean simular. 
+	\item Seleccionar el rango de distancias de separación deseado.
 	\item Asegurar que la temperatura del emisor sea la deseada.
-	\item Hacer clic en el botón \textbf{Calculate} para ejecutar la simulación.
-	\item Esperar que el indicador de estado pase de \textit{Running...}, color rojo del indicador (figura \ref{fig:indicador_Running}), a \textit{StdBy}, color verde del indicador (figura \ref{fig:indicador_StdBy}), es decir, esperar que termine la simulación.
-	\end{enumerate}
-	%% figuras de estados
-	\begin{figure}[H]
-	\centering
-	%% Figura 1
-	\begin{subfigure}[b]{0.3\textwidth}
-	\centering
-	\includegraphics[width=\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/estado_changed}%
-	\caption{Changed}%
-	\label{fig:indicador_Changed}%
-	\end{subfigure}
-	\hfill
-	%% Figura 2
-	\begin{subfigure}[b]{0.3\textwidth}
-	\centering
-	\includegraphics[width=\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/estado_running}%
-	\caption{Running}%
-	\label{fig:indicador_Running}%
-	\end{subfigure}
-	\hfill
-	%% Figura 3
-	\begin{subfigure}[b]{0.3\textwidth}
-	\centering
-	\includegraphics[width=0.9\textwidth]{figuras/Procedimiento_Simulaciones/Radiacion/estado_stdby}%
-	\caption{StdBy}%
-	\label{fig:indicador_StdBy}%
-	\end{subfigure}
-	\hfill
-	\caption{Indicadores del estado actual del sistema. (\subref{fig:indicador_Changed}) Indicador del estado \textbf{Changed} o estado de cambio, se activa cuando se produce algún cambio en los datos seleccionados para simular. (\subref{fig:indicador_Running}) Indicador del estado \textbf{Running} o corriendo, se activa cuando estando en el estado \textbf{Changed} se hace clic al botón \textbf{Calculate} y corre la simulación. (\subref{fig:indicador_StdBy}) Indicador del estado \textbf{StdBy}, se activa cuando termina la simulación, avisando que está a la espera de algún cambio.}
-	\label{fig:indicadorLED}
-	\end{figure}
-%% Guardar resultados
-El procedimiento seguido en este trabajo se encuentra detallado paso a paso en el Apéndice \ref{ch:procedimientosSimRad}.
+	\item Ejecutar la simulación y esperar a que termine.
+	\item Seleccionar el rango espectral de integración de las potencias frente a la longitud de onda.
+	\item Integrar y graficar los resultados de la integración.
+	\item Guardar los resultados de la potencia integrada.
+\end{enumerate}
 %%%%%%%%%%%%     Conducción térmica
 \subsection{Para la conducción térmica}
 Las simulaciones de transmisión de calor por conducción se realizaron todas en CFD, existiendo unos 10 casos para cada combinación de materiales y resistencias de contacto, para cada uno de ellos se sigue un mismo conjunto de pasos. \\\\
