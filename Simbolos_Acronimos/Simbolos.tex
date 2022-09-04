@@ -1,13 +1,10 @@
-%\newglossaryentry{l}{
-	%symbol      ={$l$},%
-  %name        ={Length},%
-  %description ={Length Description},%
-  %user1       ={\ensuremath{\protect\si{\protect\metre}}}
-%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           METODOS         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newglossaryentry{hrad}{
 name= $h_{rad}$,
 unit=$W/m^2K$,
-description={Coefficiente de transferencia de calor por radiaci\'{o}n},
+description={Coeficiente de transferencia de calor por radiaci\'{o}n},
 	type=symbolslist
 }
 \newglossaryentry{wres}{
@@ -22,7 +19,36 @@ description={Conductancia t\'{e}rmica de contacto},
 unit=$W/m^2K$,
 type=symbolslist
 }
-
+\newglossaryentry{densidad}{
+name=$\rho$,
+description={Densidad},
+unit=$kg/m^3$,
+type=symbolslist
+}
+\newglossaryentry{masa}{
+name=\textit{M},
+description={Masa},
+unit=$kg$,
+type=symbolslist
+}
+\newglossaryentry{condTerm}{
+name=$k_i$,
+description={Conductividad t\'{e}rmica del material i},
+unit=$W/m\cdot k$,
+type=symbolslist
+}
+\newglossaryentry{flujoCalor}{
+name=\textit{Q},
+description={Potencia calor\'{i}fica transmitida por conducci\'{o}n},
+unit=$W$,
+type=symbolslist
+}
+\newglossaryentry{deltaT}{
+name=$\Delta T$,
+description={Diferencia de temperatura},
+unit=$K$,
+type=symbolslist
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %         Símbolos de los materiales        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -91,7 +117,7 @@ type=symbolslist}
 
 \newglossaryentry{ks}{
 name=$K_s$,
-description={Media arm\'{o}nica de la conductividad t\'{e}rmica $k_s=2\cdot \frac{k_1\cdot k_2}{k_1+k_2}$},
+description={Media arm\'{o}nica de la conductividad t\'{e}rmica $k_s=2\cdot {k_1\cdot k_2}/{\left(k_1+k_2\right)}$},
 unit= falta,
 type=symbolslist}
 
@@ -100,3 +126,16 @@ name=\textit{m},
 description={Combinaci\'{o}n RMS de la media absoluta de la pendiente de la rugosidad $m=\sqrt{m_1^2+m_2^2}$},
 unit= falta,
 type=symbolslist}
+
+\newglossaryentry{presion}{
+name=\textit{P},
+description={Presi\'{o}n},
+unit=$Pa$,
+type=symbolslist
+}
+\newglossaryentry{Hc}{
+name=$H_c$,
+description={Dureza Vickers del material m\'{a}s duro},
+unit=$VH$,
+type=symbolslist
+}

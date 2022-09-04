@@ -115,13 +115,13 @@ Donde $Cte$ es una constante que es igual para el caso de los aceros, como para 
 \label{eq:relacion_conductividadesTermicas}
 \end{equation}
 Para este trabajo los datos utilizados de las conductividades térmicas de los materiales para la relación de las conductancias de contacto son a temperatura ambiente, el valor de $k_{SiO_2}$ es $1.5 \ W/\left( m^2 K\right)$ y el valor de $k_{SS}$ es de $15 \ W/\left( m^2 K\right)$, quedando la relación de conductancias de contacto como ${h_c'}/{h_c}=0.1818$.
-
+\vfill
 %%%%%%%%     PROCEDIMIENTOS DE LAS SIMULACIONES Y EXTRACCION DE RESULTADOS
 \section{Procedimientos de las simulaciones y extracción de resultados}
 A continuación se describen los procedimientos seguidos en este trabajo para la realización de la simulación de la transmisión de calor por radiación de campo cercano, la simulación de la transmisión de calor por conducción y la extracción de los datos de las simulaciones.\\
 \subsection{Para la radiación de campo cercano}
 %Aquí tendrías que meter las simulaciones de campo cercano y hablar del método (está descrito en un paper que te pasé
-Las simulaciones de transmisión de calor por radiación de campo cercano se realizan para una combinación de varios materiales de emisor y célula en un rango de distancias de 100nm a 1000nm. Para la realización de las simulaciones y la obtención de la potencia se siguen los siguientes pasos, los cuales se encuentran detallados en el apéndice \ref{ch:procedimientosSimRad}:
+Las simulaciones de transmisión de calor por radiación de campo cercano se realizan para una combinación de varios materiales de emisor y célula en un rango de distancias de 100 nm a 1000 nm. Para la realización de las simulaciones y la obtención de la potencia se siguen los pasos detallados en el apéndice \ref{ch:procedimientosSimRad}. A continuación se expone un procedimiento simplificado para la realización de una simulación.
 \begin{enumerate}
 	\item Abrir la aplicación de la Calculadora de campo cercano.
 	\item Seleccionar los materiales para el emisor y el receptor que se desean simular. 
@@ -132,190 +132,56 @@ Las simulaciones de transmisión de calor por radiación de campo cercano se rea
 	\item Integrar y graficar los resultados de la integración.
 	\item Guardar los resultados de la potencia integrada.
 \end{enumerate}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%     Conducción térmica
+%%%%%%%%%%%%%%%%%
 \subsection{Para la conducción térmica}
 Las simulaciones de transmisión de calor por conducción se realizaron todas en CFD, existiendo unos 10 casos para cada combinación de materiales y resistencias de contacto, para cada uno de ellos se sigue un mismo conjunto de pasos. \\\\
-Primero hay que crear el modelo 3D de cada componente del sistema TPV a simular, siendo cada uno de ellos es un prisma de sección cuadrada. El nano-espaciador tiene de base un cuadrado de lado 3 $\mu m$ y de altura variable $h$, el emisor y la célula tiene el mismo modelo 3D, con base cuadrada de 1mm de lado con 0.2mm de altura. Para el cálculo de las longitudes del modelo 3D se utiliza la ecuación \eqref{eq:relacion_longitud}.
+Primero hay que crear el modelo 3D de cada componente del sistema TPV a simular, siendo cada uno de ellos es un prisma de sección cuadrada. El nano-espaciador tiene de base un cuadrado de lado 3 $\mu m$ y de altura variable $h$, el emisor y la célula tiene el mismo modelo 3D, con base cuadrada de 1 mm de lado con 0.2 mm de altura. Para el cálculo de las longitudes del modelo 3D se utiliza la ecuación \eqref{eq:relacion_longitud}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% MODELADO 3D
 \subsubsection{Procedimiento modelado 3D}
-El procedimiento seguido para la obtención de los modelos 3D en Inventor y la creación del modelo de simulación inicial para cada altura del nano-espaciador es:
+El procedimiento seguido para la obtención de los modelos 3D en Inventor y la creación del modelo de simulación inicial para cada altura del nano-espaciador está detallado paso a paso en el apéndice \ref{ch:procedimientosModelado3D}. A continuación se expone un procedimiento genérico para la creación de los modelos 3D.
 \begin{enumerate}
-	\item Crear las bases cuadradas con la longitud de lado respectiva, 10m para emisor o célula y 3cm para el nano-espaciador en la escala del modelo 3D en Inventor. 
-	\item Extrudir el prisma la longitud correspondiente, 2m para el emisor/célula y $h_0$ para el nano-espaciador, siendo $h$ un valor inicial cualquier en el rango de 1mm a 10mm.
-	\item Crear un ensamblaje de emisor-espaciador-célula, estando la base del nano-espaciador en el centro de las bases de los otros dos componentes (figura \ref{fig:modelado3D}).
-	%% PASOS PARA EL ENSAMBLAJE
-	\begin{enumerate}
-		\item Agregar el nano-espaciador y los dos prismas de 10m de lado.
-		\item Renombrar los prismas de 10m de lado, una siendo emisor y la otra célula, para así diferenciarlas.
-		\item Obtener el centro de la cara superior de la célula, mediante un dibujo con dos rectas secantes que van de una esquina a otra (figura \ref{fig:modelado3D_centro_cerca}).
-		\item Aplicar una restricción con la opción \textbf{Mate} de separación nula entre la cara inferior del nano-espaciador con el centro de la cara superior de la célula,es decir, las caras entran en contacto si la distancia de separación es nula (figura \ref{fig:modelado3D_centro_cerca}).
-		\item Aplicar una restricción \textbf{Mate} de separación nula entre la cara inferior del emisor y la cara superior del nano-espaciador.
-		\item Aplicar una restricción \textbf{Flush} de separación nula a una cara lateral del emisor y una cara lateral de la célula.
-		\item Repetir el paso anterior para las caras conjuntas, siendo el resultado final el de la figura \ref{fig:modelado3D_lejos}.
-	\end{enumerate}
+	\item Crear las bases cuadradas con la longitud de lado respectiva, 10 m para emisor o célula y 3 cm para el nano-espaciador en la escala del modelo 3D en Inventor. 
+	\item Extrudir el prisma la longitud correspondiente, 2 m para los emisor/célula y 1 mm para el nano-espaciador.
+	\item Crear un ensamblaje de emisor-espaciador-célula, estando la base del nano-espaciador en el centro de las bases de los otros dos componentes, como se observa en las figuras \ref{fig:modelado3D1} \subref{fig:modelado3D_cerca1} y \subref{fig:modelado3D_centro_cerca1}.
 \begin{figure}[H]
 	\centering
-	\begin{subfigure}[b]{0.3\textwidth}
-		\centering
-			\includegraphics[width=1.00\textwidth]{figuras/Procedimiento_Simulaciones/Conduccion/modelado3D_lejos.png}
-		\caption{Vista global TPV}
-		\label{fig:modelado3D_lejos}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.3\textwidth}
+	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
 			\includegraphics[width=1.00\textwidth]{figuras/Procedimiento_Simulaciones/Conduccion/modelado3D_cerca.png}
 		\caption{Vista cerca TPV}
-		\label{fig:modelado3D_cerca}
+		\label{fig:modelado3D_cerca1}
 	\end{subfigure}
 	\hfill
-	\begin{subfigure}[b]{0.3\textwidth}
+	\begin{subfigure}[b]{0.4\textwidth}
 		\centering
 			\includegraphics[width=1.00\textwidth]{figuras/Procedimiento_Simulaciones/Conduccion/modelado3D_centro_cerca.png}
 		\caption{Vista cerca nano-espaciador}
-		\label{fig:modelado3D_centro_cerca}
+		\label{fig:modelado3D_centro_cerca1}
 	\end{subfigure}
-	\caption{Vistas del sistema TPV. (\subref{fig:modelado3D_lejos}) Vista de lejos del sistema completo de la TPV. (\subref{fig:modelado3D_cerca}) Vista del sistema TPV de cerca desde un borde. (\subref{fig:modelado3D_centro_cerca}) Vista del nano-espaciador colocado sobre el centro de una cara de la célula.}
-	\label{fig:modelado3D}
+	\caption{Vistas del sistema TPV. (\subref{fig:modelado3D_cerca}) Vista del sistema TPV de cerca desde un borde. (\subref{fig:modelado3D_centro_cerca}) Vista del nano-espaciador colocado sobre el centro de una cara de la célula.}
+	\label{fig:modelado3D1}
 \end{figure}
-	\item Guardar el ensamblaje.
-	\item Usar el \textbf{Active Model Assessment Tool}, que se encuentra en la pestaña de simulaciones, para generar el modelo o estudio de simulación de CFD\label{itm:pasoIniIterativo_Modelado3D}.
-	\item Al abrirse CFD hacer clic en \textit{Transfer to Set Up}, dar un nombre y lanzar.
-	\item Guardar el modelo o estudio de CFD \label{itm:pasoFin_Modelado3D}.
-	\item Ir al ensamblaje en Inventor.
-	\item Hacer clic derecho sobre el ícono del objeto correspondiente al nano-espaciador en el panel \textbf{model} y hacer clic en editar.
-	\item Hacer clic derecho sobre la extrusión y seleccionar la opción de editar característica (\textbf{Edit Feature}).
-	\item Modificar la altura del nano-espaciador y al terminar hacer clic en \textbf{Return} \label{itm:pasoFinIterativo_Modelado3D}.
-	\item Repetir desde el paso \ref{itm:pasoIniIterativo_Modelado3D} al \ref{itm:pasoFinIterativo_Modelado3D}, excepto en la última iteración que es hasta el paso \ref{itm:pasoFin_Modelado3D}, incluido.
+	\item Usar la herramienta \textbf{Active Model Assessment Tool}, que se encuentra en la pestaña de simulaciones, para generar el modelo de simulación de CFD\label{itm:pasoIniIterativo_Modelado3D1}.
+	\item Guardar el modelo de CFD y volver al ensamblado de Inventor.
+	\item Incrementar la altura del modelo del nano-espaciador un milímetro dentro del ensamblaje en Inventor, sin sobrepasar el máximo de 10 mm.
+	\item Repetir todo 10 veces desde el paso \ref{itm:pasoIniIterativo_Modelado3D1}, teniendo como última iteración el modelo de la TPV con nano-espaciador de 10 mm, equivalente a 1 $\mu m$ de la realidad.
 \end{enumerate} 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Procedimiento simulación CFD
 \subsubsection{Procedimiento simulación CFD}
 %%%  PROCEDIMIENTO CFD
-El procedimiento a seguir para cada modelo de la simulación de transmisión de calor por conducción en CFD es el siguiente:
+El procedimiento a seguir para cada modelo de la simulación de transmisión de calor por conducción en CFD está detallado en el apéndice  \ref{ch:procedimientosSimCond}. A continuación se expone un procedimiento sencillo sobre la realización de las simulaciones en CFD.
 \begin{enumerate}
 	\item Abrir el modelo o estudio correspondiente de simulación en CFD.
-	\item Seleccionar el emisor y cambiar el material por defecto por el que se va a simular a escala.
-	\item Seleccionar el entorno del material del emisor como variable.
-	\item Seleccionar la célula y cambiar el material por defecto por el que se va a simular a escala.
-	\item Seleccionar el entorno del material de la célula como variable.
-	\item Hacer zoom sobre el nano-espaciador, seleccionarlo y cambiar el material por defecto por el $SiO_2$ a escala.
-	\item Seleccionar el entorno del material del nano-espaciador como variable.
-	\item \textbf{En el caso que la resistencia de contacto no sea nula:}
-	\begin{enumerate}
-		\item Esconder el emisor.
-		\item Seleccionar el selector de superficies.
-		\item Seleccionar la superficie superior del nano-espaciador, es decir, la superficie que hace contacto con el emisor.
-		\item Cambiar el material por defecto por la resistencia de contacto a escala.
-		\item Seleccionar el selector de volúmenes.
-		\item Mostrar el emisor.
-	\end{enumerate}
-	%% PANEL DE HERRAMIENTAS
-	\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.48\textwidth}
-		\centering
-			\includegraphics[width=0.9\textwidth]{figuras/Procedimiento_Simulaciones/Conduccion/paneles.png}
-		\caption{Panel principal}
-		\label{fig:paneles}
-		\end{subfigure}
-		\hfill
-		\begin{subfigure}[b]{0.48\textwidth}
-			\centering
-			\includegraphics[width=0.9\textwidth]{figuras/Procedimiento_Simulaciones/Conduccion/paneles_resultados.png}
-			\caption{Panel de resultados}
-			\label{fig:paneles_resultados}
-		\end{subfigure}
-		\caption{(\subref{fig:paneles}) Panel de las herramientas utilizadas para aplicar materiales, condiciones de contorno, lanzar simulaciones, seleccionar el selector de superficies y volúmenes. (\subref{fig:paneles_resultados}) Paneles de las herramientas utilizadas para la extracción de resultados de las simulaciones de transmisión de calor por conducción.}
-		\label{fig:paneles_CFD}
-	\end{figure}
-	\item Seleccionar la cara superior del emisor y agregar como condición de contorno una temperatura constante de 800\textdegree C.
-	\item Seleccionar la cara inferior de la célula y agregar como condición de contorno una temperatura constante de 25\textdegree C.
-	\item Seleccionar la función de mallado.
-	\item Aplicar un mallado de tamaño de 0.01 o más al nano-espaciador, el valor del mallado varía según la altura del nano-espaciador, aumentando al aumentar la altura del nano-espciador (figura \ref{fig:mallados_metodos}).
-	\item Aplicar un mallado de tamaño entre 40 y 60 a los demás componentes de la TPV.
-	%%% FIGURAS DE MALLADO
-	\begin{figure}[H]
-	\centering
-	\begin{subfigure}[b]{0.3\textwidth}
-		\centering
-			\includegraphics[width=1.00\textwidth]{figuras/Procedimiento_Simulaciones/Conduccion/mallado_100.png}
-		\caption{Mallado del nano-espaciador de 100nm}
-		\label{fig:mallado_100_metodos}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.3\textwidth}
-		\centering
-			\includegraphics[width=1.00\textwidth]{figuras/Procedimiento_Simulaciones/Conduccion/mallado_100_cerca.png}
-		\caption{Mallado del nano-espaciador de 100nm de cerca}
-		\label{fig:mallado_100_cerca_metodos}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.3\textwidth}
-		\centering
-			\includegraphics[width=1.00\textwidth]{figuras/Procedimiento_Simulaciones/Conduccion/mallado_1000.png}
-		\caption{Mallado del nano-espaciador de 1000nm}
-		\label{fig:mallado_1000_cerca_metodos}
-	\end{subfigure}
-	\caption{(\subref{fig:mallado_100_metodos}) Mallado del nano-espaciador de 100nm, con tamaño de malla de 0.01. (\subref{fig:mallado_100_cerca_metodos}) Mallado del nano-espaciador de 100nm visto de cerca. (\subref{fig:mallado_1000_cerca_metodos}) Mallado del nano-espaciador de 1000nm, con tamaño de malla de 0.1.}
-	\label{fig:mallados_metodos}
-\end{figure} 
-%%% CONTINUA ENUMERACION
-	\item Hacer clic en \textbf{Solve} (figura \ref{fig:paneles}).
-	\item Seleccionar en la pestaña \textbf{Physics} la casilla de \textbf{Heat transfer} (\ref{fig:physics_panel}) .
-	\item Ir a la pestaña \textbf{Control} (figura \ref{fig:control_panel}).
-	\item Poner el guardado de los resultados de la simulación a la mitad del número de iteraciones.
-	\item Hacer unas 10 a 14 iteraciones asegurándose que continua desde la iteración cero.
-	\item Correr la simulación dando click al botón de \textbf{Solve} dentro de la ventana del lanzar la simulación.
-	%%% VENTANA DEL SOLVER
-	\begin{figure}[H]
-		\centering
-		\begin{subfigure}[b]{0.48\textwidth}
-			\centering
-			\includegraphics[width=0.8\textwidth]{figuras/Procedimiento_Simulaciones/Conduccion/control_panel.png}
-			\caption{panel de control del solver}
-			\label{fig:control_panel}
-		\end{subfigure}
-	  \hfill
-		\begin{subfigure}[b]{0.48\textwidth}
-			\centering
-			\includegraphics[width=0.8\textwidth]{figuras/Procedimiento_Simulaciones/Conduccion/physics_panel.png}
-			\caption{panel de la física del solver}
-			\label{fig:physics_panel}
-		\end{subfigure}
-		\caption{(\subref{fig:control_panel}) Panel de control de la ventana del Solver.(\subref{fig:physics_panel}) Panel de las propiedades físicas de la ventana del Solver.}
-		\label{fig:panels_Solver}
-	\end{figure}
-	%%    CONTINUA
-	\item Esperar a que la simulación termine. Un mensaje aparecerá en la ventana de salidas de que la simulación ha finalizado.
-	%% Extracción de los resultados
-	\item \textbf{Extraer los datos de la simulación en un archivo CSV}.\label{it:extraerResCFD}
-	\begin{enumerate}
-		\item Abrir la herramienta \textbf{Wall Calculator} con un clic (figura \ref{fig:paneles_resultados}).
-		\item Seleccionar las casillas de potencia y temperatura.
-		\item Seleccionar la opción de superficie del \textbf{Model entity selection}.
-		\item Seleccionar la superficie superior del emisor y la inferior de la célula, aparecerá los números correspondientes a dichas superficies en el \textbf{Wall Calculator} (figura \ref{fig:ventana_wall_calculator_control}).
-		\item Hacer clic en \textbf{Calculate}, esto nos llevará a la pestaña de \textbf{Output}.
-		\item Hacer clic en \textbf{Write to file} y guardar el archivo de salida que contiene las potencias y temperaturas medias de las superficies seleccionadas (figura \ref{fig:ventana_wall_calculator_resultados}).
-	\end{enumerate}
-		%%% VENTANA DEL WALL CALCULATOR
-	\begin{figure}[H]
-		\centering
-		\begin{subfigure}[b]{0.48\textwidth}
-			\centering
-			\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Conduccion/ventana_wall_calculator.png}
-			\caption{Pestaña de selección y resultados.}
-			\label{fig:ventana_wall_calculator_control}
-		\end{subfigure}
-	  \hfill
-		\begin{subfigure}[b]{0.48\textwidth}
-			\centering
-			\includegraphics[width=0.6\textwidth]{figuras/Procedimiento_Simulaciones/Conduccion/resultados_conduccion.png}
-			\caption{Pestaña de salida.}
-			\label{fig:ventana_wall_calculator_resultados}
-		\end{subfigure}
-		\caption{(\subref{fig:ventana_wall_calculator_control}) Pestaña de selección y resultados del \textbf{Wall Calculator}.(\subref{fig:ventana_wall_calculator_resultados}) Pestaña de salida del \textbf{Wall Calculator}.}
-		\label{fig:ventana_wall_calculator}
-	\end{figure}
-	\item Repetir los pasos anteriores para cada combinación de materiales y resistencias de contacto sin tener que volver a introducir las condiciones de contorno o volver a configurar el mallado.
-	\item Repetir los pasos anteriores para cada altura del nano-espaciador.
+	\item Aplicar los materiales adecuados para cada componente con la propiedad de entorno puesta en \textit{variable}.
+	\item Aplicar en caso que aplique la resistencia de contacto sobre la superficie superior del nano-espaciador.
+	\item Aplicar las condiciones de contorno a los componentes del sistema, es decir, las temperaturas al emisor y a la célula.
+	\item Aplicar un mallado apropiado para cada componente del sistema, teniendo el nano-espaciador una gran cantidad de nodos.
+	\item Simular la transmisión de calor en el modo estacionario hasta llegar al régimen estacionario.
+	\item Extraer o guardar los resultados de las potencias de conducción en un CSV.
+	\item Repetir estos pasos para cada modelo con distintas alturas de nano-espaciadores.
 \end{enumerate}
