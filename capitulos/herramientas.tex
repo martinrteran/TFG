@@ -5,7 +5,7 @@ En este capítulo se exponen los materiales utilizados para cada componente del 
 Para una \acrshort{ntpv} es imprescindible una selección adecuada de los materiales de cada componente, para así conseguir la mayor cantidad de eficiencia y potencia eléctrica. A continuación se listan y desarrollan los materiales de cada uno de los componentes de la \acrshort{ntpv} utilizados en este trabajo, y los criterios seguidos para la elección de cada uno. Siendo estos componentes que integran la \acrshort{ntpv} un emisor, una célula \acrshort{tpv} y los nano-espaciadores.
 \subsection{Nano-espaciadores}
 Los nano-espaciadores tienen que tener una resistencia térmica de conducción alta, para poder disminuir las pérdidas por conducción. También tienen que ser resistentes a la compresión que se ven sometidos por el peso de los componentes y la expansión térmica. Por último, tienen que permitir el paso de la luz con energía mayor a la \acrshort{bg} de la célula a utilizar, para así aumentar el flujo de radiación útil a la célula.\\\\
-Para este trabajo suponemos que los nano-espaciadores son de dióxido de silicio (\gls{sio2}) \cite{doi:10.1063/1.1141498}, un material que ha sido utilizado en varias ocasiones en sistemas de campo cercano de \acrshort{tpv} o \acrshort{tic} por ser un material cerámico con una baja conductividad térmica y alta resistencia a la fuerza de compresión. La conductividad térmica es menor a 10 W/m\textdegree C en el rango de temperatura de trabajo, entre 25 a 800\textdegree C.
+Para este trabajo suponemos que los nano-espaciadores son de dióxido de silicio (\gls{sio2}) \cite{doi:10.1063/1.1141498}, un material que ha sido utilizado en varias ocasiones en sistemas de campo cercano de \acrshort{tpv} o \acrshort{tic} por ser un material cerámico con una baja conductividad térmica y alta resistencia a la compresión. La conductividad térmica es menor a 10 W/m\textdegree C en el rango de temperatura de trabajo, entre 25 a 800\textdegree C.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %               Célula TPV                 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -21,7 +21,7 @@ El material del emisor está limitado principalmente al campo de aplicación de 
 	\caption[Potencias por unidad de área para una célula de Ge y diferentes materiales de emisor para un rango de longitudes de onda desde aproximadamente 0.2 $\mu m$ hasta 1.8 $\mu m$ (0.7 eV) con distancias de separación de 100nm y 1000nm según las ecuaciones \eqref{eq:flujoPropNF} y \eqref{eq:flujoEvasNF}]{Potencias por unidad de área para una célula de Ge y diferentes materiales de emisor para un rango de longitudes de onda desde aproximadamente 0.2 $\mu m$ hasta 1.8 $\mu m$ (0.7 eV) con distancias de separación de 100nm y 1000nm según las ecuaciones de \cite{nfTPV_equations} calculadas a partir de las ecuaciones \eqref{eq:flujoPropNF} y \eqref{eq:flujoEvasNF}.}
 	\label{fig:EgRad}
 \end{figure}
-Entre todos los materiales de emisor que se pueden observar en la figura \ref{fig:EgRad}, se seleccionan para este trabajo se seleccionan los siguientes tres materiales:
+Entre todos los materiales de emisor que se pueden observar en la figura \ref{fig:EgRad}, se seleccionan para este trabajo los siguientes tres materiales:
 \begin{itemize}
 	\item \textbf{\gls{si}}: es un material que es abundante y que se encuentra entre los materiales de emisor con mayor potencia de radiación. Se utilizará para realizar las pruebas de simulación iniciales, para así tener un punto de partida.
 	\item \textbf{Acero inoxidable 304 (\acrshort{ss})}: aunque no genere mucha potencia de radiación, es un material muy utilizado en la industria, incluyendo al transporte. Siendo de gran interés para sistemas de recuperación de calor que utilizan TPV.
@@ -59,7 +59,7 @@ En esta página web están recopilados de artículos científicos los índices d
 %Para el modelado 3D de cada componente del sistema (emisor, célula y nano-espaciador) se utiliza Autodesk Inventor 2021 por la facilidades que presenta autoDesk de utilizar los archivos de un programa de la misma compañía en otro programa para continuar con el estudio del sistema.ç
 %%%  Autodesk INVENTOR 2021
 \subsection{Autodesk Inventor Professional 2021}
-Es un software de Diseño 3D Asistido por Ordenador (CAD 3D) que ofrece herramientas para el diseño de piezas, ensamblajes, mecanismos, documentación y simulación de los sistemas. También permite el utilizar herramientas de entorno añadidas para simulaciones más complejas, el fácil acoplamiento para el uso de otros programas de Autodesk y el uso de parámetros en el diseño y modelado de las piezas.
+Es un software de Diseño 3D Asistido por Ordenador (CAD 3D) que ofrece herramientas para el diseño de piezas, ensamblajes, mecanismos, documentación y simulación de los sistemas. También permite el utilizar herramientas de entorno añadidas para simulaciones más complejas, el fácil acoplamiento para el uso de otros programas de Autodesk y el uso de parámetros en el diseño y modelado de las piezas.\\\\
 %\begin{figure}[H]
 	%\centering
 		%\includegraphics[width=3cm]{figuras/inventorpro.png}
@@ -78,7 +78,7 @@ Una desventaja de este programa es la limitación que presenta en las unidades m
 %\subsection{Simulaciones de transmisión de calor por conducción}
 %Para la simulación de transmisión de calor se usa el programa Autodesk Computational Fluid Dynamics (CFD), que aún ser usado principalmente para simulaciones con fluidos también permite simular solo transmisión de calor por conducción en sólidos y permite usar los diseños de Autodesk Inventor para simular, siendo fácilmente creado el provecto de CFD desde Inventor en la pestaña nueva de simulación, que se crea automáticamente con la instalación de CFD, y haciendo click sobre \textit{Active Model Assessment Tool}. Usándose exclusivamente para las simulaciones de conducción porque no puede simular la transmisión de calor por campo cercano.
 \subsection{Autodesk CFD}
-Es un software desarrollado por Autodesk que se usa para crear simulaciones computacional de la dinámica de fluidos para la predicción del comportamiento complejo de fluidos (líquidos y gases), el programa también simula la transmisión de calor por conducción en sólidos, convección en fluidos y de radiación. \\
+Es un software desarrollado por Autodesk que se usa para crear simulaciones computacional de la dinámica de fluidos para la predicción del comportamiento complejo de fluidos (líquidos y gases), el programa también simula la transmisión de calor por conducción en sólidos, convección en fluidos y radiación.\\\\
 %\begin{figure}[H]
 	%\centering
 		%\includegraphics[width=3cm]{figuras/CFD.png}
@@ -94,20 +94,20 @@ Se utiliza el programa para las simulaciones de transmisión de calor por conduc
 \end{itemize}
 
 \subsection{MATLAB}
-MATLAB es un programa o plataforma de programación de \textit{MathWorks} que permite desarrollar cálculos numéricos, desarrollar algoritmos, analizar datos y crear modelos matemáticos de sistemas para cálculo o simulaciones utilizando su propio lenguaje de programación. A su vez, MATLAB proporciona una tienda de paquetes donde los usuarios puede subir aplicaciones desarrolladas en MATLAB que permiten aprovechar aún más los recursos del sistema y facilitar el trabajo, ya sea analizar datos, obtener modelos matemáticos, entre otros.\\
+MATLAB es un programa o plataforma de programación de \textit{MathWorks} que permite desarrollar cálculos numéricos, desarrollar algoritmos, analizar datos y crear modelos matemáticos de sistemas para cálculo o simulaciones utilizando su propio lenguaje de programación. A su vez, MATLAB proporciona una tienda de paquetes donde los usuarios puede subir aplicaciones desarrolladas en MATLAB que permiten aprovechar aún más los recursos del sistema y facilitar el trabajo, ya sea analizar datos, obtener modelos matemáticos, entre otros.\\\\
 %\begin{figure}[H]
 	%\centering
 		%\includegraphics[width=3cm]{figuras/MatlabIcon.png}
 	%\caption{Icono de MATLAB}
 	%\label{fig:MatlabIcon}
 %\end{figure}
-Se utiliza MATLAB para el análisis de los resultados obtenidos de las simulaciones de transmisión de calor por conducción y radiación, para realizar gráficas, para realizar cálculos y para desarrollar la aplicación de la calculadora de campo cercano. El principal motivo de usar MATLAB es para calcular la transmisión de calor en condiciones de campo cercano.
+Se utiliza MATLAB para el análisis de los resultados obtenidos de las simulaciones de transmisión de calor por conducción y radiación, para realizar gráficas, para realizar cálculos y para desarrollar la aplicación de la calculadora de campo cercano. Siendo el principal motivo para usar MATLAB el calcular la transmisión de calor en condiciones de campo cercano.
 
 \subsection{Calculadora de campo cercano} \label{sec:calc_campo_cercano}
 Para las simulaciones de transmisión de calor por radiación de campo cercano entre dos placas paralelas de área infinita se utiliza un código escrito en MATLAB que ya estaba implementado y que cumple con las ecuaciones de campo cercano para dos placas planas gruesas (ecuaciones \eqref{eq:flujoPropNF} y \eqref{eq:flujoEvasNF}). A partir de dicho código se desarrolla una aplicación en el App Designer de MATLAB que facilita el proceso, porque mejora la interfaz de usuario y disminuye los tiempos de simulación al realizar los cálculos con hilos (Parallel Processing Toolbox), permitiendo así realizar combinaciones de materiales y distancias de manera sencilla.\\\\
-Los motivos que impulsaron el desarrollar de la aplicación son el simplificar el proceso de simular la radiación por campo cercano para diferentes combinaciones de materiales y distancia de separación, y la obtención de la potencia total para el rango de longitudes de onda deseadas para todas las combinaciones.\\
+Los motivos que impulsaron el desarrollo de la aplicación son el simplificar el proceso de simular la radiación por campo cercano para diferentes combinaciones de materiales y distancia de separación, y la obtención de la potencia total para el rango de longitudes de onda deseadas para todas las combinaciones.\\
 
-La aplicación se divide en tres pestañas \textit{Potencia Radiada}, \textit{Potencia} y \textit{Materiales}. En cuanto se abre la aplicación se presenta abierta la pestaña de \textit{Potencia Radiada} (figura \ref{fig:pestana_PotenciaRadiada}), donde se seleccionan los materiales del emisor y el receptor, las distancias de separación de los cuerpos y la temperatura del emisor en grados Kelvin, ya que la del receptor es fija a 300K. También muestra la gráfica de los resultados obtenidos de la simulación para cualquier combinación excepto cuando se eligen varios materiales en un rango de distancias porque todavía no está implementado para este caso de dos rangos.\\ 
+La aplicación se divide en tres pestañas \textit{Potencia Radiada}, \textit{Potencia} y \textit{Materiales}. En cuanto se abre la aplicación se presenta abierta la pestaña de \textit{Potencia Radiada} (figura \ref{fig:pestana_PotenciaRadiada}), donde se seleccionan los materiales del emisor y el receptor, las distancias de separación de los cuerpos y la temperatura del emisor en grados Kelvin, ya que la del receptor es fija a 298 K. También muestra la gráfica de los resultados obtenidos de la simulación para cualquier combinación excepto cuando se eligen varios materiales en un rango de distancias porque todavía no está implementado para este caso de dos rangos.\\ 
 \begin{figure}[H]
 	\centering
 		\includegraphics[width=0.80\textwidth]{figuras/pestana_PotenciaRadiada2.png}
