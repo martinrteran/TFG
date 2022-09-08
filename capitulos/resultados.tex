@@ -4,8 +4,8 @@ Para determinar estas relaciones se simula la transmisión de calor por conducci
 \begin{itemize}
 	\item Primero se valida la simulación de CFD.
 	\item Se presentan los resultados de las simulaciones de transmisión de calor por conducción y por radiación de campo cercano para diferentes combinaciones de materiales de emisor y célula, y la relación entre ambas simulaciones.
-	\item Se estudia el número mínimo de espaciadores necesarios para soportar la carga de los emisores.
-	\item Por último, se presentan los resultados de usar un nano-espaciador de $Si$ en vez de $SiO_2$ para emisores de $Si$, $SS$ y $SiC$.
+	\item Por último, se estudia el número mínimo de espaciadores necesarios para soportar la carga de los emisores.
+%	\item Por último, se presentan los resultados de usar un nano-espaciador de $Si$ en vez de $SiO_2$ para emisores de $Si$, $SS$ y $SiC$.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% COMPROBACIÓN DEL PROCEDIMIENTO DE EXTRACCIÓN DE RESULTADOS DE CFD
@@ -447,16 +447,16 @@ Por último, se recopilan los resultados obtenidos de las simulaciones en la tab
 		\multirow{2}{*}{ }& \multicolumn{5}{c|}{\textbf{\large Potencias según transmisión del calor}}\\ \cline{2-6}
 & \multicolumn{4}{c||}{Conducción (W/nº esp.)}& Radiación $(W/m^2)$\\ \hline
 Dist. (nm)&$P_{Normal}$&$P_{R_c-Cal.Max}$&$P_{R_c-Cal.Inter}$&$P_{R_c-Empirico}$&$P_{Eg>0.7eV}$\\ \hline \hline
-100&4,80E-02&1,26815E-06&2,53438E-06&1,68E-03&3,13E+03\\ \hline 
-200&3,42E-02&1,26813E-06&2,53431E-06&1,65E-03&1,73E+03\\ \hline 
-300&2,64E-02&1,26811E-06&2,53424E-06&1,62E-03&1,24E+03\\ \hline 
-400&2,15E-02&1,26809E-06&2,53417E-06&1,60E-03&1,01E+03\\ \hline 
-500&1,81E-02&1,26808E-06&2,53410E-06&1,57E-03&9,11E+02\\ \hline 
-600&1,56E-02&1,26806E-06&2,53403E-06&1,54E-03&9,10E+02\\ \hline 
-700&1,37E-02&1,26804E-06&2,53396E-06&1,52E-03&9,93E+02\\ \hline 
-800&1,22E-02&1,26802E-06&2,53388E-06&1,50E-03&1,10E+03\\ \hline 
-900&1,11E-02&1,26800E-06&2,53381E-06&1,48E-03&1,14E+03\\ \hline 
-1000&1,01E-02&1,26799E-06&2,53374E-06&1,45E-03&1,08E+03\\ \hline 
+100&4,80E-02&1268,15E-09&2534,38E-09&1,68E-03&3,13E+03\\ \hline 
+200&3,42E-02&1268,13E-09&2534,31E-09&1,65E-03&1,73E+03\\ \hline 
+300&2,64E-02&1268,11E-09&2534,24E-09&1,62E-03&1,24E+03\\ \hline 
+400&2,15E-02&1268,09E-09&2534,17E-09&1,60E-03&1,01E+03\\ \hline 
+500&1,81E-02&1268,08E-09&2534,10E-09&1,57E-03&9,11E+02\\ \hline 
+600&1,56E-02&1268,06E-09&2534,03E-09&1,54E-03&9,10E+02\\ \hline 
+700&1,37E-02&1268,04E-09&2533,96E-09&1,52E-03&9,93E+02\\ \hline 
+800&1,22E-02&1268,02E-09&2533,88E-09&1,50E-03&1,10E+03\\ \hline 
+900&1,11E-02&1268,00E-09&2533,81E-09&1,48E-03&1,14E+03\\ \hline 
+1000&1,01E-02&1267,99E-09&2533,74E-09&1,45E-03&1,08E+03\\ \hline 
 		\end{tabular}
 	\label{tab:SsSiO2Ge}
 \end{table}
@@ -547,7 +547,7 @@ Se procede a calcular las densidades de nano-espaciadores por centímetro cuadra
 \end{figure}
 La principal diferencia es en las densidades de nano-espaciadores para el caso de la nTPV sin $R_c$ (figura \ref{fig:rel_SiCSiO2Ge}), siendo esta menor que la del emisor de $Si$ para todo el rango de alturas de los nano-espaciadores porque la conductividad térmica del $SiC$ a 800\textdegree C es mayor que para el $Si$, por lo tanto, la resistencia térmica del sistema disminuye, teniendo así unas menores densidades. Para el caso de la nTPV con $R_c$, las diferencias no son tan notables como en el caso sin $R_c$ porque la componente con mayor relevancia es la resistencia de contacto.\\\\
 Por último, se recopilan los resultados obtenidos de las simulaciones de transferencia de calor por conducción y radiación de campo cercano en la tabla \ref{tab:SiCSiO2Ge}, los resultados se muestran en notación científica para simplificar el análisis de los mismos.
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\caption{Tabla de recopilación de los resultados de las simulaciones de transmisión de calor por conducción y radiación de campo cercano para una nTPV de emisor de $SiC$.}
 		\begin{tabular}{|c||c|c||c|c|}
@@ -577,73 +577,74 @@ Dist. (nm)&$P_{Normal}$&$P_{R_c-Empirico}$&$P_{Eg>0.7eV}$&$P_{full}$\\ \hline \h
 Dado que los nano-espaciadores tendrán que soportar el peso del emisor o la célula se estudia la cantidad mínima de nano-espaciadores necesarios en un centímetro cuadrados para soportar la carga. También se estudia la densidad de nano-espaciadores para el caso de que se aplique una presión de una atmósfera a una de las caras para asegurar que las distancias de separación sean lo más uniformes posibles.\\\\
 La resistencia a compresión del $SiO_2$ es de unos $1.16 \ GPa$\footnote{El valor se ha obtenido de la base de datos de \hyperref[sec:grantaEduPack]{Granta EduPack 2021 R2} para el $SiO_2$ de nombre \textbf{Silica (quartz fused)}, que presenta una pureza del 99.9\%} y la densidad mayor entre los materiales de emisor y células es el acero inoxidable 304, con una densidad aproximada de $8 \ g/cm^3$ o $8\cdot 10^3 kg/m^3$. Para un emisor $SS$ de área $1 \ cm^2$ y espesor de $0.5 \ cm$ la masa total es de unos 4 $gr$ o un peso de unos $\sim 0.04 \ N$, obteniéndose una densidad mínima de nano-espaciadores para solo soportar la carga del emisor de $4 \ n^{\circ}esp/cm^2$, un valor bastante pequeño para disminuir las curvaturas por flexión o imperfecciones del acabado de la superficie del emisor, pero teniendo una mayor relación entre las potencias de radiación respecto a las de conducción, es decir, mayor transferencia de potencia útil respecto a las pérdidas por conducción, disminuyendo así el aumento indeseado de la temperatura de la célula.\\\\
 Al aplicarse una presión de una atmósfera sobre la superficie superior del emisor de la nTPV, la fuerza que soportan los nano-espaciadores aumenta hasta los $10.17 \ N$ generando que se necesiten una densidad mínima de nano-espaciadores de $975 \ n^{\circ}esp/cm^2$ para poder soportar la carga. Está densidad mínima es bastante alta respecto a las obtenidas en todos los casos de nTPVs de célula de germanio estudiados con resistencia de contacto empírica de $4\cdot 10^{-6} \ m^2 K/W$, pero no es tan elevada para el caso de la nTPV $SS-SiO_2-Ge$ con las $R_c$ calculadas para una relación de potencias mayor de un orden de magnitud (figuras \ref{fig:rels_SsSiO2Ge_Prc1vsPrc2} \subref{fig:rel_SsSiO2Ge_Rc_inter} y \subref{fig:rel_SsSiO2Ge_Rc_max}) porque sus valores de $R_c$ son mayores que la $R_c$ empírica y por ende, disminuyen las pérdidas que provoca un aumento de las densidades.
-\vfill \newpage
+\vfill %\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%    COMPARACION MATERIAL NANO-ESPACIADORES  Ctrl+Q to comment and Ctrl+W to uncomment
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Resultados de las simulaciones para unas nTPVs de nano-espaciadores de Si}\label{sec:res_XxSiGe}
-\graphicspath{ {./figuras/Resultados/DiffMatEsp} }
-Como último caso de simulación se simula la transmisión de calor en CFD por conducción para una nTPV de nano-espaciador de $Si$ y un emisor de $Si$, $SS$ y $SiC$ con resistencias de contacto empíricas de $4\cdot 10^{-6} \ m^2 K/W$, por si durante el proceso de deposición del nano-espaciador no se llegara a conseguir depositar $SiO_2$ sino un material con características semejantes a las del $Si$, esto ya ha sucedido en unos ensayos para la fabricación de los nano-espaciadores en la IES. 
-%Esto sucede porque durante unas pruebas de fabricación del $SiO_2$ en la IES, no siempre se consiguía $SiO_2$ de buena calidad y que en el peor de los casos el $SiO_2$ fabricado podría tener unas características más similares al $Si$ que al $SiO_2$ ideal.
-% comparar el efecto de cambiar el material del nano-espaciador
-\begin{table}[H]
-	\centering
-	\caption{Tabla de recopilación de los resultados de las simulaciones de transferencia de calor por conducción para las nTPVs con nano-espaciador de Si y emisores de $Si$, $SS$ y $SiC$ respecto a cada altura del nano-espaciador.}
-		\begin{tabular}{|c||c|c|c|}
-		\hline
-		 \multicolumn{4}{|c|}{\textbf{Potencias de Conducción ($mW$)}}\\	\hline
-		Dist. (nm)&$P_{R_c-Si}$&$P_{R_c-SS}$&$P_{R_cSiC}$\\ \hline \hline 
-		100&$1.7136$&$1.7113$&$1.7261$\\ \hline 
-		200&$1.7135$&$1.7112$&$1.7260$\\ \hline 
-		300&$1.7134$&$1.7110$&$1.7258$\\ \hline 
-		400&$1.7132$&$1.7109$&$1.7257$\\ \hline 
-		500&$1.7130$&$1.7107$&$1.7255$\\ \hline 
-		600&$1.7128$&$1.7105$&$1.7252$\\ \hline 
-		700&$1.7126$&$1.7103$&$1.7250$\\ \hline 
-		800&$1.7125$&$1.7102$&$1.7249$\\ \hline 
-		900&$1.7122$&$1.7099$&$1.7246$\\ \hline 
-		1000&$1.7121$&$1.7098$&$1.7244$\\ \hline
-		\end{tabular}
-	\label{tab:nanoEspaciadorDeSi}
-\end{table}
-En primer lugar, de los resultados de las simulaciones de CFD, recopiladas en la tabla \ref{tab:nanoEspaciadorDeSi}, se observa como las pérdidas de conducción son mayores para los nano-espaciadores de $Si$ (figura \ref{fig:prc_xxSi}) que para los nano-espaciador de $SiO_2$ (figura \ref{fig:prc_xxSiO2}) porque la conductividad del $Si$ es mayor que la del $SiO_2$. Por lo tanto, la resistencia térmica del nano-espaciador es menos significativa y la resistencia de contacto tiene una mayor importancia.
-\begin{figure} [H]%
-	\centering
-	\begin{subfigure}[b]{0.48\textwidth}%
-			\includegraphics[width=\columnwidth]{Prc_XxSiGe}%
-			\caption{}%
-			\label{fig:prc_xxSi}%
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.48\textwidth}%
-			\includegraphics[width=\columnwidth]{Prc_XxSiO2Ge}%
-			\caption{}%
-			\label{fig:prc_xxSiO2}%
-	\end{subfigure}
-	\caption{Potencias transmitidas por conducción de unas nTPVs con emisores de $Si$, $SS$ y $SiC$ frente a las alturas de un solo nano-espaciador en nanometros para un nano-espaciador de $Si$ (\subref{fig:prc_xxSi}) y para un nano-espaciador de $SiO_2$ (\subref{fig:prc_xxSiO2}).}%
-	\label{fig:prc_xxXX}%
-\end{figure}
-En segundo lugar, se observa como las curvas de las potencias de conducción no varían tanto entre su valor máximo y valor mínimo, siendo para el caso de las nTPVs con nano-espaciadores de $Si$ el que presenta la menor variación de los dos, siendo esta menor de $0.002 \ mW$ (figura \ref{fig:prc_xxSi}), a diferencia de los nano-espaciadores de $SiO_2$ cuya variación es menor de $0.25 \ mW$ (figura \ref{fig:prc_xxSiO2}). También se observa con mayor detalle como la diferencias de las resistencias térmicas de los materiales afecta al flujo de calor, aumentando con la disminución de la resistencia térmica o aumento de la conductividad térmica, cuyos valores se mencionan en la sección \ref{sec:res_SiCSiO2Ge}.\\\\
-En tercer lugar, las potencias de conducción son muy similares para ambos materiales de nano-espaciador con la altura de 100 nm porque la resistencia térmica de los nano-espaciadores disminuye considerablemente con la disminución de la distancia, por ser proporcional a ella. Esto produce que la $R_c$ sea la principal resistencia térmica del sistema, por tal motivo, los valores de las potencias de conducción se asemejan a dicha altura del nano-espaciador.\\\\
-Por último, se calculan las densidades de nano-espaciadores frente a las alturas de los nano-espaciadores para la nTPV de emisor de $SiC$ y nano-espaciadores de $Si$ (figura \ref{fig:prc_SiCSi}), y se compara con las densidades de la nTPV de emisor de $SiC$ pero nano-espaciadores de $SiO_2$ (figura \ref{fig:prc_SiCSiO2}). Se observa que existe una disminución de las densidades para cada relación de potencias y todas las alturas de los nano-espaciadores, siendo la más notable a los 1000 nm de altura y relación de potencias de un orden de magnitud, pasando la densidad de ser $12 \ n^{\circ}esp/cm^2$ (figura \ref{fig:prc_SiCSiO2}) a ser $10 \ n^{\circ}esp/cm^2$ (figura \ref{fig:prc_SiCSi}). Esta poca variación para dos materiales distintos de nano-esapciadores se dá porque para ambos casos la nTPV tiene una $R_c$ que es la resistencia térmica más significativa del sistema.
-\begin{figure} [h]%
-	\centering
-	\begin{subfigure}[b]{0.48\textwidth}%
-			\includegraphics[width=\columnwidth]{rel_SiC}%
-			\caption{}%
-			\label{fig:prc_SiCSi}%
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.48\textwidth}%
-			\includegraphics[width=\columnwidth]{SiC_Rc}%
-			\caption{}%
-			\label{fig:prc_SiCSiO2}%
-	\end{subfigure}
-	\caption[Relación entre la potencia radiada para energías mayores e igual a 0.7 eV y la potencia transmitida por conducción con $R_c$ para distintas densidades de nano-espaciadores (eje y) y distintas alturas de los mismos (eje x), para nTPV de 1 $cm^2$ con nano-espaciadores de $Si$ (\subref{fig:prc_SiCSi}) y de $SiO_2$ (\subref{fig:prc_SiCSiO2}). 
-	La barra de colores lateral representa los colores asociados a cada uno de los valores de las relaciones de potencias, con los contornos de las relaciones más significativas representadas en las gráficas.]{\small
-	Relación entre la potencia radiada para energías mayores e igual a 0.7 eV y la potencia transmitida por conducción con $R_c$ para distintas densidades de nano-espaciadores (eje y) y distintas alturas de los mismos (eje x), para nTPV de 1 $cm^2$ con nano-espaciadores de $Si$ (\subref{fig:prc_SiCSi}) y de $SiO_2$ (\subref{fig:prc_SiCSiO2}). 
-	La barra de colores lateral representa los colores asociados a cada uno de los valores de las relaciones de potencias, con los contornos de las relaciones más significativas representadas en las gráficas.
-	%Densidades de nano-espaciadores ($n^{\circ}esp/cm^2$) frente a las alturas de los nano-espaciadores para todas las relaciones de la potencia de radiación en el rango espectral de energías mayores e igual a 0.7 eV respecto a las potencias de conducción con $R_c$ (dependientes en la densidad de nano-espaciadores) mayores a 10 para nTPVs de nano-espaciadores de $Si$ (\subref{fig:prc_SiCSi}) y $SiO_2$(\subref{fig:prc_SiCSiO2}) . Donde las barras de colores laterales de cada gráfica representan los colores asociados a cada uno de los valores de las relaciones de las potencias, con los contornos de las relaciones más significativas representadas en las gráficas.
-	}%
-	\label{fig:prc_SiCXX}%
-\end{figure}
+%\section{Resultados de las simulaciones para unas nTPVs de nano-espaciadores de Si}\label{sec:res_XxSiGe}
+%\graphicspath{ {./figuras/Resultados/DiffMatEsp} }
+%Como último caso de simulación se simula la transmisión de calor en CFD por conducción para una nTPV de nano-espaciador de $Si$ y un emisor de $Si$, $SS$ y $SiC$ con resistencias de contacto empíricas de $4\cdot 10^{-6} \ m^2 K/W$, por si durante el proceso de deposición del nano-espaciador no se llegara a conseguir depositar $SiO_2$ sino un material con características semejantes a las del $Si$. Se decide incluir este caso de simulación en vista de los resultados obtenidos en un TFM que se desarrolló en paralelo a este trabajo. En dicho TFM se depositaron capas de SiO2 por sputtering. Sin embrago, al evaluar las propiedades de las capas depositadas, estás se parecían más a las esperadas en una capa de Si que en una capa de SiO2.
+%%Esto sucede porque durante unas pruebas de fabricación del $SiO_2$ en la IES, no siempre se consiguía $SiO_2$ de buena calidad y que en el peor de los casos el $SiO_2$ fabricado podría tener unas características más similares al $Si$ que al $SiO_2$ ideal.
+%% comparar el efecto de cambiar el material del nano-espaciador
+%\begin{table}[H]
+	%\centering
+	%\caption{Tabla de recopilación de los resultados de las simulaciones de transferencia de calor por conducción para las nTPV con nano-espaciador de Si y emisores de $Si$, $SS$ y $SiC$ con $R_c$ empírica y para una nTPV de emisor de $SiC$ sin $R_c$ respecto a cada altura del nano-espaciador.}
+		%\begin{tabular}{|c||c|c|c|}
+		%\hline
+		 %\multicolumn{4}{|c|}{\textbf{Potencias de Conducción ($mW$)}}\\	\hline
+		%Dist. (nm)&$P_{R_c-Si}$&$P_{R_c-SS}$&$P_{R_cSiC}$\\ \hline \hline 
+		%100&$1.7136$&$1.7113$&$1.7261$\\ \hline 
+		%200&$1.7135$&$1.7112$&$1.7260$\\ \hline 
+		%300&$1.7134$&$1.7110$&$1.7258$\\ \hline 
+		%400&$1.7132$&$1.7109$&$1.7257$\\ \hline 
+		%500&$1.7130$&$1.7107$&$1.7255$\\ \hline 
+		%600&$1.7128$&$1.7105$&$1.7252$\\ \hline 
+		%700&$1.7126$&$1.7103$&$1.7250$\\ \hline 
+		%800&$1.7125$&$1.7102$&$1.7249$\\ \hline 
+		%900&$1.7122$&$1.7099$&$1.7246$\\ \hline 
+		%1000&$1.7121$&$1.7098$&$1.7244$\\ \hline
+		%\end{tabular}
+	%\label{tab:nanoEspaciadorDeSi}
+%\end{table}
+%En primer lugar, de los resultados de las simulaciones de CFD, recopiladas en la tabla \ref{tab:nanoEspaciadorDeSi}, se observa como las pérdidas de conducción son mayores para los nano-espaciadores de $Si$ (figura \ref{fig:prc_xxSi}) que para los nano-espaciador de $SiO_2$ (figura \ref{fig:prc_xxSiO2}) porque la conductividad del $Si$ es mayor que la del $SiO_2$. Por lo tanto, la resistencia térmica del nano-espaciador es menos significativa y la resistencia de contacto tiene una mayor importancia.
+%\begin{figure} [H]%
+	%\centering
+	%\begin{subfigure}[b]{0.48\textwidth}%
+			%\includegraphics[width=\columnwidth]{Prc_XxSiGe}%
+			%\caption{}%
+			%\label{fig:prc_xxSi}%
+	%\end{subfigure}
+	%\hfill
+	%\begin{subfigure}[b]{0.48\textwidth}%
+			%\includegraphics[width=\columnwidth]{Prc_XxSiO2Ge}%
+			%\caption{}%
+			%\label{fig:prc_xxSiO2}%
+	%\end{subfigure}
+	%\caption{Potencias transmitidas por conducción de unas nTPVs con emisores de $Si$, $SS$ y $SiC$ frente a las alturas de un solo nano-espaciador en nanometros para un nano-espaciador de $Si$ (\subref{fig:prc_xxSi}) y para un nano-espaciador de $SiO_2$ (\subref{fig:prc_xxSiO2}).}%
+	%\label{fig:prc_xxXX}%
+%\end{figure}
+%En segundo lugar, se observa como las curvas de las potencias de conducción no varían tanto entre su valor máximo y valor mínimo, siendo para el caso de las nTPVs con nano-espaciadores de $Si$ el que presenta la menor variación de los dos, siendo esta menor de $0.002 \ mW$ (figura \ref{fig:prc_xxSi}), a diferencia de los nano-espaciadores de $SiO_2$ cuya variación es menor de $0.25 \ mW$ (figura \ref{fig:prc_xxSiO2}). También se observa con mayor detalle como la diferencias de las resistencias térmicas de los materiales afecta al flujo de calor, aumentando con la disminución de la resistencia térmica o aumento de la conductividad térmica, cuyos valores se mencionan en la sección \ref{sec:res_SiCSiO2Ge}.\\\\
+%En tercer lugar, las potencias de conducción son muy similares para ambos materiales de nano-espaciador con la altura de 100 nm porque la resistencia térmica de los nano-espaciadores disminuye considerablemente con la disminución de la distancia, por ser proporcional a ella. Esto produce que la $R_c$ sea la principal resistencia térmica del sistema, por tal motivo, los valores de las potencias de conducción se asemejan a dicha altura del nano-espaciador.\\\\
+%Por último, se calculan las densidades de nano-espaciadores frente a las alturas de los nano-espaciadores para la nTPV de emisor de $SiC$ y nano-espaciadores de $Si$ (figuras \ref{fig:prc_SiCXX} \subref{fig:rel_SiC_SinRc} y \subref{fig:rel_SiC}), y se compara con las densidades de la nTPV de emisor de $SiC$ pero nano-espaciadores de $SiO_2$ (figuras \ref{fig:relation_SiCSiO2Ge} \subref{fig:rel_SiCSiO2Ge} y \subref{fig:rel_SiCSiO2Ge_Rc}). Se observa que con $R_c$ existe una disminución de las densidades para cada relación de potencias y todas las alturas de los nano-espaciadores, siendo la más notable a los 1000 nm de altura y relación de potencias de un orden de magnitud, pasando la densidad de ser $12 \ n^{\circ}esp/cm^2$ (figura \ref{fig:rel_SiC}) a ser $10 \ n^{\circ}esp/cm^2$ (figura \ref{fig:rel_SiCSiO2Ge_Rc}). Esta poca variación para dos materiales distintos de nano-espaciadores se dá porque para ambos casos la nTPV tiene una $R_c$ que es la resistencia térmica más significativa del sistema.
+%\begin{figure} [h]%
+	%\centering
+	%\begin{subfigure}[b]{0.48\textwidth}%
+			%\includegraphics[width=\columnwidth]{rel_SiC_SinRc}%
+			%\caption{}%
+			%\label{fig:rel_SiC_SinRc}%
+	%\end{subfigure}
+	%\hfill
+	%\begin{subfigure}[b]{0.48\textwidth}%
+			%\includegraphics[width=\columnwidth]{rel_SiC}%
+			%\caption{}%
+			%\label{fig:rel_SiC}%
+	%\end{subfigure}
+	%\caption[Relación entre la potencia radiada para energías mayores e igual a 0.7 eV y la potencia transmitida por conducción con $R_c$ para distintas densidades de nano-espaciadores (eje y) y distintas alturas de los mismos (eje x), para nTPV de 1 $cm^2$ con nano-espaciadores de $Si$ con (\subref{fig:rel_SiC}) y sin $R_c$ (\subref{fig:rel_SiC_SinRc}). 
+	%La barra de colores lateral representa los colores asociados a cada uno de los valores de las relaciones de potencias, con los contornos de las relaciones más significativas representadas en las gráficas.]{\small
+	%Relación entre la potencia radiada para energías mayores e igual a 0.7 eV y la potencia transmitida por conducción con $R_c$ para distintas densidades de nano-espaciadores (eje y) y distintas alturas de los mismos (eje x), para nTPV de 1 $cm^2$ con nano-espaciadores de $Si$ con (\subref{fig:rel_SiC}) y sin $R_c$ (\subref{fig:rel_SiC_SinRc}). 
+	%La barra de colores lateral representa los colores asociados a cada uno de los valores de las relaciones de potencias, con los contornos de las relaciones más significativas representadas en las gráficas.
+	%%Densidades de nano-espaciadores ($n^{\circ}esp/cm^2$) frente a las alturas de los nano-espaciadores para todas las relaciones de la potencia de radiación en el rango espectral de energías mayores e igual a 0.7 eV respecto a las potencias de conducción con $R_c$ (dependientes en la densidad de nano-espaciadores) mayores a 10 para nTPVs de nano-espaciadores de $Si$ (\subref{fig:prc_SiCSi}) y $SiO_2$(\subref{fig:prc_SiCSiO2}) . Donde las barras de colores laterales de cada gráfica representan los colores asociados a cada uno de los valores de las relaciones de las potencias, con los contornos de las relaciones más significativas representadas en las gráficas.
+	%}%
+	%\label{fig:prc_SiCXX}%
+%\end{figure}
+%En la figura \ref{fig:rel_SiC_SinRc} se observa como la tendencia de la curva es aumentar la densidad de nano-espaciadores al disminuir la altura de este, esto se produce porque la $h_c$ del $Si$ disminuye con el aumento de la temperatura, produciendo una disminución de la potencia transmitida por conducción al calentarse. En la tabla \ref{tab:nanoEspaciadorDeSi} se puede observar como la potencia transmitida por conducción para el caso de emisor de $SiC$ sin $R_c$ ($ $) es mayor que para el caso con nano-espaciador de $SiO_2$ (tabla \ref{tab:nanoEspaciadorDeSi}), pero teniendo una variación pico a pico menor.
